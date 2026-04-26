@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Wisemetrics — Canais Digitais</title>
+<meta name="description" content="Estratégia de presença digital Wisemetrics: site, LinkedIn, newsletter e SEO."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300..800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="wisemetrics.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+.site-map {
+  border: 1px solid var(--border); border-radius: var(--wm-r-4);
+  background: var(--bg-raised); overflow: hidden;
+}
+.site-map-row {
+  display: grid; grid-template-columns: 180px 1fr auto; gap: var(--wm-s-4);
+  align-items: center; padding: var(--wm-s-4) var(--wm-s-5);
+  border-bottom: 1px solid var(--border);
+}
+.site-map-row:last-child { border-bottom: 0; }
+.site-map-row .path { font-family: var(--wm-font-mono); font-size: var(--wm-text-xs); color: var(--accent); }
+.site-map-row .pg { font-size: var(--wm-text-sm); font-weight: 500; }
+.site-map-row .desc { color: var(--fg-muted); font-size: var(--wm-text-sm); }
+.site-map-row .priority { font-family: var(--wm-font-mono); font-size: 10px; text-transform: uppercase; letter-spacing:.08em; color:var(--fg-subtle); white-space:nowrap; }
+.newsletter-block {
+  background: var(--bg-raised); border: 1px solid var(--border); border-radius: var(--wm-r-4);
+  padding: var(--wm-s-6); position: relative; overflow: hidden;
+}
+.newsletter-block::before {
+  content:""; position:absolute; top:0; left:0; right:0; height:2px;
+  background: linear-gradient(90deg, var(--wm-signal-600), var(--accent), var(--wm-signal-600));
+}
+.nl-section { padding: var(--wm-s-4) 0; border-bottom: 1px dashed var(--border); }
+.nl-section:last-child { border-bottom: 0; }
+.nl-section-head { font-family: var(--wm-font-mono); font-size: 10px; text-transform: uppercase; letter-spacing:.1em; color:var(--fg-muted); margin-bottom:6px; }
+.nl-section-title { font-family: var(--wm-font-display); font-weight:500; font-size:var(--wm-text-md); letter-spacing:-.01em; }
+.seo-cluster {
+  background: var(--bg-raised); border: 1px solid var(--border); border-radius: var(--wm-r-3);
+  padding: var(--wm-s-4);
+}
+.seo-cluster .cluster-topic {
+  font-family: var(--wm-font-mono); font-size: 10px; text-transform: uppercase;
+  letter-spacing: .1em; color: var(--accent); margin-bottom: 8px;
+}
+.seo-keyword { display:inline-flex; align-items:center; gap:4px; font-size:var(--wm-text-xs); color:var(--fg-muted); padding:3px 8px; border:1px solid var(--border); border-radius:var(--wm-r-full); margin:3px; }
+</style>
+</head>
+<body>
+<div class="wm-app">
+  <aside class="wm-side">
+    <div class="wm-brandmark">
+      <svg class="sym" viewBox="0 0 40 40" fill="none">
+        <rect x="3" y="22" width="5" height="14" fill="currentColor" opacity=".85"/>
+        <rect x="11" y="16" width="5" height="20" fill="currentColor" opacity=".85"/>
+        <rect x="19" y="10" width="5" height="26" fill="currentColor" opacity=".85"/>
+        <rect x="27" y="18" width="5" height="18" fill="currentColor" opacity=".85"/>
+        <circle cx="34.5" cy="6" r="3.5" fill="var(--accent)"/>
+      </svg>
+      <div>
+        <div class="name">Wisemetrics<span class="dot">.</span></div>
+        <div class="wm-version">Canais Digitais</div>
+      </div>
+    </div>
+    <nav class="wm-nav">
+      <a href="index.html"><span class="num">--</span>Hub Central</a>
+      <div class="group-label" style="margin-top:16px">Documentos</div>
+      <a href="identidade-visual.html"><span class="num">01</span>Identidade Visual</a>
+      <a href="canais-digitais.html"><span class="num">02</span>Canais Digitais</a>
+      <a href="estrategia-conteudo.html"><span class="num">03</span>Estratégia Editorial</a>
+      <a href="go-to-market.html"><span class="num">04</span>Go-to-Market</a>
+      <a href="servicos.html"><span class="num">05</span>Serviços &amp; Preços</a>
+      <a href="modelos-proposta.html"><span class="num">06</span>Modelos de Proposta</a>
+      <a href="wisemetrics-design-system-v2.html"><span class="num">07</span>Design System</a>
+      <div class="group-label" style="margin-top:16px">Seções</div>
+
+    </nav>
+    <div class="wm-theme-switch">
+      <span class="slider"></span>
+      <button data-theme-btn="dark" class="active">Dark</button>
+      <button data-theme-btn="light">Light</button>
+    </div>
+  </aside>
+
+  <main class="wm-main">
+    <div class="wm-toc-float">
+      <div class="wm-toc-container">
+        <a href="#site"><span class="num">01</span>Site editorial</a>
+      <a href="#linkedin"><span class="num">02</span>LinkedIn</a>
+      <a href="#newsletter"><span class="num">03</span>Newsletter</a>
+      <a href="#seo"><span class="num">04</span>SEO</a>
+      <a href="#stack"><span class="num">05</span>Stack</a>
+      </div>
+    </div>
+    <div class="wm-container">
+
+      <section class="wm-hero">
+        <div class="wm-hero-grid-overlay"></div>
+        <canvas class="wm-hero-canvas" id="heroCanvas"></canvas>
+        <div class="wm-hud">
+          <div class="row"><span>documento</span><span class="v">canais</span></div>
+          <div class="row"><span>canal primário</span><span class="v">LinkedIn</span></div>
+          <div class="row"><span>newsletter</span><span class="v">Wisemetrics Weekly</span></div>
+          <div class="row"><span>meta assinantes</span><span class="v">2.500</span></div>
+        </div>
+        <div class="wm-hero-content">
+          <div class="wm-eyebrow wm-fade-up"><span class="pulse"></span>Presença Digital · v1.0</div>
+          <h1 class="wm-h1 wm-fade-up d1">Canais <em>Digitais.</em></h1>
+          <p class="wm-lede wm-fade-up d2">Site editorial como sede. LinkedIn como canal de autoridade. Newsletter como canal de conversão. SEO como inbound passivo. Cada canal com um papel, não com ambição de ser tudo.</p>
+          <div class="wm-hero-meta wm-fade-up d3">
+            <div class="cell"><span class="label">Sede</span><span class="val accent">Site editorial</span></div>
+            <div class="cell"><span class="label">Autoridade</span><span class="val">LinkedIn</span></div>
+            <div class="cell"><span class="label">Conversão</span><span class="val">Newsletter</span></div>
+            <div class="cell"><span class="label">Inbound</span><span class="val">SEO de categoria</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SITE -->
+      <section class="wm-section" id="site">
+        <div class="wm-section-head">
+          <div class="num">01</div>
+          <div>
+            <h2 class="wm-h2">Site editorial</h2>
+            <p class="sub">O site não é um site institucional — é uma publicação. Cada página tem função editorial específica. O dado está inteiro; a navegação revela o que importa primeiro.</p>
+          </div>
+        </div>
+        <div class="wm-grid cols-4" style="margin-bottom:var(--wm-s-6)">
+          <div class="wm-channel"><div class="ch-icon">Σ</div><div class="ch-name">Conversão</div><div class="ch-role">Objetivo principal</div><p>Capturar leads qualificados via download de Consumer Pulse e solicitação de diagnóstico.</p></div>
+          <div class="wm-channel"><div class="ch-icon">≡</div><div class="ch-name">Autoridade</div><div class="ch-role">Conteúdo editorial</div><p>Hub de artigos, relatórios e insights que demonstram expertise antes que o cliente contate.</p></div>
+          <div class="wm-channel"><div class="ch-icon">◎</div><div class="ch-name">SEO</div><div class="ch-role">Inbound passivo</div><p>Clusters de conteúdo sobre inteligência de consumidor, analytics aplicado e pesquisa de mercado.</p></div>
+          <div class="wm-channel"><div class="ch-icon">⌗</div><div class="ch-name">Portfólio</div><div class="ch-role">Evidência de qualidade</div><p>Cases com metodologia explícita. Não apenas o resultado — o raciocínio por trás.</p></div>
+        </div>
+        <h3 class="wm-h3">Mapa de páginas</h3>
+        <div class="site-map">
+          <div class="site-map-row" style="background:var(--bg-sunken)">
+            <span class="path">/</span><div><div class="pg">Home</div><div class="desc">Hero com tagline + Consumer Pulse CTA + 3 serviços destacados + últimos insights</div></div><span class="priority accent" style="color:var(--accent)">P1</span>
+          </div>
+          <div class="site-map-row">
+            <span class="path">/intelligence</span><div><div class="pg">Consumer Pulse</div><div class="desc">Flagship de conteúdo — download público do relatório trimestral com form de captura</div></div><span class="priority">P1</span>
+          </div>
+          <div class="site-map-row">
+            <span class="path">/servicos</span><div><div class="pg">Serviços</div><div class="desc">As 4 linhas de serviço com tiers, entregáveis e CTA de diagnóstico</div></div><span class="priority">P1</span>
+          </div>
+          <div class="site-map-row">
+            <span class="path">/cases</span><div><div class="pg">Cases</div><div class="desc">3–6 casos com problema, abordagem, dado encontrado e decisão tomada (empresa anonimizada)</div></div><span class="priority">P2</span>
+          </div>
+          <div class="site-map-row">
+            <span class="path">/blog</span><div><div class="pg">Insights (blog)</div><div class="desc">Artigos educativos por cluster temático. SEO + nutrição de leads</div></div><span class="priority">P2</span>
+          </div>
+          <div class="site-map-row">
+            <span class="path">/sobre</span><div><div class="pg">Sobre</div><div class="desc">Manifesto de marca + equipe + princípios metodológicos</div></div><span class="priority">P3</span>
+          </div>
+          <div class="site-map-row">
+            <span class="path">/contato</span><div><div class="pg">Contato / Diagnóstico</div><div class="desc">Form curto: nome, empresa, setor, desafio. Resposta em 24h.</div></div><span class="priority">P1</span>
+          </div>
+        </div>
+        <div class="wm-sub">
+          <h3 class="wm-h3">KPIs do site — Ano 1</h3>
+          <div class="wm-grid cols-4">
+            <div class="wm-stat"><span class="stat-label">Sessões mensais</span><div class="stat-value">8.000</div><span class="stat-delta up">meta 12 meses</span></div>
+            <div class="wm-stat"><span class="stat-label">Taxa de captação (forms)</span><div class="stat-value">3,5%</div><span class="stat-delta up">sessão → lead</span></div>
+            <div class="wm-stat"><span class="stat-label">Downloads Consumer Pulse</span><div class="stat-value">2.000</div><span class="stat-delta up">acumulado anual</span></div>
+            <div class="wm-stat"><span class="stat-label">Tempo médio na página</span><div class="stat-value">&gt;3min</div><span class="stat-delta up">indicador de engagement</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LINKEDIN -->
+      <section class="wm-section" id="linkedin">
+        <div class="wm-section-head">
+          <div class="num">02</div>
+          <div>
+            <h2 class="wm-h2">LinkedIn</h2>
+            <p class="sub">Canal principal de autoridade. Não vendemos no LinkedIn — educamos. A venda acontece quando o lead chega ao site ou responde a proposta.</p>
+          </div>
+        </div>
+        <div class="wm-grid cols-3">
+          <div class="wm-card"><span class="kicker">Frequência</span><h4>3 posts / semana</h4><p>Semanal: 2 "leituras de número" + 1 conteúdo de metodologia ou caso. Sem conteúdo de feriado ou efeméride sem dado.</p></div>
+          <div class="wm-card"><span class="kicker">Formatos</span><h4>Texto + carrossel + artigo</h4><p>60% texto longo (autoridade analítica). 30% carrossel visual (dados com design). 10% artigo longo (SEO + newsletter).</p></div>
+          <div class="wm-card"><span class="kicker">Meta</span><h4>2.000 → 6.000 seguidores</h4><p>Taxa de crescimento mínima: +300/mês após mês 3. Alcance orgânico esperado por post: 3.000–8.000 impressões.</p></div>
+        </div>
+        <div class="wm-sub">
+          <h3 class="wm-h3">Tipos de post aprovados</h3>
+          <div class="wm-grid cols-2">
+            <div style="border:1px solid var(--border);border-radius:var(--wm-r-4);background:var(--bg-raised);padding:var(--wm-s-5)">
+              <div class="wm-mono" style="color:var(--accent);font-size:10px;margin-bottom:10px;text-transform:uppercase;letter-spacing:.1em">Formato 1 · Leitura de Número</div>
+              <p style="font-family:var(--wm-font-display);font-size:var(--wm-text-md);font-weight:350;color:var(--fg);margin-bottom:10px;letter-spacing:-.01em">[Dado concreto + fonte + período].</p>
+              <p style="font-size:var(--wm-text-sm);color:var(--fg-muted);margin-bottom:10px">Não é [causa óbvia] — é [hipótese não intuitiva]. Para [setor X], isso significa [consequência prática].</p>
+              <div style="display:flex;gap:6px"><span class="wm-badge accent">#wisemetrics</span><span class="wm-badge">#consumidor</span></div>
+            </div>
+            <div style="border:1px solid var(--border);border-radius:var(--wm-r-4);background:var(--bg-raised);padding:var(--wm-s-5)">
+              <div class="wm-mono" style="color:var(--accent);font-size:10px;margin-bottom:10px;text-transform:uppercase;letter-spacing:.1em">Formato 2 · Metodologia Aberta</div>
+              <p style="font-family:var(--wm-font-display);font-size:var(--wm-text-md);font-weight:350;color:var(--fg);margin-bottom:10px;letter-spacing:-.01em">"Como fazemos [x] sem usar [clichê de mercado]".</p>
+              <p style="font-size:var(--wm-text-sm);color:var(--fg-muted);margin-bottom:10px">Explicar a inteligência por trás da entrega. Sem vender explicitamente — o método é o diferencial.</p>
+              <div style="display:flex;gap:6px"><span class="wm-badge accent">#pesquisa</span><span class="wm-badge">#dados</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEWSLETTER -->
+      <section class="wm-section" id="newsletter">
+        <div class="wm-section-head">
+          <div class="num">03</div>
+          <div>
+            <h2 class="wm-h2">Wisemetrics Weekly</h2>
+            <p class="sub">Newsletter semanal — o canal de conversão mais eficiente. Quem assina tem intenção; quem lê tem disposição. Enviada toda quarta-feira às 8h30.</p>
+          </div>
+        </div>
+        <div class="wm-grid cols-2" style="align-items:start">
+          <div class="newsletter-block">
+            <div class="wm-mono" style="color:var(--accent);font-size:10px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:var(--wm-s-4)">Estrutura da edição semanal</div>
+            <div class="nl-section"><div class="nl-section-head">Abertura</div><div class="nl-section-title">1 dado de mercado + interpretação (120 palavras)</div></div>
+            <div class="nl-section"><div class="nl-section-head">Análise</div><div class="nl-section-title">Aprofundamento em 1 tema: comportamento, metodologia ou ferramentas (300 palavras)</div></div>
+            <div class="nl-section"><div class="nl-section-head">Consumer Corner</div><div class="nl-section-title">Insight do painel amostral Wisemetrics — dado exclusivo para assinantes</div></div>
+            <div class="nl-section"><div class="nl-section-head">O que estamos lendo</div><div class="nl-section-title">3 links comentados: 1 pesquisa acadêmica, 1 case, 1 ferramenta</div></div>
+            <div class="nl-section"><div class="nl-section-head">Pergunta da semana</div><div class="nl-section-title">1 questão aberta para engajar resposta. Melhores aparecem na edição seguinte.</div></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:var(--wm-s-4)">
+            <div class="wm-stat"><span class="stat-label">Meta assinantes (12m)</span><div class="stat-value">2.500</div><span class="stat-delta up">Open rate meta: 42%+</span></div>
+            <div class="wm-stat"><span class="stat-label">Frequência</span><div class="stat-value">Semanal</div><span class="stat-delta up">Quarta-feira, 8h30</span></div>
+            <div class="wm-stat"><span class="stat-label">Plataforma recomendada</span><div class="stat-value">Beehiiv</div><span class="stat-delta up">opção: Substack ou Ghost</span></div>
+            <div>
+              <h3 class="wm-h3" style="margin-bottom:var(--wm-s-3)">KPIs de newsletter</h3>
+              <div class="wm-metric-row"><div class="wm-metric-row-head"><span class="mlabel">Open rate</span><span class="mvals">meta &gt;40%</span></div><div class="wm-metric-bar"><div class="wm-metric-bar-fill" style="width:80%;animation-delay:.1s"></div></div></div>
+              <div class="wm-metric-row"><div class="wm-metric-row-head"><span class="mlabel">Click rate</span><span class="mvals">meta &gt;8%</span></div><div class="wm-metric-bar"><div class="wm-metric-bar-fill" style="width:40%;animation-delay:.2s"></div></div></div>
+              <div class="wm-metric-row"><div class="wm-metric-row-head"><span class="mlabel">Unsubscribe / edição</span><span class="mvals">&lt;0,3%</span></div><div class="wm-metric-bar"><div class="wm-metric-bar-fill" style="width:90%;animation-delay:.3s;background:var(--wm-success)"></div></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEO -->
+      <section class="wm-section" id="seo">
+        <div class="wm-section-head">
+          <div class="num">04</div>
+          <div>
+            <h2 class="wm-h2">SEO de categoria</h2>
+            <p class="sub">Não competimos por keywords genéricas de "pesquisa de mercado". Competimos pelos termos do ICP que procura resposta para um problema específico.</p>
+          </div>
+        </div>
+        <div class="wm-grid cols-3">
+          <div class="seo-cluster">
+            <div class="cluster-topic">Cluster 1 · Intenção navegacional</div>
+            <div style="margin-bottom:8px;font-weight:500;font-size:var(--wm-text-sm)">Quem busca Wisemetrics por nome</div>
+            <div><span class="seo-keyword">wisemetrics</span><span class="seo-keyword">wisemetrics consumer pulse</span><span class="seo-keyword">wisemetrics relatorio</span></div>
+          </div>
+          <div class="seo-cluster">
+            <div class="cluster-topic">Cluster 2 · Intenção informacional</div>
+            <div style="margin-bottom:8px;font-weight:500;font-size:var(--wm-text-sm)">Quem quer aprender sobre o tema</div>
+            <div><span class="seo-keyword">como fazer pesquisa de consumidor</span><span class="seo-keyword">inteligência de mercado b2b</span><span class="seo-keyword">analytics de marketing o que é</span><span class="seo-keyword">consumer insights brasil</span></div>
+          </div>
+          <div class="seo-cluster">
+            <div class="cluster-topic">Cluster 3 · Intenção comercial</div>
+            <div style="margin-bottom:8px;font-weight:500;font-size:var(--wm-text-sm)">Quem está próximo de contratar</div>
+            <div><span class="seo-keyword">empresa de pesquisa de mercado</span><span class="seo-keyword">consultoria de dados para marketing</span><span class="seo-keyword">relatório de comportamento do consumidor</span><span class="seo-keyword">pesquisa quantitativa b2b</span></div>
+          </div>
+        </div>
+        <div class="wm-sub">
+          <div class="wm-alert">
+            <svg class="ic" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v5M10 13.5v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <div><strong>Estratégia de long-tail.</strong><p>Artigos como "como calcular market share no varejo de saúde" têm volume baixo mas conversão alta — o leitor já está na fase de consideração de contratação.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STACK -->
+      <section class="wm-section" id="stack">
+        <div class="wm-section-head">
+          <div class="num">05</div>
+          <div>
+            <h2 class="wm-h2">Stack recomendada</h2>
+            <p class="sub">Ferramentas avaliadas por: custo-benefício, curva de aprendizado e integração. Configuração sem dev para os primeiros 18 meses.</p>
+          </div>
+        </div>
+        <div style="overflow-x:auto">
+          <table class="wm-table" style="min-width:600px">
+            <thead><tr><th>Categoria</th><th>Ferramenta</th><th>Alternativa</th><th>Custo/mês aprox.</th><th>Prioridade</th></tr></thead>
+            <tbody>
+              <tr><td>CRM</td><td>HubSpot (free/Starter)</td><td>Pipedrive</td><td class="num">R$0–580</td><td><span class="wm-badge accent">P1</span></td></tr>
+              <tr><td>Newsletter</td><td>Beehiiv</td><td>Substack / Ghost</td><td class="num">R$100–250</td><td><span class="wm-badge accent">P1</span></td></tr>
+              <tr><td>Analytics</td><td>Google Analytics 4</td><td>Plausible</td><td class="num">R$0</td><td><span class="wm-badge accent">P1</span></td></tr>
+              <tr><td>Social scheduling</td><td>Buffer</td><td>Later</td><td class="num">R$120</td><td><span class="wm-badge">P2</span></td></tr>
+              <tr><td>SEO</td><td>Ahrefs</td><td>Semrush</td><td class="num">R$600</td><td><span class="wm-badge">P2</span></td></tr>
+              <tr><td>Design</td><td>Figma</td><td>Canva Pro</td><td class="num">R$250</td><td><span class="wm-badge accent">P1</span></td></tr>
+              <tr><td>Painel amostral</td><td>Toluna / Cint</td><td>Survio + painel próprio</td><td class="num">Por projeto</td><td><span class="wm-badge accent">P1</span></td></tr>
+              <tr><td>Video (webinar)</td><td>Livestorm</td><td>Zoom / StreamYard</td><td class="num">R$320</td><td><span class="wm-badge">P3</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer class="wm-footer">
+        <span class="left">WISEMETRICS · CANAIS DIGITAIS · v1.0 · 2026</span>
+        <span class="right">DADO QUE PENSA.</span>
+      </footer>
+    </div>
+  </main>
+</div>
+<div class="wm-toast" id="toast"></div>
+<script src="wisemetrics.js"></script>
+</body>
+</html>

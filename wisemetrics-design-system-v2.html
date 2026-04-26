@@ -1,0 +1,1976 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Wisemetrics — Design System v0.2</title>
+<meta name="description" content="Design System Wisemetrics. Editorial + tecnológico. Brand, web, produto e social." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300..800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+/* =============================================================
+   WISEMETRICS DESIGN SYSTEM v0.2 — TOKENS
+   ============================================================= */
+:root{
+  /* --- Paper (warm neutrals) --- */
+  --wm-paper-50:  #f7f5f0;
+  --wm-paper-100: #ece7dc;
+  --wm-paper-200: #d9d1bf;
+  --wm-paper-300: #b8ad93;
+  --wm-paper-400: #8a8067;
+  --wm-paper-500: #5d5541;
+  --wm-paper-600: #3d3828;
+  --wm-paper-700: #26231a;
+  --wm-paper-800: #141310;
+  --wm-paper-900: #0a0907;
+
+  /* --- Ink (deep navy with cyan undertone to harmonize with teal) --- */
+  --wm-ink-50:  #eaf0f5;
+  --wm-ink-100: #c8d5e1;
+  --wm-ink-200: #8ba2b8;
+  --wm-ink-300: #526d88;
+  --wm-ink-400: #2c4762;
+  --wm-ink-500: #132a44;   /* brand primary, slightly cooler */
+  --wm-ink-600: #0c1e33;
+  --wm-ink-700: #071524;
+  --wm-ink-800: #040d18;
+  --wm-ink-900: #02060d;
+
+  /* --- Signal (teal — brand accent) --- */
+  --wm-signal-50:  #e6f9f6;
+  --wm-signal-100: #b9efe7;
+  --wm-signal-200: #7ee0d3;
+  --wm-signal-300: #42ccbb;
+  --wm-signal-400: #1db5a3;   /* HERO ACCENT — user-specified */
+  --wm-signal-500: #0f9385;
+  --wm-signal-600: #0a6e63;
+  --wm-signal-700: #06463f;
+
+  /* --- Amber (secondary accent — used only for warnings/data-series-B) --- */
+  --wm-amber-400: #e8a33a;
+  --wm-amber-500: #c48220;
+
+  /* --- Data palette (categorical, teal-led) --- */
+  --wm-data-1: #1db5a3;  /* signal teal */
+  --wm-data-2: #132a44;  /* ink */
+  --wm-data-3: #e8a33a;  /* amber */
+  --wm-data-4: #a1306f;  /* magenta */
+  --wm-data-5: #6f4fa3;  /* violet */
+  --wm-data-6: #4a7cb8;  /* sky */
+  --wm-data-7: #d9d1bf;  /* paper neutral */
+
+  /* --- Semantic --- */
+  --wm-success: #1db5a3;     /* reuses signal — no need for 3rd green */
+  --wm-warning: #e8a33a;
+  --wm-danger:  #d94b45;
+  --wm-info:    #4a7cb8;
+
+  /* --- Type --- */
+  --wm-font-display: "Fraunces", "Noto Serif", Georgia, serif;
+  --wm-font-body:    "Inter Tight", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --wm-font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Type scale */
+  --wm-text-2xs: 0.6875rem;
+  --wm-text-xs:  0.75rem;
+  --wm-text-sm:  0.875rem;
+  --wm-text-base:1rem;
+  --wm-text-md:  1.125rem;
+  --wm-text-lg:  1.375rem;
+  --wm-text-xl:  1.75rem;
+  --wm-text-2xl: 2.25rem;
+  --wm-text-3xl: 3rem;
+  --wm-text-4xl: 4.25rem;
+  --wm-text-5xl: 6rem;
+  --wm-text-6xl: 8rem;
+
+  /* Spacing, radius, motion (preserved) */
+  --wm-s-0: 0; --wm-s-1: 4px; --wm-s-2: 8px; --wm-s-3: 12px; --wm-s-4: 16px;
+  --wm-s-5: 24px; --wm-s-6: 32px; --wm-s-7: 48px; --wm-s-8: 64px;
+  --wm-s-9: 96px; --wm-s-10: 128px; --wm-s-11: 160px;
+
+  --wm-r-0: 0; --wm-r-1: 2px; --wm-r-2: 4px; --wm-r-3: 8px;
+  --wm-r-4: 12px; --wm-r-5: 18px; --wm-r-full: 999px;
+
+  --wm-shadow-1: 0 1px 0 rgba(0,0,0,.05), 0 1px 2px rgba(0,0,0,.08);
+  --wm-shadow-2: 0 2px 4px rgba(0,0,0,.08), 0 8px 24px -8px rgba(0,0,0,.16);
+  --wm-shadow-3: 0 4px 8px rgba(0,0,0,.08), 0 24px 48px -16px rgba(0,0,0,.24);
+  --wm-glow-signal: 0 0 0 1px rgba(29,181,163,.25), 0 0 24px rgba(29,181,163,.25);
+
+  --wm-ease-standard: cubic-bezier(.2,.6,.2,1);
+  --wm-ease-entrance: cubic-bezier(.16,.84,.24,1);
+  --wm-ease-exit:     cubic-bezier(.4,0,1,1);
+  --wm-dur-1: 120ms; --wm-dur-2: 200ms; --wm-dur-3: 320ms; --wm-dur-4: 520ms;
+
+  --wm-container: 1280px;
+  --wm-gutter: 24px;
+}
+
+/* ---------- Semantic roles: dark default (hero moment) ---------- */
+[data-theme="dark"]{
+  --bg:           #060a12;
+  --bg-raised:    #0c121d;
+  --bg-sunken:    #030509;
+  --bg-elevated:  #141b2a;
+  --fg:           #ece7dc;
+  --fg-muted:     #8a8067;
+  --fg-subtle:    #5d5541;
+  --border:       rgba(236,231,220,.08);
+  --border-strong:rgba(236,231,220,.16);
+  --rule:         rgba(236,231,220,.08);
+  --accent:       var(--wm-signal-400);
+  --accent-hi:    var(--wm-signal-300);
+  --accent-fg:    #021714;
+  --primary:      var(--wm-ink-100);
+  --primary-fg:   var(--wm-ink-900);
+  --shadow-card:  0 1px 0 rgba(255,255,255,.02) inset, 0 0 0 1px rgba(255,255,255,.04), 0 20px 60px -30px rgba(0,0,0,.8);
+}
+
+[data-theme="light"]{
+  --bg:           var(--wm-paper-50);
+  --bg-raised:    #ffffff;
+  --bg-sunken:    var(--wm-paper-100);
+  --bg-elevated:  #ffffff;
+  --fg:           var(--wm-paper-900);
+  --fg-muted:     var(--wm-paper-500);
+  --fg-subtle:    var(--wm-paper-400);
+  --border:       var(--wm-paper-200);
+  --border-strong:var(--wm-paper-300);
+  --rule:         var(--wm-paper-200);
+  --accent:       var(--wm-signal-500);
+  --accent-hi:    var(--wm-signal-400);
+  --accent-fg:    #ffffff;
+  --primary:      var(--wm-ink-500);
+  --primary-fg:   #ffffff;
+  --shadow-card:  var(--wm-shadow-2);
+  --wm-data-2:    #132a44;
+}
+
+/* =============================================================
+   RESET + BASE
+   ============================================================= */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:var(--wm-font-body);
+  font-size:var(--wm-text-base);
+  line-height:1.55;
+  font-feature-settings:"ss01","cv11";
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  transition: background var(--wm-dur-4) var(--wm-ease-standard), color var(--wm-dur-3) var(--wm-ease-standard);
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+a{color:inherit;text-underline-offset:3px;text-decoration-thickness:1px}
+
+/* =============================================================
+   LAYOUT
+   ============================================================= */
+.wm-app{display:grid;grid-template-columns:280px 1fr;min-height:100vh;position:relative;z-index:1}
+.wm-side{
+  position:sticky;top:0;align-self:start;height:100vh;
+  border-right:1px solid var(--border);
+  background:color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter:blur(16px) saturate(140%);
+  -webkit-backdrop-filter:blur(16px) saturate(140%);
+  padding:var(--wm-s-6) var(--wm-s-5);
+  display:flex;flex-direction:column;gap:var(--wm-s-5);
+  overflow-y:auto;
+  z-index:10;
+}
+.wm-main{min-width:0}
+.wm-container{max-width:var(--wm-container);margin:0 auto;padding:var(--wm-s-7) var(--wm-s-7)}
+@media (max-width:960px){
+  .wm-app{grid-template-columns:1fr}
+  .wm-side{position:static;height:auto;border-right:0;border-bottom:1px solid var(--border)}
+  .wm-container{padding:var(--wm-s-7) var(--wm-s-5)}
+}
+
+/* Sidebar */
+.wm-brandmark{display:flex;align-items:center;gap:var(--wm-s-3)}
+.wm-brandmark .sym{width:32px;height:32px;position:relative}
+.wm-brandmark .name{font-family:var(--wm-font-display);font-weight:500;font-size:var(--wm-text-md);letter-spacing:-.015em}
+.wm-brandmark .dot{color:var(--accent)}
+.wm-version{font-family:var(--wm-font-mono);font-size:var(--wm-text-2xs);color:var(--fg-muted);letter-spacing:.06em;text-transform:uppercase}
+.wm-nav{display:flex;flex-direction:column;gap:1px}
+.wm-nav a{
+  display:flex;align-items:center;gap:var(--wm-s-3);
+  padding:7px 10px;border-radius:var(--wm-r-2);
+  font-size:var(--wm-text-sm);color:var(--fg-muted);
+  text-decoration:none;
+  transition:background var(--wm-dur-1) var(--wm-ease-standard), color var(--wm-dur-1), transform var(--wm-dur-1);
+}
+.wm-nav a:hover{background:var(--bg-elevated);color:var(--fg);transform:translateX(2px)}
+.wm-nav a .num{font-family:var(--wm-font-mono);font-size:var(--wm-text-2xs);color:var(--fg-subtle);width:22px}
+.wm-nav .group-label{
+  font-family:var(--wm-font-mono);font-size:var(--wm-text-2xs);text-transform:uppercase;letter-spacing:.08em;
+  color:var(--fg-subtle);padding:14px 10px 4px;
+}
+
+/* Theme switch — now a proper segmented control */
+.wm-theme-switch{
+  margin-top:auto;
+  padding:4px;border:1px solid var(--border);border-radius:var(--wm-r-full);
+  background:var(--bg-sunken);
+  display:grid;grid-template-columns:1fr 1fr;gap:2px;
+  position:relative;
+}
+.wm-theme-switch button{
+  padding:6px 10px;border-radius:var(--wm-r-full);
+  font-family:var(--wm-font-mono);font-size:var(--wm-text-2xs);
+  text-transform:uppercase;letter-spacing:.08em;
+  color:var(--fg-muted);
+  transition:color var(--wm-dur-2);z-index:1;
+}
+.wm-theme-switch button.active{color:var(--accent-fg)}
+.wm-theme-switch .slider{
+  position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);
+  background:var(--accent);border-radius:var(--wm-r-full);
+  transition:transform var(--wm-dur-3) var(--wm-ease-standard);
+  box-shadow:var(--wm-glow-signal);
+}
+[data-theme="light"] .wm-theme-switch .slider{transform:translateX(calc(100% + 4px))}
+
+/* =============================================================
+   TYPOGRAPHY UTILITIES
+   ============================================================= */
+.wm-eyebrow{
+  font-family:var(--wm-font-mono);
+  font-size:var(--wm-text-2xs);
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);
+  display:inline-flex;align-items:center;gap:10px;
+}
+.wm-eyebrow::before{content:"";width:24px;height:1px;background:currentColor;display:inline-block}
+.wm-eyebrow .pulse{width:6px;height:6px;border-radius:50%;background:currentColor;animation:wmPulse 2s var(--wm-ease-standard) infinite;box-shadow:0 0 8px currentColor}
+@keyframes wmPulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.3)}}
+
+.wm-h1{
+  font-family:var(--wm-font-display);
+  font-weight:350;
+  font-size:clamp(2.75rem, 6vw + 1rem, var(--wm-text-6xl));
+  line-height:.94;letter-spacing:-.03em;
+  font-variation-settings:"opsz" 144,"SOFT" 20;
+  color:var(--fg);margin:0;
+  text-wrap:balance;
+}
+.wm-h1 em{
+  font-style:italic;
+  color:var(--accent);
+  font-variation-settings:"opsz" 144,"SOFT" 100;
+  font-weight:300;
+}
+.wm-h2{
+  font-family:var(--wm-font-display);font-weight:400;
+  font-size:clamp(2rem,3vw + 1rem, var(--wm-text-3xl));
+  line-height:1.02;letter-spacing:-.025em;
+  margin:0 0 var(--wm-s-4);
+  font-variation-settings:"opsz" 96;
+  text-wrap:balance;
+}
+.wm-h3{
+  font-family:var(--wm-font-display);font-weight:500;
+  font-size:var(--wm-text-xl);line-height:1.15;letter-spacing:-.015em;
+  margin:0 0 var(--wm-s-3);
+}
+.wm-lede{
+  font-family:var(--wm-font-display);font-weight:350;
+  font-size:var(--wm-text-lg);line-height:1.4;color:var(--fg-muted);
+  max-width:62ch;margin:var(--wm-s-4) 0 0;
+  font-variation-settings:"opsz" 48;
+  text-wrap:pretty;
+}
+.wm-mono{font-family:var(--wm-font-mono);font-size:var(--wm-text-xs);letter-spacing:.02em}
+
+/* =============================================================
+   HERO — WEBGL CANVAS + CONTENT
+   ============================================================= */
+.wm-hero{
+  position:relative;
+  padding:var(--wm-s-10) 0 var(--wm-s-9);
+  border-bottom:1px solid var(--rule);
+  overflow:hidden;
+  isolation:isolate;
+}
+.wm-hero-canvas{
+  position:absolute;inset:0;z-index:-1;opacity:.75;
+  mask-image:radial-gradient(ellipse at 80% 30%, #000 0%, transparent 65%);
+  -webkit-mask-image:radial-gradient(ellipse at 80% 30%, #000 0%, transparent 65%);
+}
+[data-theme="light"] .wm-hero-canvas{opacity:.5}
+.wm-hero-grid-overlay{
+  position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity:.4;
+  mask-image:radial-gradient(ellipse at center, #000 0%, transparent 80%);
+  -webkit-mask-image:radial-gradient(ellipse at center, #000 0%, transparent 80%);
+}
+.wm-hero-content{max-width:900px}
+.wm-hero-meta{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:var(--wm-s-5);
+  margin-top:var(--wm-s-8);padding-top:var(--wm-s-5);border-top:1px solid var(--rule);
+}
+.wm-hero-meta .cell{display:flex;flex-direction:column;gap:4px}
+.wm-hero-meta .label{font-family:var(--wm-font-mono);font-size:var(--wm-text-2xs);text-transform:uppercase;letter-spacing:.12em;color:var(--fg-subtle)}
+.wm-hero-meta .val{font-size:var(--wm-text-sm);color:var(--fg)}
+.wm-hero-meta .val.accent{color:var(--accent)}
+
+/* HUD readout — technical corner widget */
+.wm-hud{
+  position:absolute;top:var(--wm-s-7);right:var(--wm-s-7);
+  font-family:var(--wm-font-mono);font-size:10px;color:var(--fg-muted);
+  letter-spacing:.08em;text-transform:uppercase;
+  border:1px solid var(--border);border-radius:var(--wm-r-2);
+  padding:8px 12px;background:color-mix(in srgb, var(--bg-raised) 80%, transparent);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  min-width:180px;
+  display:flex;flex-direction:column;gap:4px;
+  z-index:2;
+}
+.wm-hud .row{display:flex;justify-content:space-between;gap:12px}
+.wm-hud .row .v{color:var(--accent)}
+@media (max-width:720px){.wm-hud{display:none}}
+
+/* =============================================================
+   SECTIONS
+   ============================================================= */
+.wm-section{padding:var(--wm-s-9) 0;border-bottom:1px solid var(--rule);position:relative}
+.wm-section:last-child{border-bottom:0}
+.wm-section-head{
+  display:grid;grid-template-columns:80px 1fr;gap:var(--wm-s-5);align-items:baseline;
+  margin-bottom:var(--wm-s-7);
+}
+.wm-section-head .num{
+  font-family:var(--wm-font-mono);font-size:var(--wm-text-sm);color:var(--accent);
+  border-top:1px solid var(--accent);padding-top:8px;
+}
+.wm-section-head h2{margin:0}
+.wm-section-head .sub{color:var(--fg-muted);margin-top:var(--wm-s-4);max-width:62ch;font-size:var(--wm-text-md);text-wrap:pretty}
+
+.wm-sub{margin-top:var(--wm-s-8)}
+.wm-sub h3{margin-bottom:var(--wm-s-5)}
+
+.wm-grid{display:grid;gap:var(--wm-s-5)}
+.wm-grid.cols-2{grid-template-columns:repeat(2,1fr)}
+.wm-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.wm-grid.cols-4{grid-template-columns:repeat(4,1fr)}
+.wm-grid.cols-6{grid-template-columns:repeat(6,1fr)}
+@media (max-width:860px){
+  .wm-grid.cols-3,.wm-grid.cols-4,.wm-grid.cols-6{grid-template-columns:repeat(2,1fr)}
+  .wm-grid.cols-2{grid-template-columns:1fr}
+}
+
+/* =============================================================
+   COLOR SWATCHES
+   ============================================================= */
+.wm-swatch{
+  position:relative;aspect-ratio:4/5;border-radius:var(--wm-r-3);
+  background:var(--swatch,#000);color:var(--swatch-fg,#fff);
+  padding:16px;display:flex;flex-direction:column;justify-content:space-between;
+  border:1px solid var(--border);
+  cursor:pointer;overflow:hidden;
+  transition:transform var(--wm-dur-2) var(--wm-ease-standard), box-shadow var(--wm-dur-2);
+}
+.wm-swatch:hover{transform:translateY(-3px);box-shadow:var(--wm-shadow-3)}
+.wm-swatch .name{font-family:var(--wm-font-mono);font-size:var(--wm-text-2xs);letter-spacing:.1em;text-transform:uppercase;opacity:.85}
+.wm-swatch .hex{font-family:var(--wm-font-mono);font-size:var(--wm-text-sm);font-weight:500}
+.wm-swatch .token{font-family:var(--wm-font-mono);font-size:var(--wm-text-2xs);opacity:.7;margin-top:4px;word-break:break-all}
+.wm-swatch .copied{
+  position:absolute;inset:auto 10px 10px auto;font-family:var(--wm-font-mono);
+  font-size:10px;padding:2px 8px;border-radius:4px;background:rgba(255,255,255,.2);
+  opacity:0;transition:opacity var(--wm-dur-2);
+}
+.wm-swatch.copied .copied{opacity:1}
+.wm-swatch.featured{aspect-ratio:4/5}
+.wm-swatch.featured::after{
+  content:"";position:absolute;inset:-1px;border-radius:var(--wm-r-3);pointer-events:none;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.1), inset 0 0 40px rgba(29,181,163,.2);
+}
+
+.wm-ramp{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;margin-bottom:var(--wm-s-6)}
+.wm-ramp .step{aspect-ratio:1/1;border-radius:var(--wm-r-2);position:relative;cursor:pointer;transition:transform var(--wm-dur-1)}
+.wm-ramp .step:hover{transform:scale(1.05);z-index:1}
+.wm-ramp .step::after{
+  content:attr(data-label);position:absolute;inset:auto 0 -20px 0;text-align:center;
+  font-family:var(--wm-font-mono);font-size:10px;color:var(--fg-subtle);
+}
+
+/* =============================================================
+   TYPE SPECIMENS
+   ============================================================= */
+.wm-specimen{
+  border:1px solid var(--border);border-radius:var(--wm-r-4);
+  padding:var(--wm-s-7);background:var(--bg-raised);
+  position:relative;overflow:hidden;
+}
+.wm-specimen::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(600px 300px at 100% 0%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 60%);
+  pointer-events:none;
+}
+.wm-specimen .sample{margin-bottom:var(--wm-s-5);position:relative}
+.wm-specimen .meta{
+  display:flex;gap:var(--wm-s-5);flex-wrap:wrap;
+  padding-top:var(--wm-s-4);border-top:1px solid var(--border);
+  font-family:var(--wm-font-mono);font-size:var(--wm-text-xs);color:var(--fg-muted);
+  position:relative;
+}
+.wm-type-scale{display:flex;flex-direction:column;gap:var(--wm-s-2)}
+.wm-type-scale .row{
+  display:grid;grid-template-columns:90px 1fr;gap:var(--wm-s-5);align-items:baseline;
+  padding:var(--wm-s-3) 0;border-bottom:1px dashed var(--border);
+}
+.wm-type-scale .tag{font-family:var(--wm-font-mono);font-size:var(--wm-text-xs);color:var(--fg-subtle)}
+.wm-type-scale .display{font-family:var(--wm-font-display);font-weight:400;line-height:1}
+.wm-type-scale .display.italic{font-style:italic;color:var(--accent)}
+
+/* =============================================================
+   COMPONENTS
+   ============================================================= */
+/* Buttons */
+.wm-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:12px 22px;border-radius:var(--wm-r-full);
+  font-size:var(--wm-text-sm);font-weight:500;letter-spacing:.005em;
+  transition:all var(--wm-dur-2) var(--wm-ease-standard);
+  position:relative;overflow:hidden;border:1px solid transparent;
+  font-family:var(--wm-font-body);
+}
+.wm-btn.primary{background:var(--fg);color:var(--bg)}
+.wm-btn.primary:hover{transform:translateY(-1px);box-shadow:var(--wm-shadow-3)}
+.wm-btn.accent{background:var(--accent);color:var(--accent-fg);box-shadow:var(--wm-glow-signal)}
+.wm-btn.accent:hover{background:var(--accent-hi);transform:translateY(-1px);box-shadow:0 0 0 1px rgba(29,181,163,.4), 0 0 32px rgba(29,181,163,.4)}
+.wm-btn.ghost{background:transparent;color:var(--fg);border-color:var(--border-strong)}
+.wm-btn.ghost:hover{background:var(--bg-elevated);border-color:var(--fg-muted)}
+.wm-btn.link{padding:4px 0;border-radius:0;border-bottom:1px solid var(--accent);color:var(--accent)}
+.wm-btn.link:hover{color:var(--accent-hi)}
+.wm-btn .arrow{transition:transform var(--wm-dur-2) var(--wm-ease-standard)}
+.wm-btn:hover .arrow{transform:translateX(4px)}
+.wm-btn.accent::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent);
+  transform:translateX(-100%);
+  transition:transform var(--wm-dur-4) var(--wm-ease-standard);
+}
+.wm-btn.accent:hover::before{transform:translateX(100%)}
+
+/* Input */
+.wm-field{display:flex;flex-direction:column;gap:8px}
+.wm-field label{font-size:var(--wm-text-sm);color:var(--fg-muted);font-family:var(--wm-font-mono);font-size:var(--wm-text-xs);text-transform:uppercase;letter-spacing:.08em}
+.wm-input{
+  padding:12px 14px;border:1px solid var(--border-strong);border-radius:var(--wm-r-3);
+  background:var(--bg-raised);color:var(--fg);font:inherit;width:100%;
+  transition:border-color var(--wm-dur-1), box-shadow var(--wm-dur-1);
+}
+.wm-input:focus{outline:0;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent)}
+
+/* Badge */
+.wm-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:4px 10px;border-radius:var(--wm-r-full);
+  font-family:var(--wm-font-mono);font-size:var(--wm-text-2xs);letter-spacing:.06em;text-transform:uppercase;
+  border:1px solid var(--border-strong);color:var(--fg-muted);background:var(--bg-raised);
+}
+.wm-badge.accent{background:color-mix(in srgb, var(--accent) 12%, transparent);color:var(--accent);border-color:color-mix(in srgb, var(--accent) 30%, transparent)}
+.wm-badge.primary{background:color-mix(in srgb, var(--primary) 12%, transparent);color:var(--primary);border-color:color-mix(in srgb, var(--primary) 30%, transparent)}
+.wm-badge.warning{background:color-mix(in srgb, var(--wm-warning) 12%, transparent);color:var(--wm-amber-400);border-color:color-mix(in srgb, var(--wm-warning) 30%, transparent)}
+.wm-badge::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}
+
+/* Card */
+.wm-card{
+  background:var(--bg-raised);border:1px solid var(--border);border-radius:var(--wm-r-4);
+  padding:var(--wm-s-5);display:flex;flex-direction:column;gap:var(--wm-s-3);
+  transition:transform var(--wm-dur-2), box-shadow var(--wm-dur-2), border-color var(--wm-dur-2);
+  position:relative;overflow:hidden;
+}
+.wm-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-card);border-color:var(--border-strong)}
+.wm-card::after{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(180deg, color-mix(in srgb, var(--accent) 0%, transparent), color-mix(in srgb, var(--accent) 4%, transparent));
+  opacity:0;transition:opacity var(--wm-dur-3);
+}
+.wm-card:hover::after{opacity:1}
+.wm-card .kicker{font-family:var(--wm-font-mono);font-size:var(--wm-text-2xs);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);position:relative;z-index:1}
+.wm-card h4{font-family:var(--wm-font-display);font-weight:500;font-size:var(--wm-text-lg);margin:0;letter-spacing:-.01em;position:relative;z-index:1;text-wrap:balance}
+.wm-card p{margin:0;color:var(--fg-muted);font-size:var(--wm-text-sm);position:relative;z-index:1}
+
+/* Alert */
+.wm-alert{
+  display:grid;grid-template-columns:auto 1fr;gap:var(--wm-s-3);
+  padding:var(--wm-s-4) var(--wm-s-5);border-radius:var(--wm-r-3);
+  border:1px solid var(--border);background:var(--bg-raised);
+  border-left-width:3px;border-left-color:var(--accent);
+}
+.wm-alert.warning{border-left-color:var(--wm-amber-400)}
+.wm-alert.danger{border-left-color:var(--wm-danger)}
+.wm-alert.success{border-left-color:var(--accent)}
+.wm-alert .ic{width:20px;height:20px;margin-top:2px;color:var(--accent)}
+.wm-alert.warning .ic{color:var(--wm-amber-400)}
+.wm-alert.danger .ic{color:var(--wm-danger)}
+.wm-alert strong{font-family:var(--wm-font-display);font-weight:500}
+.wm-alert p{margin:2px 0 0;color:var(--fg-muted);font-size:var(--wm-text-sm)}
+
+/* Table */
+.wm-table{width:100%;border-collapse:collapse;font-size:var(--wm-text-sm)}
+.wm-table thead th{
+  text-align:left;font-family:var(--wm-font-mono);font-size:var(--wm-text-2xs);
+  text-transform:uppercase;letter-spacing:.08em;color:var(--fg-muted);
+  padding:12px;border-bottom:1px solid var(--border-strong);
+}
+.wm-table tbody td{padding:14px 12px;border-bottom:1px solid var(--border)}
+.wm-table tbody tr{transition:background var(--wm-dur-1)}
+.wm-table tbody tr:hover{background:var(--bg-elevated)}
+.wm-table .num{font-family:var(--wm-font-mono);text-align:right}
+
+/* =============================================================
+   DASHBOARD PREVIEW
+   ============================================================= */
+.wm-dashboard{
+  background:var(--bg-raised);border:1px solid var(--border);border-radius:var(--wm-r-5);
+  overflow:hidden;box-shadow:var(--shadow-card);
+}
+.wm-dashboard-head{
+  display:flex;align-items:center;justify-content:space-between;gap:var(--wm-s-4);
+  padding:var(--wm-s-4) var(--wm-s-5);border-bottom:1px solid var(--border);
+  background:var(--bg-sunken);
+}
+.wm-dashboard-head .title h4{font-family:var(--wm-font-display);font-weight:500;font-size:var(--wm-text-lg);margin:0;letter-spacing:-.01em}
+.wm-dashboard-head .title .sub{font-family:var(--wm-font-mono);font-size:var(--wm-text-2xs);color:var(--accent);text-transform:uppercase;letter-spacing:.1em;display:flex;align-items:center;gap:8px}
+.wm-dashboard-head .title .sub::after{content:"live";opacity:.6}
+.wm-dashboard-body{padding:var(--wm-s-5);display:grid;grid-template-columns:1.4fr 1fr;gap:var(--wm-s-5)}
+@media (max-width:760px){.wm-dashboard-body{grid-template-columns:1fr}}
+
+.wm-kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--wm-s-3);margin-bottom:var(--wm-s-5)}
+.wm-kpi .item{padding:var(--wm-s-4);border-radius:var(--wm-r-3);background:var(--bg-sunken);position:relative;overflow:hidden}
+.wm-kpi .item::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg, transparent, var(--accent), transparent);opacity:.3}
+.wm-kpi .label{font-family:var(--wm-font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-muted)}
+.wm-kpi .value{font-family:var(--wm-font-display);font-weight:450;font-size:var(--wm-text-xl);letter-spacing:-.015em;margin-top:4px}
+.wm-kpi .delta{font-family:var(--wm-font-mono);font-size:var(--wm-text-xs);display:inline-flex;gap:4px;align-items:center;margin-top:2px}
+.wm-kpi .delta.up{color:var(--wm-success)}
+.wm-kpi .delta.down{color:var(--wm-danger)}
+
+.wm-chart{position:relative;height:240px;padding:0 4px}
+.wm-chart svg{width:100%;height:100%;overflow:visible}
+.wm-legend{display:flex;gap:var(--wm-s-5);flex-wrap:wrap;margin-top:var(--wm-s-3);font-family:var(--wm-font-mono);font-size:var(--wm-text-2xs);color:var(--fg-muted);text-transform:uppercase;letter-spacing:.08em}
+.wm-legend span{display:inline-flex;align-items:center;gap:8px}
+.wm-legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
+
+/* Social previews */
+.wm-social{
+  aspect-ratio:1/1;border-radius:var(--wm-r-4);overflow:hidden;position:relative;
+  padding:var(--wm-s-5);
+  display:flex;flex-direction:column;justify-content:space-between;
+  border:1px solid var(--border);
+}
+.wm-social.var-ink{background:var(--wm-ink-700);color:#fff}
+.wm-social.var-paper{background:var(--wm-paper-50);color:var(--wm-ink-500)}
+.wm-social.var-signal{background:var(--wm-signal-400);color:var(--wm-ink-900)}
+.wm-social .kicker{font-family:var(--wm-font-mono);font-size:var(--wm-text-2xs);letter-spacing:.12em;text-transform:uppercase;opacity:.8;z-index:2}
+.wm-social h5{font-family:var(--wm-font-display);font-weight:400;font-size:var(--wm-text-xl);line-height:1.05;letter-spacing:-.02em;margin:0;max-width:14ch;z-index:2;position:relative;text-wrap:balance}
+.wm-social h5 em{font-style:italic}
+.wm-social.var-ink h5 em{color:var(--wm-signal-300)}
+.wm-social.var-paper h5 em{color:var(--wm-signal-500)}
+.wm-social.var-signal h5 em{color:var(--wm-ink-700)}
+.wm-social .foot{display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--wm-font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.7;z-index:2}
+.wm-social canvas{position:absolute;inset:0;z-index:1;opacity:.6;pointer-events:none}
+
+/* Logo lockups */
+.wm-logo-demo{
+  background:var(--bg-raised);border:1px solid var(--border);border-radius:var(--wm-r-4);
+  padding:var(--wm-s-7);display:flex;align-items:center;justify-content:center;min-height:160px;
+  position:relative;overflow:hidden;
+}
+.wm-logo-demo.dark{background:var(--wm-ink-800);color:#fff}
+.wm-logo-demo.accent{background:var(--wm-signal-400);color:var(--wm-ink-900)}
+.wm-logo-wordmark{display:flex;align-items:center;gap:12px;position:relative;z-index:1}
+.wm-logo-wordmark .sym{width:38px;height:38px}
+.wm-logo-wordmark .txt{font-family:var(--wm-font-display);font-weight:500;font-size:var(--wm-text-xl);letter-spacing:-.02em}
+.wm-logo-wordmark .dot{color:var(--wm-signal-400)}
+.wm-logo-demo.dark .wm-logo-wordmark .dot{color:var(--wm-signal-300)}
+.wm-logo-demo.accent .wm-logo-wordmark .dot{color:var(--wm-ink-800)}
+
+/* Space viz */
+.wm-space-grid{display:flex;flex-direction:column;gap:var(--wm-s-3)}
+.wm-space-row{display:grid;grid-template-columns:80px 1fr auto;gap:var(--wm-s-4);align-items:center}
+.wm-space-row .tok{font-family:var(--wm-font-mono);font-size:var(--wm-text-xs);color:var(--fg-muted)}
+.wm-space-row .bar{height:16px;background:var(--accent);border-radius:2px;box-shadow:var(--wm-glow-signal)}
+.wm-space-row .px{font-family:var(--wm-font-mono);font-size:var(--wm-text-xs);color:var(--fg-muted)}
+
+/* Radii */
+.wm-radii{display:grid;grid-template-columns:repeat(6,1fr);gap:var(--wm-s-4)}
+.wm-radii .rb{
+  aspect-ratio:1/1;background:var(--accent);display:flex;align-items:flex-end;padding:10px;color:var(--accent-fg);
+  font-family:var(--wm-font-mono);font-size:var(--wm-text-2xs);font-weight:500;
+}
+
+/* Shadows */
+.wm-shadows{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--wm-s-5)}
+.wm-shadows .sh{
+  background:var(--bg-raised);border-radius:var(--wm-r-4);padding:var(--wm-s-7);
+  display:flex;flex-direction:column;align-items:center;gap:12px;
+  font-family:var(--wm-font-mono);font-size:var(--wm-text-xs);color:var(--fg-muted);
+}
+.wm-shadows .sh.s1{box-shadow:var(--wm-shadow-1)}
+.wm-shadows .sh.s2{box-shadow:var(--wm-shadow-2)}
+.wm-shadows .sh.s3{box-shadow:var(--wm-shadow-3)}
+.wm-shadows .sh.glow{box-shadow:var(--wm-glow-signal);border:1px solid color-mix(in srgb, var(--accent) 30%, transparent)}
+
+/* Principles */
+.wm-principle{
+  display:grid;grid-template-columns:60px 1fr;gap:var(--wm-s-5);
+  padding:var(--wm-s-5) 0;border-top:1px solid var(--rule);
+}
+.wm-principle:first-child{border-top:0}
+.wm-principle .num{font-family:var(--wm-font-mono);color:var(--accent);font-size:var(--wm-text-sm)}
+.wm-principle h4{font-family:var(--wm-font-display);font-weight:500;font-size:var(--wm-text-lg);margin:0 0 8px;letter-spacing:-.01em}
+.wm-principle p{margin:0;color:var(--fg-muted);font-size:var(--wm-text-md);max-width:62ch;text-wrap:pretty}
+
+/* Voice */
+.wm-voice{display:grid;grid-template-columns:1fr 1fr;gap:var(--wm-s-5)}
+@media (max-width:760px){.wm-voice{grid-template-columns:1fr}}
+.wm-voice .do,.wm-voice .dont{
+  padding:var(--wm-s-5);border-radius:var(--wm-r-4);
+  background:var(--bg-raised);border:1px solid var(--border);
+  border-top:3px solid var(--accent);
+}
+.wm-voice .dont{border-top-color:var(--wm-danger)}
+.wm-voice h5{font-family:var(--wm-font-mono);font-size:var(--wm-text-xs);text-transform:uppercase;letter-spacing:.12em;margin:0 0 var(--wm-s-3);color:var(--fg-muted)}
+.wm-voice ul{margin:0;padding-left:18px;color:var(--fg);font-size:var(--wm-text-sm);line-height:1.75}
+.wm-voice ul li::marker{color:var(--accent)}
+.wm-voice .dont ul li::marker{color:var(--wm-danger)}
+
+/* Code block */
+.wm-code{
+  font-family:var(--wm-font-mono);font-size:var(--wm-text-xs);
+  background:var(--bg-sunken);border:1px solid var(--border);border-radius:var(--wm-r-4);
+  padding:var(--wm-s-5);overflow-x:auto;color:var(--fg);line-height:1.7;
+  white-space:pre;
+}
+.wm-code .c{color:var(--fg-muted)}
+.wm-code .k{color:var(--accent)}
+.wm-code .v{color:var(--wm-data-6)}
+
+/* Ambient canvas sections (data-graph background) */
+.wm-ambient{
+  position:relative;border-radius:var(--wm-r-5);overflow:hidden;
+  background:var(--bg-elevated);border:1px solid var(--border);
+  padding:var(--wm-s-7);
+  min-height:280px;
+  display:flex;align-items:center;justify-content:center;
+}
+.wm-ambient canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.wm-ambient-content{position:relative;z-index:1;text-align:center;max-width:48ch}
+
+/* Entrance animations */
+.wm-fade-up{opacity:0;transform:translateY(16px);animation:wmFadeUp 1s var(--wm-ease-entrance) forwards}
+@keyframes wmFadeUp{to{opacity:1;transform:none}}
+.wm-fade-up.d1{animation-delay:.08s}
+.wm-fade-up.d2{animation-delay:.18s}
+.wm-fade-up.d3{animation-delay:.3s}
+.wm-fade-up.d4{animation-delay:.45s}
+
+/* Toast */
+.wm-toast{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(40px);
+  background:var(--wm-ink-800);color:var(--wm-paper-50);
+  padding:12px 20px;border-radius:var(--wm-r-full);font-family:var(--wm-font-mono);font-size:var(--wm-text-xs);
+  letter-spacing:.04em;opacity:0;transition:all var(--wm-dur-3) var(--wm-ease-standard);z-index:100;
+  box-shadow:var(--wm-shadow-3);border:1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+}
+.wm-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* Accessibility */
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;transition:none!important}
+}
+
+/* Scrollbar (webkit) */
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:var(--bg-sunken)}
+::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:5px}
+::-webkit-scrollbar-thumb:hover{background:var(--fg-subtle)}
+</style>
+</head>
+<body>
+
+<div class="wm-app">
+
+  <!-- ========== SIDEBAR ========== -->
+  <aside class="wm-side">
+    <div class="wm-brandmark">
+      <svg class="sym" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect x="3" y="22" width="5" height="14" fill="currentColor" opacity=".85"/>
+        <rect x="11" y="16" width="5" height="20" fill="currentColor" opacity=".85"/>
+        <rect x="19" y="10" width="5" height="26" fill="currentColor" opacity=".85"/>
+        <rect x="27" y="18" width="5" height="18" fill="currentColor" opacity=".85"/>
+        <circle cx="34.5" cy="6" r="3.5" fill="var(--accent)"/>
+        <circle cx="34.5" cy="6" r="6" fill="none" stroke="var(--accent)" stroke-width=".5" opacity=".5"/>
+      </svg>
+      <div>
+        <div class="name">Wisemetrics<span class="dot">.</span></div>
+        <div class="wm-version">Design System · v0.2</div>
+      </div>
+    </div>
+
+    <nav class="wm-nav" aria-label="Styleguide sections">
+      <div class="group-label">Fundamentos</div>
+      <a href="#intro"><span class="num">00</span>Introdução</a>
+      <a href="#principles"><span class="num">01</span>Princípios</a>
+      <a href="#brand"><span class="num">02</span>Marca &amp; Logo</a>
+      <a href="#voice"><span class="num">03</span>Voz &amp; Tom</a>
+
+      <div class="group-label">Tokens</div>
+      <a href="#color"><span class="num">04</span>Cor</a>
+      <a href="#type"><span class="num">05</span>Tipografia</a>
+      <a href="#space"><span class="num">06</span>Espaço &amp; Grid</a>
+      <a href="#radii"><span class="num">07</span>Raios &amp; Sombras</a>
+      <a href="#motion"><span class="num">08</span>Motion</a>
+
+      <div class="group-label">Componentes</div>
+      <a href="#buttons"><span class="num">09</span>Botões</a>
+      <a href="#forms"><span class="num">10</span>Inputs</a>
+      <a href="#cards"><span class="num">11</span>Cards</a>
+      <a href="#feedback"><span class="num">12</span>Feedback</a>
+      <a href="#data"><span class="num">13</span>Tabelas</a>
+
+      <div class="group-label">Aplicações</div>
+      <a href="#product"><span class="num">14</span>Produto</a>
+      <a href="#social"><span class="num">15</span>Social Media</a>
+      <a href="#atmos"><span class="num">16</span>Atmosfera</a>
+      <a href="#tokens-json"><span class="num">17</span>Tokens (JSON)</a>
+    </nav>
+
+    <div class="wm-theme-switch" role="tablist">
+      <span class="slider" aria-hidden="true"></span>
+      <button data-theme-btn="dark" class="active">Dark</button>
+      <button data-theme-btn="light">Light</button>
+    </div>
+  </aside>
+
+  <!-- ========== MAIN ========== -->
+  <main class="wm-main">
+    <div class="wm-container">
+
+      <!-- ========== HERO ========== -->
+      <section class="wm-hero" id="intro">
+        <div class="wm-hero-grid-overlay"></div>
+        <canvas class="wm-hero-canvas" id="heroCanvas"></canvas>
+
+        <div class="wm-hud" id="heroHud">
+          <div class="row"><span>points</span><span class="v" data-k="p">—</span></div>
+          <div class="row"><span>fps</span><span class="v" data-k="f">—</span></div>
+          <div class="row"><span>cursor</span><span class="v" data-k="c">—</span></div>
+          <div class="row"><span>seed</span><span class="v" data-k="s">042</span></div>
+        </div>
+
+        <div class="wm-hero-content">
+          <div class="wm-eyebrow wm-fade-up"><span class="pulse"></span>Design System · Guia Interativo</div>
+          <h1 class="wm-h1 wm-fade-up d1">Estratégia, dados<br/>e produto <em>numa só lógica.</em></h1>
+          <p class="wm-lede wm-fade-up d2">
+            Um sistema vivo que organiza marca, web, produto e social da Wisemetrics.
+            O rigor editorial da serifa Fraunces encontra a superfície técnica do dado em movimento.
+          </p>
+
+          <div class="wm-hero-meta wm-fade-up d3">
+            <div class="cell"><span class="label">Versão</span><span class="val">0.2 · Abril 2026</span></div>
+            <div class="cell"><span class="label">Escopo</span><span class="val">Brand · Web · Produto · Social</span></div>
+            <div class="cell"><span class="label">Palette</span><span class="val accent">Teal · Ink · Paper</span></div>
+            <div class="cell"><span class="label">Stack visual</span><span class="val">Fraunces + WebGL + Canvas</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 01 PRINCIPLES ========== -->
+      <section class="wm-section" id="principles">
+        <div class="wm-section-head">
+          <div class="num">01</div>
+          <div>
+            <h2 class="wm-h2">Princípios</h2>
+            <p class="sub">Cinco convicções que orientam toda decisão de design — da escolha de cor a um gráfico de dispersão.</p>
+          </div>
+        </div>
+
+        <div class="wm-principle">
+          <div class="num">01</div>
+          <div>
+            <h4>Dado com alma</h4>
+            <p>Números sozinhos não convencem. Emparelhamos rigor estatístico com narrativa editorial — toda métrica carrega contexto, hipótese e consequência.</p>
+          </div>
+        </div>
+        <div class="wm-principle">
+          <div class="num">02</div>
+          <div>
+            <h4>Tecnologia visível, nunca gratuita</h4>
+            <p>Usamos WebGL, canvas generativo e micro-animação para tornar a presença do dado perceptível. Mas só onde há significado — nada é ornamento por ornamento.</p>
+          </div>
+        </div>
+        <div class="wm-principle">
+          <div class="num">03</div>
+          <div>
+            <h4>Clareza antes de rebuscamento</h4>
+            <p>Preferimos a palavra direta ao jargão e a linha limpa ao efeito. Densidade é permitida; ruído não.</p>
+          </div>
+        </div>
+        <div class="wm-principle">
+          <div class="num">04</div>
+          <div>
+            <h4>Calor brasileiro, disciplina editorial</h4>
+            <p>A marca é brasileira por origem e por temperamento. Aparece em contraste tipográfico, em um teal vibrante e em um jeito de escrever que conversa — sem perder o rigor.</p>
+          </div>
+        </div>
+        <div class="wm-principle">
+          <div class="num">05</div>
+          <div>
+            <h4>Acessibilidade por padrão</h4>
+            <p>Contraste WCAG AA mínimo em todos os pares semânticos. Foco visível, alvos ≥ 44px, <code class="wm-mono">prefers-reduced-motion</code> respeitado.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 02 BRAND & LOGO ========== -->
+      <section class="wm-section" id="brand">
+        <div class="wm-section-head">
+          <div class="num">02</div>
+          <div>
+            <h2 class="wm-h2">Marca &amp; Logo</h2>
+            <p class="sub">Wordmark com símbolo de dados: um mini-histograma onde o ponto-de-insight é destacado em teal. O anel externo evoca o sinal que emerge do ruído — o padrão que encontramos.</p>
+          </div>
+        </div>
+
+        <div class="wm-grid cols-3">
+          <div class="wm-logo-demo">
+            <div class="wm-logo-wordmark" style="color:var(--fg)">
+              <svg class="sym" viewBox="0 0 40 40" fill="currentColor" aria-hidden="true">
+                <rect x="3" y="22" width="5" height="14"/><rect x="11" y="16" width="5" height="20"/>
+                <rect x="19" y="10" width="5" height="26"/><rect x="27" y="18" width="5" height="18"/>
+                <circle cx="34.5" cy="6" r="3.5" fill="var(--wm-signal-400)"/>
+                <circle cx="34.5" cy="6" r="6" fill="none" stroke="var(--wm-signal-400)" stroke-width=".5" opacity=".5"/>
+              </svg>
+              <span class="txt">Wisemetrics<span class="dot">.</span></span>
+            </div>
+          </div>
+          <div class="wm-logo-demo dark">
+            <div class="wm-logo-wordmark">
+              <svg class="sym" viewBox="0 0 40 40" fill="currentColor" aria-hidden="true">
+                <rect x="3" y="22" width="5" height="14"/><rect x="11" y="16" width="5" height="20"/>
+                <rect x="19" y="10" width="5" height="26"/><rect x="27" y="18" width="5" height="18"/>
+                <circle cx="34.5" cy="6" r="3.5" fill="var(--wm-signal-300)"/>
+                <circle cx="34.5" cy="6" r="6" fill="none" stroke="var(--wm-signal-300)" stroke-width=".5" opacity=".6"/>
+              </svg>
+              <span class="txt">Wisemetrics<span class="dot" style="color:var(--wm-signal-300)">.</span></span>
+            </div>
+          </div>
+          <div class="wm-logo-demo accent">
+            <div class="wm-logo-wordmark">
+              <svg class="sym" viewBox="0 0 40 40" fill="currentColor" aria-hidden="true">
+                <rect x="3" y="22" width="5" height="14"/><rect x="11" y="16" width="5" height="20"/>
+                <rect x="19" y="10" width="5" height="26"/><rect x="27" y="18" width="5" height="18"/>
+                <circle cx="34.5" cy="6" r="3.5" fill="currentColor"/>
+                <circle cx="34.5" cy="6" r="6" fill="none" stroke="currentColor" stroke-width=".5" opacity=".5"/>
+              </svg>
+              <span class="txt">Wisemetrics<span class="dot">.</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Construção &amp; leitura do símbolo</h3>
+          <div class="wm-grid cols-2">
+            <div class="wm-card">
+              <span class="kicker">Símbolo</span>
+              <p>Quatro barras crescem em escada até um ponto destacado em teal — o <em>insight</em> que emerge do dado. Grade 4pt, altura máxima 26u, ponto com anel-eco de rarefação.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Área de respiro</span>
+              <p>Margem mínima ao redor do lockup = altura do "W" (x-height do Fraunces 500). Nunca comprimir abaixo de 120px de largura em tela.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 03 VOICE ========== -->
+      <section class="wm-section" id="voice">
+        <div class="wm-section-head">
+          <div class="num">03</div>
+          <div>
+            <h2 class="wm-h2">Voz &amp; Tom</h2>
+            <p class="sub">Escrevemos como um consultor sênior conversa com um cliente: direto, evidenciado, curioso. Sem clichês de IA, sem floreio vazio.</p>
+          </div>
+        </div>
+
+        <div class="wm-voice">
+          <div class="do">
+            <h5>Fazer</h5>
+            <ul>
+              <li>Frases curtas quando possível; longas quando preciso.</li>
+              <li>Números concretos com fonte e período.</li>
+              <li>Verbos ativos: "revelamos", "medimos", "decidimos".</li>
+              <li>Ironia sutil quando couber; nunca cinismo.</li>
+              <li>Português limpo, com naturalidade — como quem escreve para ser lido em voz alta.</li>
+            </ul>
+          </div>
+          <div class="dont">
+            <h5>Evitar</h5>
+            <ul>
+              <li>Construções "não é apenas X, é Y" — o padrão formulaico da cópia genérica.</li>
+              <li>Travessões duplos em sequência (—) como recurso de ênfase preguiçoso.</li>
+              <li>"Desbloqueie", "desvende", "potencialize", "revolucione" e afins.</li>
+              <li>Capitalização de sentenças à moda inglesa ("Transforme Seus Dados").</li>
+              <li>Emoji em contexto institucional; ícones bastam.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Exemplos de aplicação</h3>
+          <div class="wm-grid cols-2">
+            <div class="wm-card">
+              <span class="kicker">Landing · Headline</span>
+              <h4 style="font-size:var(--wm-text-xl)">Leitura de consumidor que chega antes da planilha.</h4>
+              <p>Hipóteses com dado atrás, relatórios que aguentam discussão de diretoria.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Produto · Estado vazio</span>
+              <h4 style="font-size:var(--wm-text-xl)">Sem dados por aqui — ainda.</h4>
+              <p>Conecte uma fonte para que a gente comece a montar o retrato da sua audiência.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 04 COLOR ========== -->
+      <section class="wm-section" id="color">
+        <div class="wm-section-head">
+          <div class="num">04</div>
+          <div>
+            <h2 class="wm-h2">Cor</h2>
+            <p class="sub">Base editorial quente (Paper), voz institucional profunda (Ink), um único momento saturado (Signal teal) e uma paleta categórica para gráficos. Clique em qualquer swatch para copiar o token.</p>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Paleta-marca</h3>
+          <div class="wm-grid cols-4">
+            <div class="wm-swatch featured" data-token="--wm-signal-400" data-hex="#1db5a3" style="--swatch:#1db5a3;--swatch-fg:#021714">
+              <div>
+                <div class="name">Signal</div>
+                <div class="wm-mono" style="opacity:.75">accent · hero</div>
+              </div>
+              <div>
+                <div class="hex">#1DB5A3</div>
+                <div class="token">--wm-signal-400</div>
+              </div>
+              <span class="copied">copiado</span>
+            </div>
+            <div class="wm-swatch" data-token="--wm-ink-500" data-hex="#132a44" style="--swatch:#132a44;--swatch-fg:#fff">
+              <div>
+                <div class="name">Ink</div>
+                <div class="wm-mono" style="opacity:.75">primary</div>
+              </div>
+              <div>
+                <div class="hex">#132A44</div>
+                <div class="token">--wm-ink-500</div>
+              </div>
+              <span class="copied">copiado</span>
+            </div>
+            <div class="wm-swatch" data-token="--wm-paper-50" data-hex="#f7f5f0" style="--swatch:#f7f5f0;--swatch-fg:#26231a;border-color:#d9d1bf">
+              <div>
+                <div class="name">Paper</div>
+                <div class="wm-mono" style="opacity:.75">canvas</div>
+              </div>
+              <div>
+                <div class="hex">#F7F5F0</div>
+                <div class="token">--wm-paper-50</div>
+              </div>
+              <span class="copied">copiado</span>
+            </div>
+            <div class="wm-swatch" data-token="--wm-paper-900" data-hex="#0a0907" style="--swatch:#0a0907;--swatch-fg:#f7f5f0">
+              <div>
+                <div class="name">Night</div>
+                <div class="wm-mono" style="opacity:.75">dark-bg</div>
+              </div>
+              <div>
+                <div class="hex">#0A0907</div>
+                <div class="token">--wm-paper-900</div>
+              </div>
+              <span class="copied">copiado</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Escalas (ramps)</h3>
+
+          <p class="wm-mono" style="color:var(--fg-muted);margin-bottom:8px">signal · 50 → 700 (paleta principal de destaque)</p>
+          <div class="wm-ramp" id="ramp-signal" style="grid-template-columns:repeat(7,1fr)"></div>
+
+          <p class="wm-mono" style="color:var(--fg-muted);margin-bottom:8px">ink · 50 → 900</p>
+          <div class="wm-ramp" id="ramp-ink"></div>
+
+          <p class="wm-mono" style="color:var(--fg-muted);margin-bottom:8px">paper · 50 → 900</p>
+          <div class="wm-ramp" id="ramp-paper"></div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Paleta de dados (categórica)</h3>
+          <p class="wm-lede" style="font-size:var(--wm-text-md);margin-top:0">Otimizada para 7 séries distintas, liderada pelo Signal. Ordem de uso da esquerda para a direita.</p>
+          <div class="wm-grid" id="data-palette" style="grid-template-columns:repeat(7,1fr)"></div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Regra de proporção (60/30/10)</h3>
+          <p style="color:var(--fg-muted);max-width:62ch">
+            60% superfícies neutras (paper / ink escuro), 30% tipografia e elementos de contraste, 10% no máximo de Signal.
+            O teal é evento — usado em CTAs, destaques e um único ponto por tela. Quando tudo grita, nada é ouvido.
+          </p>
+          <div style="display:flex;height:56px;border-radius:8px;overflow:hidden;margin-top:16px;border:1px solid var(--border)">
+            <div style="flex:60;background:var(--wm-ink-800)"></div>
+            <div style="flex:30;background:var(--wm-paper-200)"></div>
+            <div style="flex:10;background:var(--wm-signal-400);box-shadow:var(--wm-glow-signal)"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 05 TYPOGRAPHY ========== -->
+      <section class="wm-section" id="type">
+        <div class="wm-section-head">
+          <div class="num">05</div>
+          <div>
+            <h2 class="wm-h2">Tipografia</h2>
+            <p class="sub">Três famílias com papéis claros. <strong>Fraunces</strong> (display serif variável) carrega a voz editorial e italiciza bem; <strong>Inter Tight</strong> é a voz cotidiana; <strong>JetBrains Mono</strong> é a voz do dado — kickers, labels, HUDs.</p>
+          </div>
+        </div>
+
+        <div class="wm-specimen">
+          <div class="sample" style="font-family:var(--wm-font-display);font-weight:350;font-size:clamp(2.5rem,5vw,4.5rem);line-height:.95;letter-spacing:-.03em;font-variation-settings:'opsz' 144,'SOFT' 20">
+            A leitura de consumidor <em style="color:var(--accent);font-variation-settings:'opsz' 144,'SOFT' 100;font-weight:300">que chega antes</em> da planilha.
+          </div>
+          <div class="meta">
+            <span>Fraunces · Variable serif</span>
+            <span>Display / H1 / editorial moments</span>
+            <span>opsz 96–144 · wght 300–600</span>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Escala tipográfica</h3>
+          <div class="wm-type-scale">
+            <div class="row"><span class="tag">6XL · 128</span><span class="display" style="font-size:var(--wm-text-6xl);font-weight:300">Aa</span></div>
+            <div class="row"><span class="tag">5XL · 96</span><span class="display" style="font-size:var(--wm-text-5xl)">Dados com alma</span></div>
+            <div class="row"><span class="tag">4XL · 68</span><span class="display italic" style="font-size:var(--wm-text-4xl);font-style:italic;font-weight:300">que emerge</span></div>
+            <div class="row"><span class="tag">3XL · 48</span><span class="display" style="font-size:var(--wm-text-3xl)">Consumer Insights</span></div>
+            <div class="row"><span class="tag">2XL · 36</span><span class="display" style="font-size:var(--wm-text-2xl)">Relatórios que aguentam diretoria</span></div>
+            <div class="row"><span class="tag">XL · 28</span><span style="font-size:var(--wm-text-xl);font-family:var(--wm-font-display);font-weight:500">Títulos de card e KPI</span></div>
+            <div class="row"><span class="tag">LG · 22</span><span style="font-size:var(--wm-text-lg)">Corpo lead · Inter Tight 400</span></div>
+            <div class="row"><span class="tag">MD · 18</span><span style="font-size:var(--wm-text-md)">Corpo de leitura</span></div>
+            <div class="row"><span class="tag">BASE · 16</span><span>Corpo padrão da interface — referência para a maior parte do texto.</span></div>
+            <div class="row"><span class="tag">SM · 14</span><span style="font-size:var(--wm-text-sm);color:var(--fg-muted)">Legendas, ajudas de formulário</span></div>
+            <div class="row"><span class="tag">XS · 12</span><span class="wm-mono" style="font-size:var(--wm-text-xs);color:var(--accent)">DATA.MONO · KICKER · LABEL · HUD</span></div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Pares tipográficos</h3>
+          <div class="wm-grid cols-2">
+            <div class="wm-card">
+              <span class="kicker">Editorial (headline + body)</span>
+              <div style="font-family:var(--wm-font-display);font-size:var(--wm-text-2xl);font-weight:400;line-height:1.02;letter-spacing:-.025em">Retratos de audiência que <em style="color:var(--accent);font-weight:300">aguentam discussão</em>.</div>
+              <p style="font-size:var(--wm-text-md);line-height:1.5;margin-top:12px">Fraunces 400 + Inter Tight 400. Usado em landings e relatórios.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Produto (label + value)</span>
+              <div class="wm-mono" style="color:var(--accent);text-transform:uppercase;letter-spacing:.12em;font-size:10px">CTR médio · 7d</div>
+              <div style="font-family:var(--wm-font-display);font-size:var(--wm-text-2xl);font-weight:450">3,42%<span style="color:var(--accent);font-size:var(--wm-text-md);margin-left:8px;font-family:var(--wm-font-mono);font-weight:400">▲ 0,61</span></div>
+              <p style="font-size:var(--wm-text-sm);color:var(--fg-muted);margin-top:8px">JetBrains Mono (label/delta) + Fraunces (valor). Padrão para KPIs.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 06 SPACE & GRID ========== -->
+      <section class="wm-section" id="space">
+        <div class="wm-section-head">
+          <div class="num">06</div>
+          <div>
+            <h2 class="wm-h2">Espaço &amp; Grid</h2>
+            <p class="sub">Base 4pt. Grid de 12 colunas, container máximo 1280px, gutter 24px. Ritmo vertical em múltiplos de 8.</p>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Escala de espaçamento</h3>
+          <div class="wm-space-grid" id="space-grid"></div>
+        </div>
+      </section>
+
+      <!-- ========== 07 RADII & SHADOWS ========== -->
+      <section class="wm-section" id="radii">
+        <div class="wm-section-head">
+          <div class="num">07</div>
+          <div>
+            <h2 class="wm-h2">Raios &amp; Sombras</h2>
+            <p class="sub">Raios suaves em superfícies grandes (8–18px), quase retos em elementos funcionais (2–4px). Sombras editoriais + um "glow" técnico exclusivo do Signal.</p>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Raios</h3>
+          <div class="wm-radii">
+            <div class="rb" style="border-radius:0">0</div>
+            <div class="rb" style="border-radius:2px">2</div>
+            <div class="rb" style="border-radius:4px">4</div>
+            <div class="rb" style="border-radius:8px">8</div>
+            <div class="rb" style="border-radius:12px">12</div>
+            <div class="rb" style="border-radius:18px">18</div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Elevações</h3>
+          <div class="wm-shadows">
+            <div class="sh s1">shadow-1 · hairline</div>
+            <div class="sh s2">shadow-2 · card</div>
+            <div class="sh s3">shadow-3 · modal</div>
+            <div class="sh glow" style="grid-column:span 3;color:var(--accent)">glow-signal · exclusive accent halo (CTAs, KPI-hero, live-indicators)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 08 MOTION ========== -->
+      <section class="wm-section" id="motion">
+        <div class="wm-section-head">
+          <div class="num">08</div>
+          <div>
+            <h2 class="wm-h2">Motion</h2>
+            <p class="sub">Movimento com propósito: revelar hierarquia, confirmar ação, guiar o olhar ao dado. Durações curtas (120–520ms), easing padrão <code class="wm-mono">cubic-bezier(.2,.6,.2,1)</code>. Respeita <code class="wm-mono">prefers-reduced-motion</code>.</p>
+          </div>
+        </div>
+
+        <div class="wm-grid cols-3">
+          <div class="wm-card"><span class="kicker">Dur 1 · 120ms</span><h4>Micro-feedback</h4><p>Hover, foco, toggle.</p></div>
+          <div class="wm-card"><span class="kicker">Dur 2 · 200ms</span><h4>Ação discreta</h4><p>Entrada/saída de botão, input, menu.</p></div>
+          <div class="wm-card"><span class="kicker">Dur 3 · 320ms</span><h4>Revelar conteúdo</h4><p>Cards, modais, troca de tema.</p></div>
+          <div class="wm-card"><span class="kicker">Dur 4 · 520ms</span><h4>Storytelling</h4><p>Entradas em stagger de landing e reports.</p></div>
+          <div class="wm-card"><span class="kicker">Ambient</span><h4>Loop gerativo</h4><p>Hero WebGL e grafos de fundo rodam indefinidamente a baixa energia.</p></div>
+          <div class="wm-card"><span class="kicker">Reactive</span><h4>Reagir ao cursor</h4><p>Pontos do hero seguem o mouse com atenuação — presença, não perseguição.</p></div>
+        </div>
+      </section>
+
+      <!-- ========== 09 BUTTONS ========== -->
+      <section class="wm-section" id="buttons">
+        <div class="wm-section-head">
+          <div class="num">09</div>
+          <div>
+            <h2 class="wm-h2">Botões</h2>
+            <p class="sub">Formato pill. Três ênfases — primária (neutra), destaque (Signal com halo e shine), fantasma — mais link in-line.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
+          <button class="wm-btn primary">Solicitar diagnóstico <span class="arrow">→</span></button>
+          <button class="wm-btn accent">Começar agora <span class="arrow">→</span></button>
+          <button class="wm-btn ghost">Ver casos</button>
+          <a href="#" class="wm-btn link">Leia o white-paper →</a>
+        </div>
+      </section>
+
+      <!-- ========== 10 FORMS ========== -->
+      <section class="wm-section" id="forms">
+        <div class="wm-section-head">
+          <div class="num">10</div>
+          <div>
+            <h2 class="wm-h2">Inputs</h2>
+            <p class="sub">Campos com respiro generoso, foco destacado em Signal e hierarquia clara de label → input → ajuda.</p>
+          </div>
+        </div>
+
+        <div class="wm-grid cols-2">
+          <div class="wm-field">
+            <label for="f1">E-mail corporativo</label>
+            <input class="wm-input" id="f1" type="email" placeholder="voce@empresa.com" />
+            <span style="font-size:var(--wm-text-xs);color:var(--fg-muted)">Usamos seu e-mail apenas para enviar o diagnóstico.</span>
+          </div>
+          <div class="wm-field">
+            <label for="f2">Setor</label>
+            <input class="wm-input" id="f2" placeholder="Ex.: varejo, saúde, educação" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 11 CARDS ========== -->
+      <section class="wm-section" id="cards">
+        <div class="wm-section-head">
+          <div class="num">11</div>
+          <div>
+            <h2 class="wm-h2">Cards</h2>
+            <p class="sub">Unidade de conteúdo padrão. Kicker Signal + título display + descrição. Hover sobe 3px, gradiente sutil aparece.</p>
+          </div>
+        </div>
+
+        <div class="wm-grid cols-3">
+          <div class="wm-card">
+            <span class="kicker">Serviço · 01</span>
+            <h4>Data Science &amp; Modelagem</h4>
+            <p>Análises estatísticas e modelos preditivos que transformam dados brutos em hipóteses acionáveis.</p>
+            <span class="wm-badge primary" style="align-self:flex-start;margin-top:8px">Core</span>
+          </div>
+          <div class="wm-card">
+            <span class="kicker">Serviço · 02</span>
+            <h4>Consumer Insights</h4>
+            <p>Social listening, tráfego e pesquisa combinados em um retrato fiel do seu consumidor.</p>
+            <span class="wm-badge primary" style="align-self:flex-start;margin-top:8px">Core</span>
+          </div>
+          <div class="wm-card">
+            <span class="kicker">Serviço · 03</span>
+            <h4>Dashboards Interativos</h4>
+            <p>Painéis que colocam KPIs estratégicos na ponta do dedo, em tempo real.</p>
+            <span class="wm-badge accent" style="align-self:flex-start;margin-top:8px">Destaque</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 12 FEEDBACK ========== -->
+      <section class="wm-section" id="feedback">
+        <div class="wm-section-head">
+          <div class="num">12</div>
+          <div>
+            <h2 class="wm-h2">Feedback</h2>
+            <p class="sub">Alertas com faixa lateral colorida — editorial, sem o peso dos banners preenchidos.</p>
+          </div>
+        </div>
+
+        <div class="wm-grid" style="gap:12px">
+          <div class="wm-alert">
+            <svg class="ic" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v5M10 13.5v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <div><strong>Fonte sincronizada.</strong><p>Últimos dados recebidos há 3 minutos via API do GA4.</p></div>
+          </div>
+          <div class="wm-alert success">
+            <svg class="ic" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><strong>Relatório publicado.</strong><p>A versão de Abril foi compartilhada com os 4 stakeholders do projeto.</p></div>
+          </div>
+          <div class="wm-alert warning">
+            <svg class="ic" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2l8.5 15h-17L10 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 8v4M10 14.5v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <div><strong>Amostra pequena.</strong><p>Os segmentos abaixo de 30 respostas estão marcados como inconclusivos.</p></div>
+          </div>
+          <div class="wm-alert danger">
+            <svg class="ic" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M7 7l6 6M13 7l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <div><strong>Conexão perdida.</strong><p>A API do Meta Ads não respondeu nas últimas 3 tentativas. Verifique as credenciais.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 13 DATA / TABLE ========== -->
+      <section class="wm-section" id="data">
+        <div class="wm-section-head">
+          <div class="num">13</div>
+          <div>
+            <h2 class="wm-h2">Tabelas</h2>
+            <p class="sub">Números alinhados à direita em monoespaçada, labels em mono-caps, zebra por hover.</p>
+          </div>
+        </div>
+
+        <div style="overflow-x:auto">
+          <table class="wm-table">
+            <thead>
+              <tr><th>Canal</th><th>Sessões</th><th>CTR</th><th>CPL</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Meta Ads</td><td class="num">48.210</td><td class="num">3,42%</td><td class="num">R$ 12,80</td><td><span class="wm-badge accent">ok</span></td></tr>
+              <tr><td>Google Search</td><td class="num">31.556</td><td class="num">5,18%</td><td class="num">R$ 9,20</td><td><span class="wm-badge accent">ok</span></td></tr>
+              <tr><td>TikTok Ads</td><td class="num">12.084</td><td class="num">1,94%</td><td class="num">R$ 21,40</td><td><span class="wm-badge warning">atenção</span></td></tr>
+              <tr><td>Orgânico</td><td class="num">9.712</td><td class="num">—</td><td class="num">—</td><td><span class="wm-badge primary">informativo</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ========== 14 PRODUCT / DASHBOARD ========== -->
+      <section class="wm-section" id="product">
+        <div class="wm-section-head">
+          <div class="num">14</div>
+          <div>
+            <h2 class="wm-h2">Produto · Dashboards</h2>
+            <p class="sub">Uma aplicação do sistema em um cartão típico de painel. Cabeçalho editorial + KPIs em serifa + gráfico de área animado com a paleta categórica.</p>
+          </div>
+        </div>
+
+        <div class="wm-dashboard">
+          <div class="wm-dashboard-head">
+            <div class="title">
+              <span class="sub">Campanha · Black November 2026&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+              <h4>Funil de consideração</h4>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center">
+              <span class="wm-badge accent">7d</span>
+              <span class="wm-badge">30d</span>
+              <span class="wm-badge">90d</span>
+              <button class="wm-btn ghost" style="padding:8px 14px;font-size:var(--wm-text-xs)">Exportar</button>
+            </div>
+          </div>
+          <div class="wm-dashboard-body">
+            <div>
+              <div class="wm-kpi">
+                <div class="item">
+                  <div class="label">Alcance</div>
+                  <div class="value">1,82<span style="font-size:var(--wm-text-md);color:var(--fg-muted)">M</span></div>
+                  <div class="delta up">▲ 14,2% vs. 7d anteriores</div>
+                </div>
+                <div class="item">
+                  <div class="label">CTR médio</div>
+                  <div class="value">3,42%</div>
+                  <div class="delta up">▲ 0,61 p.p.</div>
+                </div>
+                <div class="item">
+                  <div class="label">CPL</div>
+                  <div class="value">R$ 12,80</div>
+                  <div class="delta down">▼ 8,1% (bom)</div>
+                </div>
+              </div>
+              <div class="wm-chart">
+                <svg viewBox="0 0 600 240" preserveAspectRatio="none" aria-label="Gráfico de área: alcance por dia" id="chartSvg">
+                  <defs>
+                    <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="0%" stop-color="var(--wm-data-1)" stop-opacity=".45"/>
+                      <stop offset="100%" stop-color="var(--wm-data-1)" stop-opacity="0"/>
+                    </linearGradient>
+                    <linearGradient id="g2" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="0%" stop-color="var(--wm-data-3)" stop-opacity=".35"/>
+                      <stop offset="100%" stop-color="var(--wm-data-3)" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <g stroke="var(--border)" stroke-dasharray="2 4">
+                    <line x1="0" y1="60" x2="600" y2="60"/>
+                    <line x1="0" y1="120" x2="600" y2="120"/>
+                    <line x1="0" y1="180" x2="600" y2="180"/>
+                  </g>
+                  <path id="areaA" d="M0,190 L60,160 L120,125 L180,135 L240,90 L300,95 L360,65 L420,55 L480,75 L540,45 L600,30 L600,240 L0,240 Z" fill="url(#g1)" style="animation:wmDraw 1.2s var(--wm-ease-entrance) both"/>
+                  <path id="lineA" d="M0,190 L60,160 L120,125 L180,135 L240,90 L300,95 L360,65 L420,55 L480,75 L540,45 L600,30" fill="none" stroke="var(--wm-data-1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" pathLength="1" style="stroke-dasharray:1;stroke-dashoffset:1;animation:wmDashOff 1.4s var(--wm-ease-entrance) forwards"/>
+                  <path id="areaB" d="M0,210 L60,195 L120,180 L180,170 L240,165 L300,150 L360,140 L420,135 L480,120 L540,115 L600,105 L600,240 L0,240 Z" fill="url(#g2)" style="animation:wmDraw 1.6s var(--wm-ease-entrance) both .2s"/>
+                  <path d="M0,210 L60,195 L120,180 L180,170 L240,165 L300,150 L360,140 L420,135 L480,120 L540,115 L600,105" fill="none" stroke="var(--wm-data-3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" pathLength="1" style="stroke-dasharray:1;stroke-dashoffset:1;animation:wmDashOff 1.8s var(--wm-ease-entrance) forwards .2s"/>
+                  <circle cx="540" cy="45" r="5" fill="var(--wm-data-1)" stroke="var(--bg-raised)" stroke-width="3" style="animation:wmPopIn 1.2s var(--wm-ease-entrance) both 1.2s"/>
+                  <circle cx="540" cy="45" r="5" fill="none" stroke="var(--wm-data-1)" stroke-width="1" style="transform-origin:540px 45px;animation:wmRing 2.4s var(--wm-ease-exit) infinite 1.6s"/>
+                </svg>
+              </div>
+              <div class="wm-legend">
+                <span><i style="background:var(--wm-data-1)"></i>Meta Ads</span>
+                <span><i style="background:var(--wm-data-3)"></i>Google Search</span>
+                <span><i style="background:var(--wm-data-5)"></i>TikTok</span>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div style="padding:var(--wm-s-4);border:1px solid color-mix(in srgb, var(--accent) 25%, transparent);border-radius:var(--wm-r-3);background:color-mix(in srgb, var(--accent) 6%, transparent)">
+                <div class="wm-mono" style="color:var(--accent);font-size:10px;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor"></span>Insight automático</div>
+                <p style="font-family:var(--wm-font-display);font-size:var(--wm-text-md);line-height:1.35;margin:10px 0 0;letter-spacing:-.005em">
+                  O CTR de Meta Ads cresceu após a troca de criativo em 14/abr. Vale replicar a abordagem no TikTok, onde o CPL está 67% acima da média.
+                </p>
+              </div>
+              <div style="padding:var(--wm-s-4);border:1px solid var(--border);border-radius:var(--wm-r-3)">
+                <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;letter-spacing:.1em;text-transform:uppercase">Segmentos top</div>
+                <div style="display:flex;flex-direction:column;gap:12px;margin-top:12px">
+                  <div>
+                    <div style="display:flex;justify-content:space-between;font-size:var(--wm-text-sm)"><span>Mulheres 25–34, SP</span><span class="wm-mono">31%</span></div>
+                    <div style="height:6px;background:var(--bg-sunken);border-radius:3px;margin-top:6px;overflow:hidden"><div style="width:31%;height:100%;background:var(--wm-data-1);border-radius:3px;box-shadow:0 0 8px var(--wm-data-1)"></div></div>
+                  </div>
+                  <div>
+                    <div style="display:flex;justify-content:space-between;font-size:var(--wm-text-sm)"><span>Homens 35–44, RJ</span><span class="wm-mono">22%</span></div>
+                    <div style="height:6px;background:var(--bg-sunken);border-radius:3px;margin-top:6px;overflow:hidden"><div style="width:22%;height:100%;background:var(--wm-data-3);border-radius:3px"></div></div>
+                  </div>
+                  <div>
+                    <div style="display:flex;justify-content:space-between;font-size:var(--wm-text-sm)"><span>Mulheres 18–24, MG</span><span class="wm-mono">17%</span></div>
+                    <div style="height:6px;background:var(--bg-sunken);border-radius:3px;margin-top:6px;overflow:hidden"><div style="width:17%;height:100%;background:var(--wm-data-5);border-radius:3px"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <style>
+          @keyframes wmDraw{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+          @keyframes wmDashOff{to{stroke-dashoffset:0}}
+          @keyframes wmPopIn{0%{opacity:0;transform:scale(0)}60%{opacity:1;transform:scale(1.4)}100%{opacity:1;transform:scale(1)}}
+          @keyframes wmRing{0%{r:5;opacity:.8}100%{r:18;opacity:0}}
+        </style>
+      </section>
+
+      <!-- ========== 15 SOCIAL ========== -->
+      <section class="wm-section" id="social">
+        <div class="wm-section-head">
+          <div class="num">15</div>
+          <div>
+            <h2 class="wm-h2">Social Media</h2>
+            <p class="sub">Três variantes de capa 1:1: Ink (com grafo técnico), Paper (editorial sóbrio), Signal (atenção máxima). Headline serifa com itálico destacado, assinatura discreta.</p>
+          </div>
+        </div>
+
+        <div class="wm-grid cols-3">
+          <div class="wm-social var-ink">
+            <canvas data-social="ink"></canvas>
+            <span class="kicker">Relatório · 04/26</span>
+            <h5>Quem compra no <em>Dia das Mães</em> já decidiu em março.</h5>
+            <div class="foot"><span>wisemetrics.in</span><span>#consumerinsights</span></div>
+          </div>
+          <div class="wm-social var-paper">
+            <span class="kicker">Nota curta</span>
+            <h5>Dado bonito não é <em>dado honesto</em>.</h5>
+            <div class="foot"><span>wisemetrics.in</span><span>#dataviz</span></div>
+          </div>
+          <div class="wm-social var-signal">
+            <span class="kicker">Case · Varejo</span>
+            <h5>-18% no CPL em <em>seis semanas</em>.</h5>
+            <div class="foot"><span>wisemetrics.in</span><span>#case</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 16 ATMOSPHERE (generative) ========== -->
+      <section class="wm-section" id="atmos">
+        <div class="wm-section-head">
+          <div class="num">16</div>
+          <div>
+            <h2 class="wm-h2">Atmosfera Generativa</h2>
+            <p class="sub">Cenas de fundo opcionais para landings, headers de relatório e capas de case. São canvas 2D de baixo consumo que desenham um grafo de dados vivo — pontos com conexões por proximidade. Usar com parcimônia; o conteúdo manda, a atmosfera suporta.</p>
+          </div>
+        </div>
+
+        <div class="wm-grid cols-2">
+          <div class="wm-ambient">
+            <canvas data-ambient="graph"></canvas>
+            <div class="wm-ambient-content">
+              <span class="wm-eyebrow"><span class="pulse"></span>Data Graph · loop</span>
+              <h3 class="wm-h3" style="margin-top:12px;font-size:var(--wm-text-xl)">Variante A — grafo de dados</h3>
+              <p style="color:var(--fg-muted);margin:0;font-size:var(--wm-text-sm)">Pontos flutuantes conectam-se por proximidade. Sugere amostragem, rede, audiência.</p>
+            </div>
+          </div>
+          <div class="wm-ambient">
+            <canvas data-ambient="orbit"></canvas>
+            <div class="wm-ambient-content">
+              <span class="wm-eyebrow"><span class="pulse"></span>Orbit · loop</span>
+              <h3 class="wm-h3" style="margin-top:12px;font-size:var(--wm-text-xl)">Variante B — órbita de sinal</h3>
+              <p style="color:var(--fg-muted);margin:0;font-size:var(--wm-text-sm)">Partículas orbitam um ponto-insight. Sugere foco, convergência, descoberta.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 17 TOKENS JSON ========== -->
+      <section class="wm-section" id="tokens-json">
+        <div class="wm-section-head">
+          <div class="num">17</div>
+          <div>
+            <h2 class="wm-h2">Tokens (JSON)</h2>
+            <p class="sub">Exportação pronta para Figma Tokens / Style Dictionary / Tailwind config. Clique em "copiar" para levar ao seu pipeline.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;justify-content:flex-end;margin-bottom:8px">
+          <button class="wm-btn ghost" id="copyJson" style="padding:8px 14px;font-size:var(--wm-text-xs)">Copiar JSON</button>
+        </div>
+        <pre class="wm-code" id="jsonTokens">{
+  <span class="k">"color"</span>: {
+    <span class="k">"signal"</span>: { "50":"#e6f9f6","100":"#b9efe7","200":"#7ee0d3","300":"#42ccbb","400":"#1db5a3","500":"#0f9385","600":"#0a6e63","700":"#06463f" },
+    <span class="k">"ink"</span>:    { "50":"#eaf0f5","100":"#c8d5e1","200":"#8ba2b8","300":"#526d88","400":"#2c4762","500":"#132a44","600":"#0c1e33","700":"#071524","800":"#040d18","900":"#02060d" },
+    <span class="k">"paper"</span>:  { "50":"#f7f5f0","100":"#ece7dc","200":"#d9d1bf","300":"#b8ad93","400":"#8a8067","500":"#5d5541","600":"#3d3828","700":"#26231a","800":"#141310","900":"#0a0907" },
+    <span class="k">"data"</span>:   [ "#1db5a3","#132a44","#e8a33a","#a1306f","#6f4fa3","#4a7cb8","#d9d1bf" ]
+  },
+  <span class="k">"font"</span>: {
+    <span class="k">"display"</span>: <span class="v">"Fraunces, 'Noto Serif', Georgia, serif"</span>,
+    <span class="k">"body"</span>:    <span class="v">"'Inter Tight', Inter, -apple-system, sans-serif"</span>,
+    <span class="k">"mono"</span>:    <span class="v">"'JetBrains Mono', ui-monospace, monospace"</span>
+  },
+  <span class="k">"size"</span>: { "2xs":11,"xs":12,"sm":14,"base":16,"md":18,"lg":22,"xl":28,"2xl":36,"3xl":48,"4xl":68,"5xl":96,"6xl":128 },
+  <span class="k">"space"</span>: [0,4,8,12,16,24,32,48,64,96,128,160],
+  <span class="k">"radius"</span>: { "0":0,"1":2,"2":4,"3":8,"4":12,"5":18,"full":999 },
+  <span class="k">"shadow"</span>: {
+    <span class="k">"1"</span>: <span class="v">"0 1px 0 rgba(0,0,0,.05), 0 1px 2px rgba(0,0,0,.08)"</span>,
+    <span class="k">"2"</span>: <span class="v">"0 2px 4px rgba(0,0,0,.08), 0 8px 24px -8px rgba(0,0,0,.16)"</span>,
+    <span class="k">"3"</span>: <span class="v">"0 4px 8px rgba(0,0,0,.08), 0 24px 48px -16px rgba(0,0,0,.24)"</span>,
+    <span class="k">"glow"</span>: <span class="v">"0 0 0 1px rgba(29,181,163,.25), 0 0 24px rgba(29,181,163,.25)"</span>
+  },
+  <span class="k">"motion"</span>: {
+    <span class="k">"dur"</span>: { "1":120,"2":200,"3":320,"4":520 },
+    <span class="k">"ease"</span>: { "standard":"cubic-bezier(.2,.6,.2,1)","entrance":"cubic-bezier(.16,.84,.24,1)","exit":"cubic-bezier(.4,0,1,1)" }
+  }
+}</pre>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Próximos passos sugeridos</h3>
+          <ol style="color:var(--fg-muted);line-height:1.8;padding-left:22px;max-width:62ch">
+            <li>Validar tokens em auditoria de contraste WCAG (teal sobre ink-800 passa AA confortavelmente).</li>
+            <li>Importar este JSON no Figma Tokens Studio, criar estilos e variáveis, e conectar ao arquivo de componentes.</li>
+            <li>Extrair o shader do hero como componente reutilizável para abertura de relatórios.</li>
+            <li>Substituir as ~11 fontes do site atual pela tríade Fraunces / Inter Tight / JetBrains Mono.</li>
+            <li>Definir governança: quem aprova mudança de token, cadência de revisão e processo de contribuição.</li>
+          </ol>
+        </div>
+      </section>
+
+      <footer style="padding:var(--wm-s-8) 0;border-top:1px solid var(--rule);margin-top:var(--wm-s-8);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
+        <div class="wm-mono" style="color:var(--fg-subtle);font-size:var(--wm-text-2xs);letter-spacing:.1em">WISEMETRICS · DESIGN SYSTEM · 0.2 · 2026</div>
+        <div class="wm-mono" style="color:var(--accent);font-size:var(--wm-text-2xs);letter-spacing:.1em">ESTRATÉGIA · DADOS · PRODUTO — NUMA SÓ LÓGICA</div>
+      </footer>
+
+    </div>
+  </main>
+</div>
+
+<div class="wm-toast" id="toast">token copiado</div>
+
+<script>
+/* =========================================================
+   THEME
+   ========================================================= */
+const root = document.documentElement;
+const themeButtons = document.querySelectorAll('[data-theme-btn]');
+function setTheme(t){
+  root.setAttribute('data-theme', t);
+  themeButtons.forEach(b=> b.classList.toggle('active', b.dataset.themeBtn===t));
+  try{ localStorage.setItem('wm-theme', t);}catch(e){}
+  // redraw generative canvases with new palette
+  window.dispatchEvent(new Event('wm-theme-change'));
+}
+const saved = (()=>{ try{return localStorage.getItem('wm-theme')}catch(e){return null} })();
+if(saved) setTheme(saved);
+themeButtons.forEach(b=> b.addEventListener('click', ()=> setTheme(b.dataset.themeBtn)));
+
+/* =========================================================
+   RAMPS / SWATCHES / SPACE
+   ========================================================= */
+function ramp(id, prefix, steps){
+  const el = document.getElementById(id);
+  if(!el) return;
+  steps.forEach(n=>{
+    const v = getComputedStyle(root).getPropertyValue(`--wm-${prefix}-${n}`).trim();
+    const d = document.createElement('div');
+    d.className = 'step';
+    d.style.background = v;
+    d.setAttribute('data-label', n);
+    d.title = `--wm-${prefix}-${n} · ${v}`;
+    d.addEventListener('click', ()=> copyToken(`--wm-${prefix}-${n}`));
+    el.appendChild(d);
+  });
+}
+ramp('ramp-ink','ink',[50,100,200,300,400,500,600,700,800,900]);
+ramp('ramp-signal','signal',[50,100,200,300,400,500,600,700]);
+ramp('ramp-paper','paper',[50,100,200,300,400,500,600,700,800,900]);
+
+(function(){
+  const el = document.getElementById('data-palette');
+  if(!el) return;
+  for(let i=1;i<=7;i++){
+    const v = getComputedStyle(root).getPropertyValue(`--wm-data-${i}`).trim();
+    const isLight = [7].includes(i);
+    const card = document.createElement('div');
+    card.className = 'wm-swatch';
+    card.style.setProperty('--swatch', v);
+    card.style.setProperty('--swatch-fg', isLight ? '#141310' : '#fff');
+    card.dataset.token = `--wm-data-${i}`;
+    card.dataset.hex = v;
+    card.innerHTML = `
+      <div><div class="name">Serie ${i}</div></div>
+      <div><div class="hex">${v.toUpperCase()}</div><div class="token">--wm-data-${i}</div></div>
+      <span class="copied">copiado</span>`;
+    el.appendChild(card);
+  }
+})();
+
+(function(){
+  const el = document.getElementById('space-grid');
+  if(!el) return;
+  const scale = [
+    ['--wm-s-1', 4],['--wm-s-2', 8],['--wm-s-3', 12],['--wm-s-4', 16],
+    ['--wm-s-5', 24],['--wm-s-6', 32],['--wm-s-7', 48],['--wm-s-8', 64],
+    ['--wm-s-9', 96],['--wm-s-10', 128],['--wm-s-11', 160]
+  ];
+  scale.forEach(([tok,px])=>{
+    const row = document.createElement('div');
+    row.className = 'wm-space-row';
+    row.innerHTML = `<span class="tok">${tok}</span><span class="bar" style="width:${px}px"></span><span class="px">${px}px</span>`;
+    el.appendChild(row);
+  });
+})();
+
+/* =========================================================
+   CLIPBOARD
+   ========================================================= */
+const toast = document.getElementById('toast');
+function showToast(msg){
+  toast.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(showToast._t);
+  showToast._t = setTimeout(()=>toast.classList.remove('show'), 1500);
+}
+function copyToken(token){
+  const val = getComputedStyle(root).getPropertyValue(token).trim();
+  navigator.clipboard?.writeText(`${token}: ${val}`).then(()=>showToast(`${token} · ${val}`));
+}
+document.addEventListener('click', e=>{
+  const sw = e.target.closest('.wm-swatch');
+  if(!sw) return;
+  const token = sw.dataset.token;
+  if(!token) return;
+  const hex = sw.dataset.hex || getComputedStyle(root).getPropertyValue(token).trim();
+  navigator.clipboard?.writeText(`${token}: ${hex}`);
+  sw.classList.add('copied');
+  showToast(`${token} · ${hex}`);
+  setTimeout(()=>sw.classList.remove('copied'), 1400);
+});
+document.getElementById('copyJson').addEventListener('click', ()=>{
+  const txt = document.getElementById('jsonTokens').innerText;
+  navigator.clipboard?.writeText(txt).then(()=>showToast('JSON copiado'));
+});
+
+/* =========================================================
+   WEBGL HERO — POINT FIELD THAT REACTS TO CURSOR
+   A grid of points with organic wave + cursor attraction.
+   Designed to feel like "the data is aware".
+   ========================================================= */
+(function initHero(){
+  const canvas = document.getElementById('heroCanvas');
+  if(!canvas || typeof THREE === 'undefined') return;
+
+  const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, 1, 0.1, 100);
+  camera.position.set(0, 0, 18);
+
+  // Generate a grid of points
+  const GRID = 56;
+  const GAP  = 0.55;
+  const count = GRID * GRID;
+  const positions = new Float32Array(count * 3);
+  const base      = new Float32Array(count * 3);
+  let k = 0;
+  for (let i = 0; i < GRID; i++) {
+    for (let j = 0; j < GRID; j++) {
+      const x = (i - GRID/2) * GAP;
+      const y = (j - GRID/2) * GAP;
+      // slight dome so edges fall away
+      const r = Math.hypot(x,y);
+      const z = -r*0.04;
+      positions[k*3]   = x;  positions[k*3+1] = y;  positions[k*3+2] = z;
+      base[k*3]        = x;  base[k*3+1]      = y;  base[k*3+2]      = z;
+      k++;
+    }
+  }
+
+  const geom = new THREE.BufferGeometry();
+  geom.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+  // Shader material — teal points with radial soft falloff
+  const uniforms = {
+    uTime:   { value: 0 },
+    uMouse:  { value: new THREE.Vector2(0, 0) },
+    uSize:   { value: 2.2 * (window.devicePixelRatio||1) },
+    uAccent: { value: new THREE.Color('#1db5a3') },
+    uFg:     { value: new THREE.Color('#ece7dc') },
+  };
+
+  const mat = new THREE.ShaderMaterial({
+    uniforms,
+    transparent: true,
+    depthWrite: false,
+    blending: THREE.AdditiveBlending,
+    vertexShader: `
+      uniform float uTime;
+      uniform vec2  uMouse;
+      uniform float uSize;
+      varying float vDist;
+      varying float vWave;
+      void main(){
+        vec3 p = position;
+        // wave
+        float w = sin(p.x*0.35 + uTime*0.6) * 0.35
+                + cos(p.y*0.45 - uTime*0.5) * 0.35;
+        p.z += w;
+        vWave = w;
+
+        // mouse attraction (push outward near cursor)
+        vec2 toMouse = uMouse - p.xy;
+        float d = length(toMouse);
+        float influence = smoothstep(6.0, 0.0, d);
+        p.xy -= normalize(toMouse + 1e-6) * influence * 0.9;
+        p.z  += influence * 1.4;
+
+        vDist = d;
+
+        vec4 mv = modelViewMatrix * vec4(p, 1.0);
+        gl_Position = projectionMatrix * mv;
+        gl_PointSize = uSize * (1.0 + influence*1.6) * (20.0 / -mv.z);
+      }
+    `,
+    fragmentShader: `
+      uniform vec3  uAccent;
+      uniform vec3  uFg;
+      varying float vDist;
+      varying float vWave;
+      void main(){
+        vec2 uv = gl_PointCoord - 0.5;
+        float r = length(uv);
+        if (r > 0.5) discard;
+        float a = smoothstep(0.5, 0.0, r);
+        // color mix: base foreground, switches to accent near cursor & wave crests
+        float mixFactor = smoothstep(4.5, 0.0, vDist) * 0.9
+                        + smoothstep(0.2, 0.6, vWave) * 0.3;
+        vec3 col = mix(uFg * 0.35, uAccent, clamp(mixFactor, 0.0, 1.0));
+        gl_FragColor = vec4(col, a * 0.85);
+      }
+    `
+  });
+
+  const points = new THREE.Points(geom, mat);
+  points.rotation.x = -0.35;
+  scene.add(points);
+
+  // Resize
+  function resize(){
+    const el = canvas.parentElement;
+    const w = el.clientWidth, h = el.clientHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w/h;
+    camera.updateProjectionMatrix();
+  }
+  resize();
+  new ResizeObserver(resize).observe(canvas.parentElement);
+
+  // Mouse
+  const mouseTarget = new THREE.Vector2(0,0);
+  const mouse = new THREE.Vector2(0,0);
+  canvas.parentElement.addEventListener('mousemove', (e)=>{
+    const rect = canvas.getBoundingClientRect();
+    const nx = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    const ny = -(((e.clientY - rect.top) / rect.height) * 2 - 1);
+    // map to world-ish coordinates
+    mouseTarget.set(nx * 10, ny * 6);
+  });
+  canvas.parentElement.addEventListener('mouseleave', ()=> mouseTarget.set(0,0));
+
+  // HUD
+  const hud = document.getElementById('heroHud');
+  const hudP = hud.querySelector('[data-k="p"]');
+  const hudF = hud.querySelector('[data-k="f"]');
+  const hudC = hud.querySelector('[data-k="c"]');
+  hudP.textContent = count.toLocaleString('pt-BR');
+
+  // Theme updates
+  function syncTheme(){
+    const theme = root.getAttribute('data-theme');
+    const accent = getComputedStyle(root).getPropertyValue('--wm-signal-400').trim() || '#1db5a3';
+    const fg     = getComputedStyle(root).getPropertyValue('--fg').trim();
+    uniforms.uAccent.value.set(accent);
+    uniforms.uFg.value.set(fg);
+  }
+  syncTheme();
+  window.addEventListener('wm-theme-change', syncTheme);
+
+  // Animate
+  const clock = new THREE.Clock();
+  let frame = 0, lastFps = performance.now(), fpsAcc = 0;
+  function tick(){
+    const t = clock.getElapsedTime();
+    uniforms.uTime.value = t;
+    // ease mouse
+    mouse.lerp(mouseTarget, 0.08);
+    uniforms.uMouse.value.copy(mouse);
+    points.rotation.z = Math.sin(t*0.05)*0.08;
+
+    renderer.render(scene, camera);
+
+    frame++;
+    const now = performance.now();
+    if (now - lastFps > 500){
+      fpsAcc = Math.round(frame * 1000 / (now - lastFps));
+      hudF.textContent = fpsAcc;
+      hudC.textContent = `${mouse.x.toFixed(1).padStart(5,' ')}, ${mouse.y.toFixed(1).padStart(5,' ')}`;
+      frame = 0; lastFps = now;
+    }
+    requestAnimationFrame(tick);
+  }
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) tick();
+  else renderer.render(scene, camera);
+})();
+
+/* =========================================================
+   AMBIENT CANVAS — GRAPH + ORBIT
+   ========================================================= */
+function initAmbientGraph(canvas){
+  const ctx = canvas.getContext('2d');
+  let W=0, H=0, dpr=Math.min(window.devicePixelRatio||1, 2);
+  const points = [];
+  const N = 28;
+
+  function resize(){
+    const r = canvas.getBoundingClientRect();
+    W = r.width; H = r.height;
+    canvas.width = W*dpr; canvas.height = H*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  function seed(){
+    points.length = 0;
+    for(let i=0;i<N;i++){
+      points.push({
+        x: Math.random()*W, y: Math.random()*H,
+        vx: (Math.random()-.5)*0.25, vy: (Math.random()-.5)*0.25,
+        r: Math.random()*1.6 + 0.6
+      });
+    }
+  }
+  function palette(){
+    const accent = getComputedStyle(root).getPropertyValue('--wm-signal-400').trim() || '#1db5a3';
+    const muted  = getComputedStyle(root).getPropertyValue('--fg-muted').trim() || '#8a8067';
+    return { accent, muted };
+  }
+  let pal = palette();
+  window.addEventListener('wm-theme-change', ()=> pal = palette());
+
+  function step(){
+    ctx.clearRect(0,0,W,H);
+    // move
+    for(const p of points){
+      p.x += p.vx; p.y += p.vy;
+      if(p.x < 0 || p.x > W) p.vx *= -1;
+      if(p.y < 0 || p.y > H) p.vy *= -1;
+    }
+    // connections
+    for(let i=0;i<N;i++){
+      for(let j=i+1;j<N;j++){
+        const a=points[i], b=points[j];
+        const dx=a.x-b.x, dy=a.y-b.y; const d=Math.hypot(dx,dy);
+        if(d < 110){
+          const alpha = (1 - d/110) * 0.35;
+          ctx.strokeStyle = `rgba(29,181,163,${alpha})`;
+          ctx.lineWidth = 0.8;
+          ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+        }
+      }
+    }
+    // points
+    for(const p of points){
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+      ctx.fillStyle = pal.accent;
+      ctx.fill();
+      // halo for larger ones
+      if(p.r > 1.5){
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r*3, 0, Math.PI*2);
+        ctx.fillStyle = 'rgba(29,181,163,0.08)'; ctx.fill();
+      }
+    }
+    raf = requestAnimationFrame(step);
+  }
+  let raf;
+  resize(); seed();
+  new ResizeObserver(()=>{resize(); seed();}).observe(canvas);
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches) step();
+  else step._once = (()=>{step(); cancelAnimationFrame(raf);})();
+}
+
+function initAmbientOrbit(canvas){
+  const ctx = canvas.getContext('2d');
+  let W=0, H=0, dpr=Math.min(window.devicePixelRatio||1, 2);
+  const orbits = [];
+
+  function resize(){
+    const r = canvas.getBoundingClientRect();
+    W = r.width; H = r.height;
+    canvas.width = W*dpr; canvas.height = H*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    seed();
+  }
+  function seed(){
+    orbits.length = 0;
+    const cx = W/2, cy = H/2;
+    for(let i=0;i<6;i++){
+      orbits.push({
+        cx, cy,
+        r: 40 + i*24,
+        ang: Math.random()*Math.PI*2,
+        speed: 0.002 + Math.random()*0.004,
+        size: 1.4 + Math.random()*1.6
+      });
+    }
+  }
+  function step(){
+    ctx.clearRect(0,0,W,H);
+    const cx = W/2, cy = H/2;
+    // concentric rings
+    for(let i=0;i<6;i++){
+      ctx.beginPath(); ctx.arc(cx, cy, 40+i*24, 0, Math.PI*2);
+      ctx.strokeStyle = 'rgba(29,181,163,0.08)'; ctx.lineWidth = 1; ctx.stroke();
+    }
+    // orbiting points
+    for(const o of orbits){
+      o.ang += o.speed;
+      const x = o.cx + Math.cos(o.ang)*o.r;
+      const y = o.cy + Math.sin(o.ang)*o.r;
+      // trail
+      ctx.beginPath(); ctx.arc(x,y,o.size*2.5,0,Math.PI*2);
+      ctx.fillStyle = 'rgba(29,181,163,0.1)'; ctx.fill();
+      ctx.beginPath(); ctx.arc(x,y,o.size,0,Math.PI*2);
+      ctx.fillStyle = '#1db5a3'; ctx.fill();
+    }
+    // center
+    ctx.beginPath(); ctx.arc(cx,cy,4,0,Math.PI*2);
+    ctx.fillStyle = '#1db5a3'; ctx.fill();
+    ctx.beginPath(); ctx.arc(cx,cy,14,0,Math.PI*2);
+    ctx.strokeStyle = 'rgba(29,181,163,0.3)'; ctx.lineWidth=1; ctx.stroke();
+    raf = requestAnimationFrame(step);
+  }
+  let raf;
+  resize();
+  new ResizeObserver(resize).observe(canvas);
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches) step();
+  else step();
+}
+
+function initSocialInk(canvas){
+  // Smaller graph variant for social square
+  const ctx = canvas.getContext('2d');
+  let W=0, H=0, dpr=Math.min(window.devicePixelRatio||1, 2);
+  const pts = []; const N=22;
+  function resize(){
+    const r = canvas.getBoundingClientRect();
+    W = r.width; H = r.height;
+    canvas.width = W*dpr; canvas.height = H*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    pts.length = 0;
+    for(let i=0;i<N;i++) pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*0.2,vy:(Math.random()-.5)*0.2,r:Math.random()*1.4+0.6});
+  }
+  function step(){
+    ctx.clearRect(0,0,W,H);
+    for(const p of pts){ p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>W)p.vx*=-1; if(p.y<0||p.y>H)p.vy*=-1;}
+    for(let i=0;i<N;i++) for(let j=i+1;j<N;j++){
+      const a=pts[i],b=pts[j]; const d=Math.hypot(a.x-b.x,a.y-b.y);
+      if(d<90){ ctx.strokeStyle=`rgba(29,181,163,${(1-d/90)*0.4})`; ctx.lineWidth=0.6;
+        ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();}
+    }
+    for(const p of pts){ ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle='#1db5a3'; ctx.fill();}
+    requestAnimationFrame(step);
+  }
+  resize();
+  new ResizeObserver(resize).observe(canvas);
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches) step();
+  else step();
+}
+
+// Boot all ambient canvases
+document.querySelectorAll('[data-ambient="graph"]').forEach(initAmbientGraph);
+document.querySelectorAll('[data-ambient="orbit"]').forEach(initAmbientOrbit);
+document.querySelectorAll('[data-social="ink"]').forEach(initSocialInk);
+</script>
+</body>
+</html>

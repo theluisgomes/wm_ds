@@ -1,0 +1,1766 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Wisemetrics — Branding & Marketing</title>
+<meta name="description" content="Proposta de branding, posicionamento e estratégia comercial da Wisemetrics. Dado que pensa." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300..800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link rel="stylesheet" href="wisemetrics.css"/>
+</head>
+<body>
+
+<div class="wm-app">
+
+  <!-- ========== SIDEBAR ========== -->
+  <aside class="wm-side">
+    <div class="wm-brandmark">
+      <svg class="sym" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect x="3" y="22" width="5" height="14" fill="currentColor" opacity=".85"/>
+        <rect x="11" y="16" width="5" height="20" fill="currentColor" opacity=".85"/>
+        <rect x="19" y="10" width="5" height="26" fill="currentColor" opacity=".85"/>
+        <rect x="27" y="18" width="5" height="18" fill="currentColor" opacity=".85"/>
+        <circle cx="34.5" cy="6" r="3.5" fill="var(--accent)"/>
+        <circle cx="34.5" cy="6" r="6" fill="none" stroke="var(--accent)" stroke-width=".5" opacity=".5"/>
+      </svg>
+      <div>
+        <div class="name">Wisemetrics<span class="dot">.</span></div>
+        <div class="wm-version">Branding & Marketing</div>
+      </div>
+    </div>
+
+    <nav class="wm-nav" aria-label="Seções da proposta">
+      <a href="index.html"><span class="num">--</span>Hub Central</a>
+      <div class="group-label" style="margin-top:16px">Documentos</div>
+      <a href="wisemetrics-branding.html"><span class="num">00</span>Branding</a>
+      <a href="servicos.html"><span class="num">01</span>Serviços &amp; Preços</a>
+      <a href="go-to-market.html"><span class="num">02</span>Go-to-Market</a>
+      <a href="canais-digitais.html"><span class="num">03</span>Canais Digitais</a>
+      <a href="estrategia-conteudo.html"><span class="num">04</span>Estratégia de Conteúdo</a>
+      <a href="identidade-visual.html"><span class="num">05</span>Identidade Visual</a>
+      <a href="modelos-proposta.html"><span class="num">06</span>Modelos de Proposta</a>
+      <a href="wisemetrics-design-system-v2.html"><span class="num">07</span>Design System</a>
+    </nav>
+
+    <div class="wm-theme-switch" role="tablist">
+      <span class="slider" aria-hidden="true"></span>
+      <button data-theme-btn="dark" class="active">Dark</button>
+      <button data-theme-btn="light">Light</button>
+    </div>
+  </aside>
+
+  <!-- ========== MAIN ========== -->
+  <main class="wm-main">
+    <div class="wm-toc-float">
+      <div class="wm-toc-container">
+        <div class="group-label" style="margin-top:16px">Fundamentos</div>
+      <a href="#intro"><span class="num">00</span>Síntese</a>
+      <a href="#arquetipo"><span class="num">01</span>Arquétipo</a>
+      <a href="#valor"><span class="num">02</span>Proposta de valor</a>
+      <a href="#posicionamento"><span class="num">03</span>Posicionamento</a>
+      <div class="group-label">Identidade</div>
+      <a href="#voz"><span class="num">04</span>Voz & Tom</a>
+      <a href="#visual"><span class="num">05</span>Visual</a>
+      <a href="#social"><span class="num">06</span>Social Media</a>
+      <div class="group-label">Comercial</div>
+      <a href="#servicos"><span class="num">07</span>Serviços & Tiers</a>
+      <a href="#gtm"><span class="num">08</span>Go-to-Market</a>
+      <a href="#metricas"><span class="num">09</span>Métricas</a>
+      <a href="#contato"><span class="num">10</span>Próximos passos</a>
+      </div>
+    </div>
+    <div class="wm-container">
+
+      <!-- ========== HERO ========== -->
+      <section class="wm-hero" id="intro">
+        <div class="wm-hero-grid-overlay"></div>
+        <canvas class="wm-hero-canvas" id="heroCanvas"></canvas>
+
+        <div class="wm-hud" id="heroHud">
+          <div class="row"><span>documento</span><span class="v">branding</span></div>
+          <div class="row"><span>versão</span><span class="v">1.0 · 2026</span></div>
+          <div class="row"><span>escopo</span><span class="v" data-k="s">comercial</span></div>
+          <div class="row"><span>status</span><span class="v" style="color:var(--wm-signal-300)">live</span></div>
+        </div>
+
+        <div class="wm-hero-content">
+          <div class="wm-eyebrow wm-fade-up"><span class="pulse"></span>Branding & Marketing · Proposta Comercial</div>
+          <h1 class="wm-h1 wm-fade-up d1">Dado que <em>pensa.</em></h1>
+          <p class="wm-lede wm-fade-up d2">
+            Inteligência de consumidor aplicada. Rigor estatístico com narrativa estratégica —
+            toda métrica carrega contexto, hipótese e consequência.
+          </p>
+
+          <div class="wm-hero-meta wm-fade-up d3">
+            <div class="cell"><span class="label">Tagline</span><span class="val accent">Dado que pensa.</span></div>
+            <div class="cell"><span class="label">Arquétipo</span><span class="val">O Sábio</span></div>
+            <div class="cell"><span class="label">Território</span><span class="val">Inteligência aplicada</span></div>
+            <div class="cell"><span class="label">Público</span><span class="val">CMO · CPO · Head de Dados</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 01 ARQUÉTIPO ========== -->
+      <section class="wm-section" id="arquetipo">
+        <div class="wm-section-head">
+          <div class="num">01</div>
+          <div>
+            <h2 class="wm-h2">Arquétipo de marca</h2>
+            <p class="sub">A Wisemetrics é O Sábio — o guia que sabe onde o dado mente e onde ele revela. Curioso, preciso, direto, brasileiro por temperamento.</p>
+          </div>
+        </div>
+
+        <div class="wm-grid cols-2">
+          <div class="wm-card">
+            <span class="kicker">Arquétipo · O Sábio</span>
+            <h4>Quem guia quando o dado confunde</h4>
+            <p>Não somos a empresa que entrega mais relatórios. Somos a que explica por que os relatórios existentes estão respondendo a pergunta errada.</p>
+          </div>
+          <div class="wm-card">
+            <span class="kicker">Personalidade</span>
+            <h4>Curioso. Preciso. Direto.</h4>
+            <p>Brasileiro por origem e por temperamento — aparece em contraste tipográfico, em um teal vibrante e em um jeito de escrever que conversa sem perder o rigor.</p>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Dimensões de marca</h3>
+          <div class="wm-grid cols-4">
+            <div class="wm-card">
+              <span class="kicker">Território</span>
+              <h4>Dado com alma</h4>
+              <p>Rigor estatístico + narrativa editorial em cada entrega.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Promessa</span>
+              <h4>A leitura que chega antes da planilha</h4>
+              <p>Interpretação antes da reunião de board.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Anti-promessa</span>
+              <h4>Não vendemos visualizações</h4>
+              <p>Vendemos clareza. Dashboard bonito sem insight não serve.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Diferencial</span>
+              <h4>A camada entre o dado e a decisão</h4>
+              <p>O analista sênior que o cliente não tem na folha, mas precisaria.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Taglines aprovadas</h3>
+          <div style="display:flex;flex-direction:column;gap:var(--wm-s-4)">
+            <div style="padding:var(--wm-s-5);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:var(--wm-r-4);background:color-mix(in srgb,var(--accent) 5%,transparent)">
+              <div class="wm-mono" style="color:var(--accent);font-size:10px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px">Principal</div>
+              <div style="font-family:var(--wm-font-display);font-size:var(--wm-text-2xl);font-weight:350;letter-spacing:-.025em">Wisemetrics. <em style="color:var(--accent);font-style:italic;font-weight:300">Dado que pensa.</em></div>
+            </div>
+            <div class="wm-grid cols-3">
+              <div style="padding:var(--wm-s-4);border:1px solid var(--border);border-radius:var(--wm-r-3);background:var(--bg-raised)">
+                <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Landing</div>
+                <p style="font-family:var(--wm-font-display);font-size:var(--wm-text-md);margin:0;line-height:1.3">Leitura de consumidor que chega antes da planilha.</p>
+              </div>
+              <div style="padding:var(--wm-s-4);border:1px solid var(--border);border-radius:var(--wm-r-3);background:var(--bg-raised)">
+                <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Deck</div>
+                <p style="font-family:var(--wm-font-display);font-size:var(--wm-text-md);margin:0;line-height:1.3">Hipóteses com dado atrás. Relatórios que aguentam board.</p>
+              </div>
+              <div style="padding:var(--wm-s-4);border:1px solid var(--border);border-radius:var(--wm-r-3);background:var(--bg-raised)">
+                <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Produto</div>
+                <p style="font-family:var(--wm-font-display);font-size:var(--wm-text-md);margin:0;line-height:1.3">Estratégia, dados e produto numa só lógica.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 02 PROPOSTA DE VALOR ========== -->
+      <section class="wm-section" id="valor">
+        <div class="wm-section-head">
+          <div class="num">02</div>
+          <div>
+            <h2 class="wm-h2">Proposta de valor</h2>
+            <p class="sub">Servimos organizações em três momentos críticos. Em cada um, entregamos mais do que dados — entregamos orientação estratégica.</p>
+          </div>
+        </div>
+
+        <div class="wm-grid cols-3">
+          <div class="wm-card">
+            <span class="kicker">Momento A</span>
+            <h4>A empresa que cresceu rápido e perdeu clareza</h4>
+            <p>Não sabe mais quem é seu consumidor real depois da escala. Precisa de retrato atualizado de audiência.</p>
+            <span class="wm-badge accent" style="align-self:flex-start">Consumer Pulse</span>
+          </div>
+          <div class="wm-card">
+            <span class="kicker">Momento B</span>
+            <h4>A empresa com dado demais e insight de menos</h4>
+            <p>Relatórios que ninguém lê, analytics que não orientam decisão. O dashboard existe, a ação não.</p>
+            <span class="wm-badge accent" style="align-self:flex-start">Analytics</span>
+          </div>
+          <div class="wm-card">
+            <span class="kicker">Momento C</span>
+            <h4>A empresa que quer lançar e precisa de evidência</h4>
+            <p>Antes de alocar budget, precisa saber se a hipótese de produto ou posicionamento se sustenta.</p>
+            <span class="wm-badge accent" style="align-self:flex-start">Product Research</span>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Fluxo de valor</h3>
+          <div style="background:var(--bg-raised);border:1px solid var(--border);border-radius:var(--wm-r-4);padding:var(--wm-s-6);overflow-x:auto">
+            <div style="display:flex;align-items:center;gap:var(--wm-s-4);min-width:600px">
+              <div style="flex:1;text-align:center">
+                <div style="font-family:var(--wm-font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--fg-muted);margin-bottom:8px">Entrada</div>
+                <div style="background:var(--bg-sunken);border:1px solid var(--border);border-radius:var(--wm-r-3);padding:var(--wm-s-4);font-family:var(--wm-font-display);font-size:var(--wm-text-md)">Dados brutos<br><span style="color:var(--fg-muted);font-size:var(--wm-text-sm)">(o mercado)</span></div>
+              </div>
+              <div style="color:var(--accent);font-size:var(--wm-text-xl)">→</div>
+              <div style="flex:1;text-align:center">
+                <div style="font-family:var(--wm-font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:8px">Wisemetrics</div>
+                <div style="background:color-mix(in srgb,var(--accent) 8%,transparent);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:var(--wm-r-3);padding:var(--wm-s-4);font-family:var(--wm-font-display);font-size:var(--wm-text-md)">Padrões &<br>Hipóteses</div>
+              </div>
+              <div style="color:var(--accent);font-size:var(--wm-text-xl)">→</div>
+              <div style="flex:1;text-align:center">
+                <div style="font-family:var(--wm-font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--fg-muted);margin-bottom:8px">Saída</div>
+                <div style="background:var(--bg-sunken);border:1px solid var(--border);border-radius:var(--wm-r-3);padding:var(--wm-s-4);font-family:var(--wm-font-display);font-size:var(--wm-text-md)">Decisão<br><span style="color:var(--fg-muted);font-size:var(--wm-text-sm)">(seu time)</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 03 POSICIONAMENTO ========== -->
+      <section class="wm-section" id="posicionamento">
+        <div class="wm-section-head">
+          <div class="num">03</div>
+          <div>
+            <h2 class="wm-h2">Posicionamento</h2>
+            <p class="sub">A Wisemetrics ocupa um território que poucos players definem claramente no Brasil: inteligência aplicada. Dado + interpretação + recomendação estratégica em ciclos rápidos.</p>
+          </div>
+        </div>
+
+        <div class="wm-pos-map" aria-label="Mapa de posicionamento competitivo">
+          <!-- Eixos -->
+          <div class="wm-pos-axis h"></div>
+          <div class="wm-pos-axis v"></div>
+          <!-- Labels de eixo -->
+          <div class="wm-pos-axis-label" style="top:50%;left:6%;transform:translateY(-50%)">Dado bruto</div>
+          <div class="wm-pos-axis-label" style="top:50%;right:6%;transform:translateY(-50%)">Narrativa estratégica</div>
+          <div class="wm-pos-axis-label" style="top:7%;left:50%;transform:translateX(-50%)">Alta interpretação</div>
+          <div class="wm-pos-axis-label" style="bottom:7%;left:50%;transform:translateX(-50%)">Baixa interpretação</div>
+          <!-- Wisemetrics -->
+          <div class="wm-pos-node hero" style="left:72%;top:28%">
+            <div class="dot"></div>
+            <div class="lbl" style="font-size:11px;font-weight:600">Wisemetrics</div>
+          </div>
+          <!-- Competidores -->
+          <div class="wm-pos-node comp" style="left:22%;top:38%">
+            <div class="dot"></div>
+            <div class="lbl">Grandes pesquisadoras</div>
+          </div>
+          <div class="wm-pos-node comp" style="left:30%;top:72%">
+            <div class="dot"></div>
+            <div class="lbl">Plataformas de BI</div>
+          </div>
+          <div class="wm-pos-node comp" style="left:62%;top:66%">
+            <div class="dot"></div>
+            <div class="lbl">Analytics tools</div>
+          </div>
+          <div class="wm-pos-node comp" style="left:78%;top:55%">
+            <div class="dot"></div>
+            <div class="lbl">Consultorias generalistas</div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <div class="wm-grid cols-3">
+            <div class="wm-card">
+              <span class="kicker">Não somos</span>
+              <h4>Pesquisadora tradicional</h4>
+              <p>Não entregamos só fieldwork. Projetos de 6 meses com metodologia opaca não são nosso modelo.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Não somos</span>
+              <h4>Plataforma de analytics</h4>
+              <p>Não entregamos só dashboard. Dado sem interpretação não move decisão.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Somos</span>
+              <h4>A interpretação entre os dois</h4>
+              <p>Dado quantitativo + leitura qualitativa + entrega em sprints. O analista que o cliente precisaria ter.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 04 VOZ & TOM ========== -->
+      <section class="wm-section" id="voz">
+        <div class="wm-section-head">
+          <div class="num">04</div>
+          <div>
+            <h2 class="wm-h2">Voz & Tom</h2>
+            <p class="sub">Escrevemos como um consultor sênior conversa com um cliente: direto, evidenciado, curioso. Sem clichês de IA, sem floreio vazio.</p>
+          </div>
+        </div>
+
+        <div class="wm-voice">
+          <div class="do">
+            <h5>Fazer</h5>
+            <ul>
+              <li>Frases curtas quando possível; longas quando preciso.</li>
+              <li>Números concretos com fonte e período.</li>
+              <li>Verbos ativos: "revelamos", "medimos", "decidimos".</li>
+              <li>Ironia sutil quando couber; nunca cinismo.</li>
+              <li>Português limpo — como quem escreve para ser lido em voz alta.</li>
+            </ul>
+          </div>
+          <div class="dont">
+            <h5>Evitar</h5>
+            <ul>
+              <li>Construções "não é apenas X, é Y" — formulaico e vazio.</li>
+              <li>"Desbloqueie", "desvende", "potencialize", "revolucione".</li>
+              <li>Capitalização à moda inglesa ("Transforme Seus Dados").</li>
+              <li>Emoji em contexto institucional; ícones bastam.</li>
+              <li>Jargão de IA inflado sem necessidade técnica real.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Voz em uso — exemplos reais</h3>
+          <div class="wm-grid cols-2">
+            <div class="wm-card">
+              <span class="kicker">Landing · Headline</span>
+              <h4 style="font-size:var(--wm-text-xl)">Leitura de consumidor que chega antes da planilha.</h4>
+              <p>Hipóteses com dado atrás, relatórios que aguentam discussão de diretoria.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Produto · Estado vazio</span>
+              <h4 style="font-size:var(--wm-text-xl)">Sem dados por aqui — ainda.</h4>
+              <p>Conecte uma fonte para que a gente comece a montar o retrato da sua audiência.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">LinkedIn · Leitura de número</span>
+              <h4 style="font-size:var(--wm-text-xl)">O ticket médio do e-commerce de saúde cresceu 23% em Q1 2026.</h4>
+              <p>Não é inflação — a cesta está mudando. A hipótese: consumidores migrando para rotina preventiva.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Proposta · Abertura</span>
+              <h4 style="font-size:var(--wm-text-xl)">O que você precisa não é de mais uma pesquisa.</h4>
+              <p>É de uma análise que aguente a próxima reunião de board.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 05 IDENTIDADE VISUAL ========== -->
+      <section class="wm-section" id="visual">
+        <div class="wm-section-head">
+          <div class="num">05</div>
+          <div>
+            <h2 class="wm-h2">Identidade visual</h2>
+            <p class="sub">Paleta Teal/Ink/Paper. Fraunces para momentos editoriais de impacto. Signal teal é evento — aparece uma vez por tela. Referência completa: Design System v0.2.</p>
+          </div>
+        </div>
+
+        <div class="wm-grid cols-4">
+          <div style="aspect-ratio:4/5;border-radius:var(--wm-r-3);background:#1db5a3;padding:16px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--border)">
+            <div style="font-family:var(--wm-font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#021714">Signal · Hero</div>
+            <div><div style="font-family:var(--wm-font-mono);font-size:var(--wm-text-sm);font-weight:500;color:#021714">#1DB5A3</div><div style="font-family:var(--wm-font-mono);font-size:10px;opacity:.7;color:#021714">--wm-signal-400</div></div>
+          </div>
+          <div style="aspect-ratio:4/5;border-radius:var(--wm-r-3);background:#132a44;padding:16px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--border)">
+            <div style="font-family:var(--wm-font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#c8d5e1">Ink · Primary</div>
+            <div><div style="font-family:var(--wm-font-mono);font-size:var(--wm-text-sm);font-weight:500;color:#fff">#132A44</div><div style="font-family:var(--wm-font-mono);font-size:10px;opacity:.7;color:#c8d5e1">--wm-ink-500</div></div>
+          </div>
+          <div style="aspect-ratio:4/5;border-radius:var(--wm-r-3);background:#f7f5f0;padding:16px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid #d9d1bf">
+            <div style="font-family:var(--wm-font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#5d5541">Paper · Canvas</div>
+            <div><div style="font-family:var(--wm-font-mono);font-size:var(--wm-text-sm);font-weight:500;color:#26231a">#F7F5F0</div><div style="font-family:var(--wm-font-mono);font-size:10px;opacity:.7;color:#5d5541">--wm-paper-50</div></div>
+          </div>
+          <div style="aspect-ratio:4/5;border-radius:var(--wm-r-3);background:#e8a33a;padding:16px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--border)">
+            <div style="font-family:var(--wm-font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#26231a">Amber · Secondary</div>
+            <div><div style="font-family:var(--wm-font-mono);font-size:var(--wm-text-sm);font-weight:500;color:#26231a">#E8A33A</div><div style="font-family:var(--wm-font-mono);font-size:10px;opacity:.7;color:#26231a">--wm-amber-400</div></div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Proporção 60/30/10</h3>
+          <p style="color:var(--fg-muted);max-width:62ch;margin-bottom:16px">O teal é evento — usado em CTAs, destaques e um único ponto por tela. Quando tudo grita, nada é ouvido.</p>
+          <div style="display:flex;height:56px;border-radius:8px;overflow:hidden;border:1px solid var(--border)">
+            <div style="flex:60;background:var(--wm-ink-800);display:flex;align-items:center;justify-content:center;font-family:var(--wm-font-mono);font-size:10px;color:var(--fg-muted)">60% · neutro</div>
+            <div style="flex:30;background:var(--wm-paper-200);display:flex;align-items:center;justify-content:center;font-family:var(--wm-font-mono);font-size:10px;color:var(--wm-ink-700)">30% · contraste</div>
+            <div style="flex:10;background:var(--wm-signal-400);box-shadow:var(--wm-glow-signal);display:flex;align-items:center;justify-content:center;font-family:var(--wm-font-mono);font-size:10px;color:var(--wm-ink-900)">10%</div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Tipografia</h3>
+          <div class="wm-grid cols-3">
+            <div class="wm-card">
+              <span class="kicker">Fraunces · Display</span>
+              <div style="font-family:var(--wm-font-display);font-size:var(--wm-text-3xl);font-weight:350;line-height:.95;letter-spacing:-.03em;font-variation-settings:'opsz' 144,'SOFT' 20">Aa</div>
+              <p>Headlines, títulos, momentos de impacto editorial. Itálico em teal para insights principais.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Inter Tight · Interface</span>
+              <div style="font-family:var(--wm-font-body);font-size:var(--wm-text-3xl);font-weight:400;line-height:.95">Aa</div>
+              <p>Corpo de texto, UI, botões, formulários. Voz cotidiana e acessível.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">JetBrains Mono · Dado</span>
+              <div style="font-family:var(--wm-font-mono);font-size:var(--wm-text-3xl);font-weight:400;line-height:.95;color:var(--accent)">Aa</div>
+              <p>Kickers, labels de gráfico, HUDs, métricas, código. Voz do dado.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 06 SOCIAL MEDIA ========== -->
+      <section class="wm-section" id="social">
+        <div class="wm-section-head">
+          <div class="num">06</div>
+          <div>
+            <h2 class="wm-h2">Social Media</h2>
+            <p class="sub">Três variantes de post aprovadas. Headline serifa com itálico destacado. Kicker monoespaçado. A "Leitura de número" é o formato âncora — 1 dado, interpretação, implicação.</p>
+          </div>
+        </div>
+
+        <div class="wm-grid cols-3">
+          <div class="wm-social var-ink">
+            <canvas data-social="ink"></canvas>
+            <span class="kicker">Consumer Pulse · Q2/2026</span>
+            <h5>Quem compra no <em>Dia das Mães</em> já decidiu em março.</h5>
+            <div class="foot"><span>wisemetrics.com.br</span><span>#consumerinsights</span></div>
+          </div>
+          <div class="wm-social var-paper">
+            <span class="kicker">Nota analítica</span>
+            <h5>Dado bonito não é <em>dado honesto</em>.</h5>
+            <div class="foot"><span>wisemetrics.com.br</span><span>#dataviz</span></div>
+          </div>
+          <div class="wm-social var-signal">
+            <span class="kicker">Case · Varejo premium</span>
+            <h5>-18% no CPL em <em>seis semanas</em>.</h5>
+            <div class="foot"><span>wisemetrics.com.br</span><span>#case</span></div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Estrutura de "Leitura de número" (LinkedIn)</h3>
+          <div style="border:1px solid var(--border);border-radius:var(--wm-r-4);background:var(--bg-raised);padding:var(--wm-s-6);max-width:640px">
+            <div style="display:flex;flex-direction:column;gap:var(--wm-s-3)">
+              <div style="border-left:2px solid var(--accent);padding-left:var(--wm-s-4)"><span class="wm-mono" style="color:var(--fg-muted)">[Dado específico com fonte e período]</span></div>
+              <p style="margin:0;font-size:var(--wm-text-sm)">O ticket médio do e-commerce de saúde cresceu 23% em Q1 2026 (ABCOMM).</p>
+              <div style="border-left:2px solid var(--border);padding-left:var(--wm-s-4)"><span class="wm-mono" style="color:var(--fg-muted)">[Interpretação — hipótese de causa]</span></div>
+              <p style="margin:0;color:var(--fg-muted);font-size:var(--wm-text-sm)">Não é inflação — a cesta está mudando. Consumidores migrando para rotina preventiva...</p>
+              <div style="border-left:2px solid var(--border);padding-left:var(--wm-s-4)"><span class="wm-mono" style="color:var(--fg-muted)">[Implicação prática por setor]</span></div>
+              <p style="margin:0;color:var(--fg-muted);font-size:var(--wm-text-sm)">Para marcas de FMCG: o canal e-commerce de saúde está se tornando compra de giro, não de impulso...</p>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
+                <span class="wm-badge accent">#wisemetrics</span>
+                <span class="wm-badge">#consumidor</span>
+                <span class="wm-badge">#saude</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 07 SERVIÇOS & TIERS ========== -->
+      <section class="wm-section" id="servicos">
+        <div class="wm-section-head">
+          <div class="num">07</div>
+          <div>
+            <h2 class="wm-h2">Serviços & Tiers</h2>
+            <p class="sub">Quatro linhas de serviço. Três tiers de relacionamento. Preço por valor entregue — não por hora ou por assento.</p>
+          </div>
+        </div>
+
+        <div class="wm-grid cols-3">
+          <div class="wm-tier">
+            <div class="tier-name">Tier · Pulse</div>
+            <h4>Projetos pontuais</h4>
+            <div class="tier-price">R$ 15k <span>– 45k / projeto</span></div>
+            <ul>
+              <li>Insight Sprint (5 dias)</li>
+              <li>Concept Testing</li>
+              <li>Competitive Landscape</li>
+              <li>UX Research Sprint</li>
+            </ul>
+            <p style="font-size:var(--wm-text-sm);color:var(--fg-muted);margin:0">Ideal para startups e scale-ups. Aprovação simples, entrega rápida.</p>
+            <div class="tier-cta"><button class="wm-btn ghost" style="width:100%;justify-content:center">Solicitar sprint</button></div>
+          </div>
+          <div class="wm-tier featured">
+            <div class="tier-name">Tier · Signal</div>
+            <h4>Assinatura trimestral</h4>
+            <div class="tier-price">R$ 8k <span>– 20k / mês</span></div>
+            <ul>
+              <li>Consumer Pulse (tracking)</li>
+              <li>Brand Health Report</li>
+              <li>Embedded Analyst parcial</li>
+              <li>Revisões ilimitadas</li>
+              <li>Acesso antecipado a relatórios</li>
+            </ul>
+            <p style="font-size:var(--wm-text-sm);color:var(--fg-muted);margin:0">Ideal para empresas médias. Desconto de 10% vs. projetos avulsos.</p>
+            <div class="tier-cta"><button class="wm-btn accent" style="width:100%;justify-content:center">Mais indicado <span class="arrow">→</span></button></div>
+          </div>
+          <div class="wm-tier">
+            <div class="tier-name">Tier · Clarity</div>
+            <h4>Advisory contínuo</h4>
+            <div class="tier-price">R$ 30k <span>– 80k / mês</span></div>
+            <ul>
+              <li>Intelligence + Analytics + Advisory</li>
+              <li>Analista sênior dedicado</li>
+              <li>Priority scheduling</li>
+              <li>Dashboard de advisory mensal</li>
+              <li>Desconto de 15–20%</li>
+            </ul>
+            <p style="font-size:var(--wm-text-sm);color:var(--fg-muted);margin:0">Ideal para corporações e grupos. Contrato mínimo de 6 meses.</p>
+            <div class="tier-cta"><button class="wm-btn ghost" style="width:100%;justify-content:center">Conversar</button></div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Linhas de serviço</h3>
+          <div class="wm-grid cols-4">
+            <div class="wm-card">
+              <span class="kicker">Intelligence</span>
+              <h4>Consumer Pulse</h4>
+              <p>Tracking trimestral de comportamento, intenção e sentimento. Relatório com hipótese estratégica.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Analytics</span>
+              <h4>Modelagem & Atribuição</h4>
+              <p>Segmentação, churn preditivo, MMM. Modelos que orientam decisão de budget e produto.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Product Research</span>
+              <h4>Validação de hipótese</h4>
+              <p>Concept testing, UX sprint, pricing sensitivity. Evidência antes do desenvolvimento.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Advisory</span>
+              <h4>Inteligência embarcada</h4>
+              <p>Analista sênior no time, workshops, treinamento. Capacidade analítica interna elevada.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 08 GO-TO-MARKET ========== -->
+      <section class="wm-section" id="gtm">
+        <div class="wm-section-head">
+          <div class="num">08</div>
+          <div>
+            <h2 class="wm-h2">Go-to-market</h2>
+            <p class="sub">Três fases em 18 meses. A tese de entrada: não competir por preço — competir por clareza. O funil começa por autoridade, não por anúncio.</p>
+          </div>
+        </div>
+
+        <div class="wm-grid cols-3" style="margin-bottom:var(--wm-s-8)">
+          <div class="wm-card">
+            <span class="kicker">Fase 1 · Meses 1–6</span>
+            <h4>Autoridade</h4>
+            <p>Consumer Pulse Report público. Newsletter semanal. Presença em 3–5 eventos. 5 primeiros clientes. Meta ARR: R$ 300k.</p>
+            <span class="wm-badge accent" style="align-self:flex-start">em andamento</span>
+          </div>
+          <div class="wm-card">
+            <span class="kicker">Fase 2 · Meses 4–10</span>
+            <h4>Conversão</h4>
+            <p>Outbound estruturado, cases públicos, webinar mensal, programa de referral. Meta ARR: R$ 1,2M.</p>
+            <span class="wm-badge" style="align-self:flex-start">próxima fase</span>
+          </div>
+          <div class="wm-card">
+            <span class="kicker">Fase 3 · Meses 8–18</span>
+            <h4>Escala</h4>
+            <p>Dashboard self-serve, expansão de verticais, certificação Wisemetrics. Meta ARR: R$ 3,5M.</p>
+            <span class="wm-badge" style="align-self:flex-start">planejada</span>
+          </div>
+        </div>
+
+        <h3 class="wm-h3">Funil de marketing</h3>
+        <div class="wm-funnel">
+          <div class="wm-funnel-step">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h5>Consciência</h5>
+              <p>Consumer Pulse Report, palestra em eventos, LinkedIn editorial, SEO de categoria</p>
+            </div>
+            <div class="step-tag">Awareness</div>
+          </div>
+          <div class="wm-funnel-step">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h5>Consideração</h5>
+              <p>Newsletter semanal, case studies com metodologia, webinar mensal, trial de Insight Sprint</p>
+            </div>
+            <div class="step-tag">Nurturing</div>
+          </div>
+          <div class="wm-funnel-step">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h5>Decisão</h5>
+              <p>Proposta comercial, advisory call 1:1, referral de ex-cliente, indicação de agência parceira</p>
+            </div>
+            <div class="step-tag">Conversão</div>
+          </div>
+          <div class="wm-funnel-step">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h5>Retenção & Expansão</h5>
+              <p>Relatório periódico, upsell para advisory, NPS mensal, check-in trimestral de liderança</p>
+            </div>
+            <div class="step-tag">Retenção</div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Wedge — oferta de entrada</h3>
+          <div style="border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:var(--wm-r-5);background:color-mix(in srgb,var(--accent) 5%,transparent);padding:var(--wm-s-6);display:grid;grid-template-columns:1fr auto;gap:var(--wm-s-6);align-items:center">
+            <div>
+              <div class="wm-mono" style="color:var(--accent);font-size:10px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px">Oferta de entrada · Insight Sprint</div>
+              <div style="font-family:var(--wm-font-display);font-size:var(--wm-text-2xl);font-weight:350;letter-spacing:-.025em;margin-bottom:var(--wm-s-3)">5 dias. 1 questão estratégica.<br><em style="color:var(--accent);font-style:italic;font-weight:300">Uma direção fundamentada.</em></div>
+              <p style="margin:0;color:var(--fg-muted);font-size:var(--wm-text-sm);max-width:52ch">Ticket baixo o suficiente para aprovação sem licitação. Entrega rápida que cria evidência de qualidade para upsell. Taxa de conversão Sprint → recorrente esperada: 35–40%.</p>
+            </div>
+            <div style="text-align:center;flex-shrink:0">
+              <div style="font-family:var(--wm-font-display);font-size:var(--wm-text-4xl);font-weight:300;color:var(--accent);letter-spacing:-.03em">R$15k</div>
+              <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em">escopo fixo</div>
+              <button class="wm-btn accent" style="margin-top:var(--wm-s-4)">Solicitar <span class="arrow">→</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 09 MÉTRICAS ========== -->
+      <section class="wm-section" id="metricas">
+        <div class="wm-section-head">
+          <div class="num">09</div>
+          <div>
+            <h2 class="wm-h2">Métricas de marca</h2>
+            <p class="sub">KPIs de awareness, performance comercial e conteúdo. Revisão trimestral obrigatória — o que não é medido, não é gerenciado.</p>
+          </div>
+        </div>
+
+        <div class="wm-grid cols-2">
+          <div>
+            <h3 class="wm-h3" style="margin-bottom:var(--wm-s-5)">Metas de 12 meses — Awareness</h3>
+            <div class="wm-metric-row">
+              <div class="wm-metric-row-head">
+                <span class="mlabel">Seguidores LinkedIn</span>
+                <span class="mvals">2.000 → <strong style="color:var(--accent)">6.000</strong></span>
+              </div>
+              <div class="wm-metric-bar"><div class="wm-metric-bar-fill" style="width:33%;animation-delay:.1s"></div></div>
+            </div>
+            <div class="wm-metric-row">
+              <div class="wm-metric-row-head">
+                <span class="mlabel">Assinantes newsletter</span>
+                <span class="mvals">800 → <strong style="color:var(--accent)">2.500</strong></span>
+              </div>
+              <div class="wm-metric-bar"><div class="wm-metric-bar-fill" style="width:32%;animation-delay:.2s"></div></div>
+            </div>
+            <div class="wm-metric-row">
+              <div class="wm-metric-row-head">
+                <span class="mlabel">Taxa de abertura newsletter</span>
+                <span class="mvals">40% → <strong style="color:var(--accent)">45%</strong></span>
+              </div>
+              <div class="wm-metric-bar"><div class="wm-metric-bar-fill" style="width:89%;animation-delay:.3s"></div></div>
+            </div>
+            <div class="wm-metric-row">
+              <div class="wm-metric-row-head">
+                <span class="mlabel">Downloads Consumer Pulse</span>
+                <span class="mvals">500 → <strong style="color:var(--accent)">2.000</strong></span>
+              </div>
+              <div class="wm-metric-bar"><div class="wm-metric-bar-fill" style="width:25%;animation-delay:.4s"></div></div>
+            </div>
+          </div>
+          <div>
+            <h3 class="wm-h3" style="margin-bottom:var(--wm-s-5)">Metas de 12 meses — Comercial</h3>
+            <div class="wm-metric-row">
+              <div class="wm-metric-row-head">
+                <span class="mlabel">Leads qualificados / mês</span>
+                <span class="mvals">20 → <strong style="color:var(--accent)">60</strong></span>
+              </div>
+              <div class="wm-metric-bar"><div class="wm-metric-bar-fill" style="width:33%;animation-delay:.1s"></div></div>
+            </div>
+            <div class="wm-metric-row">
+              <div class="wm-metric-row-head">
+                <span class="mlabel">Taxa conversão proposta → cliente</span>
+                <span class="mvals">30% → <strong style="color:var(--accent)">40%</strong></span>
+              </div>
+              <div class="wm-metric-bar"><div class="wm-metric-bar-fill" style="width:75%;animation-delay:.2s"></div></div>
+            </div>
+            <div class="wm-metric-row">
+              <div class="wm-metric-row-head">
+                <span class="mlabel">ARR</span>
+                <span class="mvals">R$600k → <strong style="color:var(--accent)">R$3,5M</strong></span>
+              </div>
+              <div class="wm-metric-bar"><div class="wm-metric-bar-fill" style="width:17%;animation-delay:.3s"></div></div>
+            </div>
+            <div class="wm-metric-row">
+              <div class="wm-metric-row-head">
+                <span class="mlabel">Churn anual (recorrente)</span>
+                <span class="mvals">meta <strong style="color:var(--accent)">&lt;10%</strong></span>
+              </div>
+              <div class="wm-metric-bar"><div class="wm-metric-bar-fill" style="width:90%;animation-delay:.4s;background:var(--wm-success)"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <div class="wm-grid cols-3">
+            <div style="background:var(--bg-raised);border:1px solid var(--border);border-radius:var(--wm-r-4);padding:var(--wm-s-5)">
+              <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">ARR · 18 meses</div>
+              <div style="font-family:var(--wm-font-display);font-weight:450;font-size:var(--wm-text-2xl);letter-spacing:-.015em">R$ 3,5M</div>
+              <div class="wm-mono" style="color:var(--accent);font-size:var(--wm-text-xs);display:inline-flex;gap:4px;align-items:center;margin-top:2px">▲ 40% recorrente</div>
+            </div>
+            <div style="background:var(--bg-raised);border:1px solid var(--border);border-radius:var(--wm-r-4);padding:var(--wm-s-5)">
+              <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Clientes ativos · 12m</div>
+              <div style="font-family:var(--wm-font-display);font-weight:450;font-size:var(--wm-text-2xl);letter-spacing:-.015em">20–30</div>
+              <div class="wm-mono" style="color:var(--accent);font-size:var(--wm-text-xs);display:inline-flex;gap:4px;align-items:center;margin-top:2px">▲ Signal + Clarity</div>
+            </div>
+            <div style="background:var(--bg-raised);border:1px solid var(--border);border-radius:var(--wm-r-4);padding:var(--wm-s-5)">
+              <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">NPS · meta</div>
+              <div style="font-family:var(--wm-font-display);font-weight:450;font-size:var(--wm-text-2xl);letter-spacing:-.015em">65+</div>
+              <div class="wm-mono" style="color:var(--accent);font-size:var(--wm-text-xs);display:inline-flex;gap:4px;align-items:center;margin-top:2px">primeira medição 6m</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 10 PRÓXIMOS PASSOS / CONTATO ========== -->
+      <section class="wm-section" id="contato">
+        <div class="wm-section-head">
+          <div class="num">10</div>
+          <div>
+            <h2 class="wm-h2">Próximos passos</h2>
+            <p class="sub">Para começar um projeto, a conversa dura 20 minutos. Você sai com uma hipótese de trabalho. Nós saímos com o briefing.</p>
+          </div>
+        </div>
+
+        <div class="wm-ambient">
+          <canvas data-ambient="orbit"></canvas>
+          <div class="wm-ambient-content">
+            <div class="wm-eyebrow" style="justify-content:center;margin-bottom:var(--wm-s-4)"><span class="pulse"></span>Inteligência em movimento</div>
+            <h3 class="wm-h3" style="font-size:var(--wm-text-2xl);margin-bottom:var(--wm-s-4)">A leitura que chega <em style="color:var(--accent);font-style:italic">antes da planilha.</em></h3>
+            <p style="color:var(--fg-muted);margin:0 0 var(--wm-s-5);font-size:var(--wm-text-md)">Medimos padrão de comportamento. Entregamos hipótese estratégica. O dado que orienta a reunião de board.</p>
+            <div style="display:flex;gap:var(--wm-s-3);flex-wrap:wrap;justify-content:center">
+              <button class="wm-btn accent">Solicitar diagnóstico <span class="arrow">→</span></button>
+              <button class="wm-btn ghost">Baixar Consumer Pulse</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Documentação complementar</h3>
+          <div class="wm-grid cols-3">
+            <div class="wm-card">
+              <span class="kicker">Serviços & Preços</span>
+              <h4>Portfólio completo</h4>
+              <p>10 serviços em 4 linhas, tabela de preços, tiers e política comercial detalhada.</p>
+              <a class="wm-btn link" href="Servicos-e-Precificacao.md">Acessar →</a>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Go-to-Market</span>
+              <h4>Plano de 18 meses</h4>
+              <p>ICP, TAM/SAM/SOM, 3 fases de execução, OKRs e orçamento de lançamento.</p>
+              <a class="wm-btn link" href="Go-to-Market.md">Acessar →</a>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Conteúdo Editorial</span>
+              <h4>Estratégia e calendário</h4>
+              <p>5 pilares editoriais, templates de voz, Consumer Pulse Report e processo de produção.</p>
+              <a class="wm-btn link" href="Estrategia-de-Conteudo.md">Acessar →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer style="padding:var(--wm-s-8) 0;border-top:1px solid var(--rule);margin-top:var(--wm-s-8);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
+        <div class="wm-mono" style="color:var(--fg-subtle);font-size:var(--wm-text-2xs);letter-spacing:.1em">WISEMETRICS · BRANDING & MARKETING · v1.0 · 2026</div>
+        <div class="wm-mono" style="color:var(--accent);font-size:var(--wm-text-2xs);letter-spacing:.1em">DADO QUE PENSA.</div>
+      </footer>
+
+    </div>
+  </main>
+</div>
+
+<div class="wm-toast" id="toast"></div>
+
+<script src="wisemetrics.js"></script>
+<link rel="stylesheet" href="wisemetrics.css"/>
+</head>
+<body>
+
+<div class="wm-app">
+
+  <!-- ========== SIDEBAR ========== -->
+  <aside class="wm-side">
+    <div class="wm-brandmark">
+      <svg class="sym" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect x="3" y="22" width="5" height="14" fill="currentColor" opacity=".85"/>
+        <rect x="11" y="16" width="5" height="20" fill="currentColor" opacity=".85"/>
+        <rect x="19" y="10" width="5" height="26" fill="currentColor" opacity=".85"/>
+        <rect x="27" y="18" width="5" height="18" fill="currentColor" opacity=".85"/>
+        <circle cx="34.5" cy="6" r="3.5" fill="var(--accent)"/>
+        <circle cx="34.5" cy="6" r="6" fill="none" stroke="var(--accent)" stroke-width=".5" opacity=".5"/>
+      </svg>
+      <div>
+        <div class="name">Wisemetrics<span class="dot">.</span></div>
+        <div class="wm-version">Branding & Marketing</div>
+      </div>
+    </div>
+
+    <nav class="wm-nav" aria-label="Seções da proposta">
+      <div class="group-label">Fundamentos</div>
+      <a href="#intro"><span class="num">00</span>Síntese</a>
+      <a href="#arquetipo"><span class="num">01</span>Arquétipo</a>
+      <a href="#valor"><span class="num">02</span>Proposta de valor</a>
+      <a href="#posicionamento"><span class="num">03</span>Posicionamento</a>
+
+      <div class="group-label">Identidade</div>
+      <a href="#voz"><span class="num">04</span>Voz & Tom</a>
+      <a href="#visual"><span class="num">05</span>Visual</a>
+      <a href="#social"><span class="num">06</span>Social Media</a>
+
+      <div class="group-label">Comercial</div>
+      <a href="#servicos"><span class="num">07</span>Serviços & Tiers</a>
+      <a href="#gtm"><span class="num">08</span>Go-to-Market</a>
+      <a href="#metricas"><span class="num">09</span>Métricas</a>
+      <a href="#contato"><span class="num">10</span>Próximos passos</a>
+    </nav>
+
+    <div class="wm-theme-switch" role="tablist">
+      <span class="slider" aria-hidden="true"></span>
+      <button data-theme-btn="dark" class="active">Dark</button>
+      <button data-theme-btn="light">Light</button>
+    </div>
+  </aside>
+
+  <!-- ========== MAIN ========== -->
+  <main class="wm-main">
+    <div class="wm-container">
+
+      <!-- ========== HERO ========== -->
+      <section class="wm-hero" id="intro">
+        <div class="wm-hero-grid-overlay"></div>
+        <canvas class="wm-hero-canvas" id="heroCanvas"></canvas>
+
+        <div class="wm-hud" id="heroHud">
+          <div class="row"><span>documento</span><span class="v">branding</span></div>
+          <div class="row"><span>versão</span><span class="v">1.0 · 2026</span></div>
+          <div class="row"><span>escopo</span><span class="v" data-k="s">comercial</span></div>
+          <div class="row"><span>status</span><span class="v" style="color:var(--wm-signal-300)">live</span></div>
+        </div>
+
+        <div class="wm-hero-content">
+          <div class="wm-eyebrow wm-fade-up"><span class="pulse"></span>Branding & Marketing · Proposta Comercial</div>
+          <h1 class="wm-h1 wm-fade-up d1">Dado que <em>pensa.</em></h1>
+          <p class="wm-lede wm-fade-up d2">
+            Inteligência de consumidor aplicada. Rigor estatístico com narrativa estratégica —
+            toda métrica carrega contexto, hipótese e consequência.
+          </p>
+
+          <div class="wm-hero-meta wm-fade-up d3">
+            <div class="cell"><span class="label">Tagline</span><span class="val accent">Dado que pensa.</span></div>
+            <div class="cell"><span class="label">Arquétipo</span><span class="val">O Sábio</span></div>
+            <div class="cell"><span class="label">Território</span><span class="val">Inteligência aplicada</span></div>
+            <div class="cell"><span class="label">Público</span><span class="val">CMO · CPO · Head de Dados</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 01 ARQUÉTIPO ========== -->
+      <section class="wm-section" id="arquetipo">
+        <div class="wm-section-head">
+          <div class="num">01</div>
+          <div>
+            <h2 class="wm-h2">Arquétipo de marca</h2>
+            <p class="sub">A Wisemetrics é O Sábio — o guia que sabe onde o dado mente e onde ele revela. Curioso, preciso, direto, brasileiro por temperamento.</p>
+          </div>
+        </div>
+
+        <div class="wm-grid cols-2">
+          <div class="wm-card">
+            <span class="kicker">Arquétipo · O Sábio</span>
+            <h4>Quem guia quando o dado confunde</h4>
+            <p>Não somos a empresa que entrega mais relatórios. Somos a que explica por que os relatórios existentes estão respondendo a pergunta errada.</p>
+          </div>
+          <div class="wm-card">
+            <span class="kicker">Personalidade</span>
+            <h4>Curioso. Preciso. Direto.</h4>
+            <p>Brasileiro por origem e por temperamento — aparece em contraste tipográfico, em um teal vibrante e em um jeito de escrever que conversa sem perder o rigor.</p>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Dimensões de marca</h3>
+          <div class="wm-grid cols-4">
+            <div class="wm-card">
+              <span class="kicker">Território</span>
+              <h4>Dado com alma</h4>
+              <p>Rigor estatístico + narrativa editorial em cada entrega.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Promessa</span>
+              <h4>A leitura que chega antes da planilha</h4>
+              <p>Interpretação antes da reunião de board.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Anti-promessa</span>
+              <h4>Não vendemos visualizações</h4>
+              <p>Vendemos clareza. Dashboard bonito sem insight não serve.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Diferencial</span>
+              <h4>A camada entre o dado e a decisão</h4>
+              <p>O analista sênior que o cliente não tem na folha, mas precisaria.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Taglines aprovadas</h3>
+          <div style="display:flex;flex-direction:column;gap:var(--wm-s-4)">
+            <div style="padding:var(--wm-s-5);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:var(--wm-r-4);background:color-mix(in srgb,var(--accent) 5%,transparent)">
+              <div class="wm-mono" style="color:var(--accent);font-size:10px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px">Principal</div>
+              <div style="font-family:var(--wm-font-display);font-size:var(--wm-text-2xl);font-weight:350;letter-spacing:-.025em">Wisemetrics. <em style="color:var(--accent);font-style:italic;font-weight:300">Dado que pensa.</em></div>
+            </div>
+            <div class="wm-grid cols-3">
+              <div style="padding:var(--wm-s-4);border:1px solid var(--border);border-radius:var(--wm-r-3);background:var(--bg-raised)">
+                <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Landing</div>
+                <p style="font-family:var(--wm-font-display);font-size:var(--wm-text-md);margin:0;line-height:1.3">Leitura de consumidor que chega antes da planilha.</p>
+              </div>
+              <div style="padding:var(--wm-s-4);border:1px solid var(--border);border-radius:var(--wm-r-3);background:var(--bg-raised)">
+                <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Deck</div>
+                <p style="font-family:var(--wm-font-display);font-size:var(--wm-text-md);margin:0;line-height:1.3">Hipóteses com dado atrás. Relatórios que aguentam board.</p>
+              </div>
+              <div style="padding:var(--wm-s-4);border:1px solid var(--border);border-radius:var(--wm-r-3);background:var(--bg-raised)">
+                <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Produto</div>
+                <p style="font-family:var(--wm-font-display);font-size:var(--wm-text-md);margin:0;line-height:1.3">Estratégia, dados e produto numa só lógica.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 02 PROPOSTA DE VALOR ========== -->
+      <section class="wm-section" id="valor">
+        <div class="wm-section-head">
+          <div class="num">02</div>
+          <div>
+            <h2 class="wm-h2">Proposta de valor</h2>
+            <p class="sub">Servimos organizações em três momentos críticos. Em cada um, entregamos mais do que dados — entregamos orientação estratégica.</p>
+          </div>
+        </div>
+
+        <div class="wm-grid cols-3">
+          <div class="wm-card">
+            <span class="kicker">Momento A</span>
+            <h4>A empresa que cresceu rápido e perdeu clareza</h4>
+            <p>Não sabe mais quem é seu consumidor real depois da escala. Precisa de retrato atualizado de audiência.</p>
+            <span class="wm-badge accent" style="align-self:flex-start">Consumer Pulse</span>
+          </div>
+          <div class="wm-card">
+            <span class="kicker">Momento B</span>
+            <h4>A empresa com dado demais e insight de menos</h4>
+            <p>Relatórios que ninguém lê, analytics que não orientam decisão. O dashboard existe, a ação não.</p>
+            <span class="wm-badge accent" style="align-self:flex-start">Analytics</span>
+          </div>
+          <div class="wm-card">
+            <span class="kicker">Momento C</span>
+            <h4>A empresa que quer lançar e precisa de evidência</h4>
+            <p>Antes de alocar budget, precisa saber se a hipótese de produto ou posicionamento se sustenta.</p>
+            <span class="wm-badge accent" style="align-self:flex-start">Product Research</span>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Fluxo de valor</h3>
+          <div style="background:var(--bg-raised);border:1px solid var(--border);border-radius:var(--wm-r-4);padding:var(--wm-s-6);overflow-x:auto">
+            <div style="display:flex;align-items:center;gap:var(--wm-s-4);min-width:600px">
+              <div style="flex:1;text-align:center">
+                <div style="font-family:var(--wm-font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--fg-muted);margin-bottom:8px">Entrada</div>
+                <div style="background:var(--bg-sunken);border:1px solid var(--border);border-radius:var(--wm-r-3);padding:var(--wm-s-4);font-family:var(--wm-font-display);font-size:var(--wm-text-md)">Dados brutos<br><span style="color:var(--fg-muted);font-size:var(--wm-text-sm)">(o mercado)</span></div>
+              </div>
+              <div style="color:var(--accent);font-size:var(--wm-text-xl)">→</div>
+              <div style="flex:1;text-align:center">
+                <div style="font-family:var(--wm-font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:8px">Wisemetrics</div>
+                <div style="background:color-mix(in srgb,var(--accent) 8%,transparent);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:var(--wm-r-3);padding:var(--wm-s-4);font-family:var(--wm-font-display);font-size:var(--wm-text-md)">Padrões &<br>Hipóteses</div>
+              </div>
+              <div style="color:var(--accent);font-size:var(--wm-text-xl)">→</div>
+              <div style="flex:1;text-align:center">
+                <div style="font-family:var(--wm-font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--fg-muted);margin-bottom:8px">Saída</div>
+                <div style="background:var(--bg-sunken);border:1px solid var(--border);border-radius:var(--wm-r-3);padding:var(--wm-s-4);font-family:var(--wm-font-display);font-size:var(--wm-text-md)">Decisão<br><span style="color:var(--fg-muted);font-size:var(--wm-text-sm)">(seu time)</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 03 POSICIONAMENTO ========== -->
+      <section class="wm-section" id="posicionamento">
+        <div class="wm-section-head">
+          <div class="num">03</div>
+          <div>
+            <h2 class="wm-h2">Posicionamento</h2>
+            <p class="sub">A Wisemetrics ocupa um território que poucos players definem claramente no Brasil: inteligência aplicada. Dado + interpretação + recomendação estratégica em ciclos rápidos.</p>
+          </div>
+        </div>
+
+        <div class="wm-pos-map" aria-label="Mapa de posicionamento competitivo">
+          <!-- Eixos -->
+          <div class="wm-pos-axis h"></div>
+          <div class="wm-pos-axis v"></div>
+          <!-- Labels de eixo -->
+          <div class="wm-pos-axis-label" style="top:50%;left:6%;transform:translateY(-50%)">Dado bruto</div>
+          <div class="wm-pos-axis-label" style="top:50%;right:6%;transform:translateY(-50%)">Narrativa estratégica</div>
+          <div class="wm-pos-axis-label" style="top:7%;left:50%;transform:translateX(-50%)">Alta interpretação</div>
+          <div class="wm-pos-axis-label" style="bottom:7%;left:50%;transform:translateX(-50%)">Baixa interpretação</div>
+          <!-- Wisemetrics -->
+          <div class="wm-pos-node hero" style="left:72%;top:28%">
+            <div class="dot"></div>
+            <div class="lbl" style="font-size:11px;font-weight:600">Wisemetrics</div>
+          </div>
+          <!-- Competidores -->
+          <div class="wm-pos-node comp" style="left:22%;top:38%">
+            <div class="dot"></div>
+            <div class="lbl">Grandes pesquisadoras</div>
+          </div>
+          <div class="wm-pos-node comp" style="left:30%;top:72%">
+            <div class="dot"></div>
+            <div class="lbl">Plataformas de BI</div>
+          </div>
+          <div class="wm-pos-node comp" style="left:62%;top:66%">
+            <div class="dot"></div>
+            <div class="lbl">Analytics tools</div>
+          </div>
+          <div class="wm-pos-node comp" style="left:78%;top:55%">
+            <div class="dot"></div>
+            <div class="lbl">Consultorias generalistas</div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <div class="wm-grid cols-3">
+            <div class="wm-card">
+              <span class="kicker">Não somos</span>
+              <h4>Pesquisadora tradicional</h4>
+              <p>Não entregamos só fieldwork. Projetos de 6 meses com metodologia opaca não são nosso modelo.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Não somos</span>
+              <h4>Plataforma de analytics</h4>
+              <p>Não entregamos só dashboard. Dado sem interpretação não move decisão.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Somos</span>
+              <h4>A interpretação entre os dois</h4>
+              <p>Dado quantitativo + leitura qualitativa + entrega em sprints. O analista que o cliente precisaria ter.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 04 VOZ & TOM ========== -->
+      <section class="wm-section" id="voz">
+        <div class="wm-section-head">
+          <div class="num">04</div>
+          <div>
+            <h2 class="wm-h2">Voz & Tom</h2>
+            <p class="sub">Escrevemos como um consultor sênior conversa com um cliente: direto, evidenciado, curioso. Sem clichês de IA, sem floreio vazio.</p>
+          </div>
+        </div>
+
+        <div class="wm-voice">
+          <div class="do">
+            <h5>Fazer</h5>
+            <ul>
+              <li>Frases curtas quando possível; longas quando preciso.</li>
+              <li>Números concretos com fonte e período.</li>
+              <li>Verbos ativos: "revelamos", "medimos", "decidimos".</li>
+              <li>Ironia sutil quando couber; nunca cinismo.</li>
+              <li>Português limpo — como quem escreve para ser lido em voz alta.</li>
+            </ul>
+          </div>
+          <div class="dont">
+            <h5>Evitar</h5>
+            <ul>
+              <li>Construções "não é apenas X, é Y" — formulaico e vazio.</li>
+              <li>"Desbloqueie", "desvende", "potencialize", "revolucione".</li>
+              <li>Capitalização à moda inglesa ("Transforme Seus Dados").</li>
+              <li>Emoji em contexto institucional; ícones bastam.</li>
+              <li>Jargão de IA inflado sem necessidade técnica real.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Voz em uso — exemplos reais</h3>
+          <div class="wm-grid cols-2">
+            <div class="wm-card">
+              <span class="kicker">Landing · Headline</span>
+              <h4 style="font-size:var(--wm-text-xl)">Leitura de consumidor que chega antes da planilha.</h4>
+              <p>Hipóteses com dado atrás, relatórios que aguentam discussão de diretoria.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Produto · Estado vazio</span>
+              <h4 style="font-size:var(--wm-text-xl)">Sem dados por aqui — ainda.</h4>
+              <p>Conecte uma fonte para que a gente comece a montar o retrato da sua audiência.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">LinkedIn · Leitura de número</span>
+              <h4 style="font-size:var(--wm-text-xl)">O ticket médio do e-commerce de saúde cresceu 23% em Q1 2026.</h4>
+              <p>Não é inflação — a cesta está mudando. A hipótese: consumidores migrando para rotina preventiva.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Proposta · Abertura</span>
+              <h4 style="font-size:var(--wm-text-xl)">O que você precisa não é de mais uma pesquisa.</h4>
+              <p>É de uma análise que aguente a próxima reunião de board.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 05 IDENTIDADE VISUAL ========== -->
+      <section class="wm-section" id="visual">
+        <div class="wm-section-head">
+          <div class="num">05</div>
+          <div>
+            <h2 class="wm-h2">Identidade visual</h2>
+            <p class="sub">Paleta Teal/Ink/Paper. Fraunces para momentos editoriais de impacto. Signal teal é evento — aparece uma vez por tela. Referência completa: Design System v0.2.</p>
+          </div>
+        </div>
+
+        <div class="wm-grid cols-4">
+          <div style="aspect-ratio:4/5;border-radius:var(--wm-r-3);background:#1db5a3;padding:16px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--border)">
+            <div style="font-family:var(--wm-font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#021714">Signal · Hero</div>
+            <div><div style="font-family:var(--wm-font-mono);font-size:var(--wm-text-sm);font-weight:500;color:#021714">#1DB5A3</div><div style="font-family:var(--wm-font-mono);font-size:10px;opacity:.7;color:#021714">--wm-signal-400</div></div>
+          </div>
+          <div style="aspect-ratio:4/5;border-radius:var(--wm-r-3);background:#132a44;padding:16px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--border)">
+            <div style="font-family:var(--wm-font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#c8d5e1">Ink · Primary</div>
+            <div><div style="font-family:var(--wm-font-mono);font-size:var(--wm-text-sm);font-weight:500;color:#fff">#132A44</div><div style="font-family:var(--wm-font-mono);font-size:10px;opacity:.7;color:#c8d5e1">--wm-ink-500</div></div>
+          </div>
+          <div style="aspect-ratio:4/5;border-radius:var(--wm-r-3);background:#f7f5f0;padding:16px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid #d9d1bf">
+            <div style="font-family:var(--wm-font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#5d5541">Paper · Canvas</div>
+            <div><div style="font-family:var(--wm-font-mono);font-size:var(--wm-text-sm);font-weight:500;color:#26231a">#F7F5F0</div><div style="font-family:var(--wm-font-mono);font-size:10px;opacity:.7;color:#5d5541">--wm-paper-50</div></div>
+          </div>
+          <div style="aspect-ratio:4/5;border-radius:var(--wm-r-3);background:#e8a33a;padding:16px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--border)">
+            <div style="font-family:var(--wm-font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#26231a">Amber · Secondary</div>
+            <div><div style="font-family:var(--wm-font-mono);font-size:var(--wm-text-sm);font-weight:500;color:#26231a">#E8A33A</div><div style="font-family:var(--wm-font-mono);font-size:10px;opacity:.7;color:#26231a">--wm-amber-400</div></div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Proporção 60/30/10</h3>
+          <p style="color:var(--fg-muted);max-width:62ch;margin-bottom:16px">O teal é evento — usado em CTAs, destaques e um único ponto por tela. Quando tudo grita, nada é ouvido.</p>
+          <div style="display:flex;height:56px;border-radius:8px;overflow:hidden;border:1px solid var(--border)">
+            <div style="flex:60;background:var(--wm-ink-800);display:flex;align-items:center;justify-content:center;font-family:var(--wm-font-mono);font-size:10px;color:var(--fg-muted)">60% · neutro</div>
+            <div style="flex:30;background:var(--wm-paper-200);display:flex;align-items:center;justify-content:center;font-family:var(--wm-font-mono);font-size:10px;color:var(--wm-ink-700)">30% · contraste</div>
+            <div style="flex:10;background:var(--wm-signal-400);box-shadow:var(--wm-glow-signal);display:flex;align-items:center;justify-content:center;font-family:var(--wm-font-mono);font-size:10px;color:var(--wm-ink-900)">10%</div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Tipografia</h3>
+          <div class="wm-grid cols-3">
+            <div class="wm-card">
+              <span class="kicker">Fraunces · Display</span>
+              <div style="font-family:var(--wm-font-display);font-size:var(--wm-text-3xl);font-weight:350;line-height:.95;letter-spacing:-.03em;font-variation-settings:'opsz' 144,'SOFT' 20">Aa</div>
+              <p>Headlines, títulos, momentos de impacto editorial. Itálico em teal para insights principais.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Inter Tight · Interface</span>
+              <div style="font-family:var(--wm-font-body);font-size:var(--wm-text-3xl);font-weight:400;line-height:.95">Aa</div>
+              <p>Corpo de texto, UI, botões, formulários. Voz cotidiana e acessível.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">JetBrains Mono · Dado</span>
+              <div style="font-family:var(--wm-font-mono);font-size:var(--wm-text-3xl);font-weight:400;line-height:.95;color:var(--accent)">Aa</div>
+              <p>Kickers, labels de gráfico, HUDs, métricas, código. Voz do dado.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 06 SOCIAL MEDIA ========== -->
+      <section class="wm-section" id="social">
+        <div class="wm-section-head">
+          <div class="num">06</div>
+          <div>
+            <h2 class="wm-h2">Social Media</h2>
+            <p class="sub">Três variantes de post aprovadas. Headline serifa com itálico destacado. Kicker monoespaçado. A "Leitura de número" é o formato âncora — 1 dado, interpretação, implicação.</p>
+          </div>
+        </div>
+
+        <div class="wm-grid cols-3">
+          <div class="wm-social var-ink">
+            <canvas data-social="ink"></canvas>
+            <span class="kicker">Consumer Pulse · Q2/2026</span>
+            <h5>Quem compra no <em>Dia das Mães</em> já decidiu em março.</h5>
+            <div class="foot"><span>wisemetrics.com.br</span><span>#consumerinsights</span></div>
+          </div>
+          <div class="wm-social var-paper">
+            <span class="kicker">Nota analítica</span>
+            <h5>Dado bonito não é <em>dado honesto</em>.</h5>
+            <div class="foot"><span>wisemetrics.com.br</span><span>#dataviz</span></div>
+          </div>
+          <div class="wm-social var-signal">
+            <span class="kicker">Case · Varejo premium</span>
+            <h5>-18% no CPL em <em>seis semanas</em>.</h5>
+            <div class="foot"><span>wisemetrics.com.br</span><span>#case</span></div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Estrutura de "Leitura de número" (LinkedIn)</h3>
+          <div style="border:1px solid var(--border);border-radius:var(--wm-r-4);background:var(--bg-raised);padding:var(--wm-s-6);max-width:640px">
+            <div style="display:flex;flex-direction:column;gap:var(--wm-s-3)">
+              <div style="border-left:2px solid var(--accent);padding-left:var(--wm-s-4)"><span class="wm-mono" style="color:var(--fg-muted)">[Dado específico com fonte e período]</span></div>
+              <p style="margin:0;font-size:var(--wm-text-sm)">O ticket médio do e-commerce de saúde cresceu 23% em Q1 2026 (ABCOMM).</p>
+              <div style="border-left:2px solid var(--border);padding-left:var(--wm-s-4)"><span class="wm-mono" style="color:var(--fg-muted)">[Interpretação — hipótese de causa]</span></div>
+              <p style="margin:0;color:var(--fg-muted);font-size:var(--wm-text-sm)">Não é inflação — a cesta está mudando. Consumidores migrando para rotina preventiva...</p>
+              <div style="border-left:2px solid var(--border);padding-left:var(--wm-s-4)"><span class="wm-mono" style="color:var(--fg-muted)">[Implicação prática por setor]</span></div>
+              <p style="margin:0;color:var(--fg-muted);font-size:var(--wm-text-sm)">Para marcas de FMCG: o canal e-commerce de saúde está se tornando compra de giro, não de impulso...</p>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
+                <span class="wm-badge accent">#wisemetrics</span>
+                <span class="wm-badge">#consumidor</span>
+                <span class="wm-badge">#saude</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 07 SERVIÇOS & TIERS ========== -->
+      <section class="wm-section" id="servicos">
+        <div class="wm-section-head">
+          <div class="num">07</div>
+          <div>
+            <h2 class="wm-h2">Serviços & Tiers</h2>
+            <p class="sub">Quatro linhas de serviço. Três tiers de relacionamento. Preço por valor entregue — não por hora ou por assento.</p>
+          </div>
+        </div>
+
+        <div class="wm-grid cols-3">
+          <div class="wm-tier">
+            <div class="tier-name">Tier · Pulse</div>
+            <h4>Projetos pontuais</h4>
+            <div class="tier-price">R$ 15k <span>– 45k / projeto</span></div>
+            <ul>
+              <li>Insight Sprint (5 dias)</li>
+              <li>Concept Testing</li>
+              <li>Competitive Landscape</li>
+              <li>UX Research Sprint</li>
+            </ul>
+            <p style="font-size:var(--wm-text-sm);color:var(--fg-muted);margin:0">Ideal para startups e scale-ups. Aprovação simples, entrega rápida.</p>
+            <div class="tier-cta"><button class="wm-btn ghost" style="width:100%;justify-content:center">Solicitar sprint</button></div>
+          </div>
+          <div class="wm-tier featured">
+            <div class="tier-name">Tier · Signal</div>
+            <h4>Assinatura trimestral</h4>
+            <div class="tier-price">R$ 8k <span>– 20k / mês</span></div>
+            <ul>
+              <li>Consumer Pulse (tracking)</li>
+              <li>Brand Health Report</li>
+              <li>Embedded Analyst parcial</li>
+              <li>Revisões ilimitadas</li>
+              <li>Acesso antecipado a relatórios</li>
+            </ul>
+            <p style="font-size:var(--wm-text-sm);color:var(--fg-muted);margin:0">Ideal para empresas médias. Desconto de 10% vs. projetos avulsos.</p>
+            <div class="tier-cta"><button class="wm-btn accent" style="width:100%;justify-content:center">Mais indicado <span class="arrow">→</span></button></div>
+          </div>
+          <div class="wm-tier">
+            <div class="tier-name">Tier · Clarity</div>
+            <h4>Advisory contínuo</h4>
+            <div class="tier-price">R$ 30k <span>– 80k / mês</span></div>
+            <ul>
+              <li>Intelligence + Analytics + Advisory</li>
+              <li>Analista sênior dedicado</li>
+              <li>Priority scheduling</li>
+              <li>Dashboard de advisory mensal</li>
+              <li>Desconto de 15–20%</li>
+            </ul>
+            <p style="font-size:var(--wm-text-sm);color:var(--fg-muted);margin:0">Ideal para corporações e grupos. Contrato mínimo de 6 meses.</p>
+            <div class="tier-cta"><button class="wm-btn ghost" style="width:100%;justify-content:center">Conversar</button></div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Linhas de serviço</h3>
+          <div class="wm-grid cols-4">
+            <div class="wm-card">
+              <span class="kicker">Intelligence</span>
+              <h4>Consumer Pulse</h4>
+              <p>Tracking trimestral de comportamento, intenção e sentimento. Relatório com hipótese estratégica.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Analytics</span>
+              <h4>Modelagem & Atribuição</h4>
+              <p>Segmentação, churn preditivo, MMM. Modelos que orientam decisão de budget e produto.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Product Research</span>
+              <h4>Validação de hipótese</h4>
+              <p>Concept testing, UX sprint, pricing sensitivity. Evidência antes do desenvolvimento.</p>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Advisory</span>
+              <h4>Inteligência embarcada</h4>
+              <p>Analista sênior no time, workshops, treinamento. Capacidade analítica interna elevada.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 08 GO-TO-MARKET ========== -->
+      <section class="wm-section" id="gtm">
+        <div class="wm-section-head">
+          <div class="num">08</div>
+          <div>
+            <h2 class="wm-h2">Go-to-market</h2>
+            <p class="sub">Três fases em 18 meses. A tese de entrada: não competir por preço — competir por clareza. O funil começa por autoridade, não por anúncio.</p>
+          </div>
+        </div>
+
+        <div class="wm-grid cols-3" style="margin-bottom:var(--wm-s-8)">
+          <div class="wm-card">
+            <span class="kicker">Fase 1 · Meses 1–6</span>
+            <h4>Autoridade</h4>
+            <p>Consumer Pulse Report público. Newsletter semanal. Presença em 3–5 eventos. 5 primeiros clientes. Meta ARR: R$ 300k.</p>
+            <span class="wm-badge accent" style="align-self:flex-start">em andamento</span>
+          </div>
+          <div class="wm-card">
+            <span class="kicker">Fase 2 · Meses 4–10</span>
+            <h4>Conversão</h4>
+            <p>Outbound estruturado, cases públicos, webinar mensal, programa de referral. Meta ARR: R$ 1,2M.</p>
+            <span class="wm-badge" style="align-self:flex-start">próxima fase</span>
+          </div>
+          <div class="wm-card">
+            <span class="kicker">Fase 3 · Meses 8–18</span>
+            <h4>Escala</h4>
+            <p>Dashboard self-serve, expansão de verticais, certificação Wisemetrics. Meta ARR: R$ 3,5M.</p>
+            <span class="wm-badge" style="align-self:flex-start">planejada</span>
+          </div>
+        </div>
+
+        <h3 class="wm-h3">Funil de marketing</h3>
+        <div class="wm-funnel">
+          <div class="wm-funnel-step">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h5>Consciência</h5>
+              <p>Consumer Pulse Report, palestra em eventos, LinkedIn editorial, SEO de categoria</p>
+            </div>
+            <div class="step-tag">Awareness</div>
+          </div>
+          <div class="wm-funnel-step">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h5>Consideração</h5>
+              <p>Newsletter semanal, case studies com metodologia, webinar mensal, trial de Insight Sprint</p>
+            </div>
+            <div class="step-tag">Nurturing</div>
+          </div>
+          <div class="wm-funnel-step">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h5>Decisão</h5>
+              <p>Proposta comercial, advisory call 1:1, referral de ex-cliente, indicação de agência parceira</p>
+            </div>
+            <div class="step-tag">Conversão</div>
+          </div>
+          <div class="wm-funnel-step">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h5>Retenção & Expansão</h5>
+              <p>Relatório periódico, upsell para advisory, NPS mensal, check-in trimestral de liderança</p>
+            </div>
+            <div class="step-tag">Retenção</div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Wedge — oferta de entrada</h3>
+          <div style="border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:var(--wm-r-5);background:color-mix(in srgb,var(--accent) 5%,transparent);padding:var(--wm-s-6);display:grid;grid-template-columns:1fr auto;gap:var(--wm-s-6);align-items:center">
+            <div>
+              <div class="wm-mono" style="color:var(--accent);font-size:10px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px">Oferta de entrada · Insight Sprint</div>
+              <div style="font-family:var(--wm-font-display);font-size:var(--wm-text-2xl);font-weight:350;letter-spacing:-.025em;margin-bottom:var(--wm-s-3)">5 dias. 1 questão estratégica.<br><em style="color:var(--accent);font-style:italic;font-weight:300">Uma direção fundamentada.</em></div>
+              <p style="margin:0;color:var(--fg-muted);font-size:var(--wm-text-sm);max-width:52ch">Ticket baixo o suficiente para aprovação sem licitação. Entrega rápida que cria evidência de qualidade para upsell. Taxa de conversão Sprint → recorrente esperada: 35–40%.</p>
+            </div>
+            <div style="text-align:center;flex-shrink:0">
+              <div style="font-family:var(--wm-font-display);font-size:var(--wm-text-4xl);font-weight:300;color:var(--accent);letter-spacing:-.03em">R$15k</div>
+              <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em">escopo fixo</div>
+              <button class="wm-btn accent" style="margin-top:var(--wm-s-4)">Solicitar <span class="arrow">→</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 09 MÉTRICAS ========== -->
+      <section class="wm-section" id="metricas">
+        <div class="wm-section-head">
+          <div class="num">09</div>
+          <div>
+            <h2 class="wm-h2">Métricas de marca</h2>
+            <p class="sub">KPIs de awareness, performance comercial e conteúdo. Revisão trimestral obrigatória — o que não é medido, não é gerenciado.</p>
+          </div>
+        </div>
+
+        <div class="wm-grid cols-2">
+          <div>
+            <h3 class="wm-h3" style="margin-bottom:var(--wm-s-5)">Metas de 12 meses — Awareness</h3>
+            <div class="wm-metric-row">
+              <div class="wm-metric-row-head">
+                <span class="mlabel">Seguidores LinkedIn</span>
+                <span class="mvals">2.000 → <strong style="color:var(--accent)">6.000</strong></span>
+              </div>
+              <div class="wm-metric-bar"><div class="wm-metric-bar-fill" style="width:33%;animation-delay:.1s"></div></div>
+            </div>
+            <div class="wm-metric-row">
+              <div class="wm-metric-row-head">
+                <span class="mlabel">Assinantes newsletter</span>
+                <span class="mvals">800 → <strong style="color:var(--accent)">2.500</strong></span>
+              </div>
+              <div class="wm-metric-bar"><div class="wm-metric-bar-fill" style="width:32%;animation-delay:.2s"></div></div>
+            </div>
+            <div class="wm-metric-row">
+              <div class="wm-metric-row-head">
+                <span class="mlabel">Taxa de abertura newsletter</span>
+                <span class="mvals">40% → <strong style="color:var(--accent)">45%</strong></span>
+              </div>
+              <div class="wm-metric-bar"><div class="wm-metric-bar-fill" style="width:89%;animation-delay:.3s"></div></div>
+            </div>
+            <div class="wm-metric-row">
+              <div class="wm-metric-row-head">
+                <span class="mlabel">Downloads Consumer Pulse</span>
+                <span class="mvals">500 → <strong style="color:var(--accent)">2.000</strong></span>
+              </div>
+              <div class="wm-metric-bar"><div class="wm-metric-bar-fill" style="width:25%;animation-delay:.4s"></div></div>
+            </div>
+          </div>
+          <div>
+            <h3 class="wm-h3" style="margin-bottom:var(--wm-s-5)">Metas de 12 meses — Comercial</h3>
+            <div class="wm-metric-row">
+              <div class="wm-metric-row-head">
+                <span class="mlabel">Leads qualificados / mês</span>
+                <span class="mvals">20 → <strong style="color:var(--accent)">60</strong></span>
+              </div>
+              <div class="wm-metric-bar"><div class="wm-metric-bar-fill" style="width:33%;animation-delay:.1s"></div></div>
+            </div>
+            <div class="wm-metric-row">
+              <div class="wm-metric-row-head">
+                <span class="mlabel">Taxa conversão proposta → cliente</span>
+                <span class="mvals">30% → <strong style="color:var(--accent)">40%</strong></span>
+              </div>
+              <div class="wm-metric-bar"><div class="wm-metric-bar-fill" style="width:75%;animation-delay:.2s"></div></div>
+            </div>
+            <div class="wm-metric-row">
+              <div class="wm-metric-row-head">
+                <span class="mlabel">ARR</span>
+                <span class="mvals">R$600k → <strong style="color:var(--accent)">R$3,5M</strong></span>
+              </div>
+              <div class="wm-metric-bar"><div class="wm-metric-bar-fill" style="width:17%;animation-delay:.3s"></div></div>
+            </div>
+            <div class="wm-metric-row">
+              <div class="wm-metric-row-head">
+                <span class="mlabel">Churn anual (recorrente)</span>
+                <span class="mvals">meta <strong style="color:var(--accent)">&lt;10%</strong></span>
+              </div>
+              <div class="wm-metric-bar"><div class="wm-metric-bar-fill" style="width:90%;animation-delay:.4s;background:var(--wm-success)"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <div class="wm-grid cols-3">
+            <div style="background:var(--bg-raised);border:1px solid var(--border);border-radius:var(--wm-r-4);padding:var(--wm-s-5)">
+              <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">ARR · 18 meses</div>
+              <div style="font-family:var(--wm-font-display);font-weight:450;font-size:var(--wm-text-2xl);letter-spacing:-.015em">R$ 3,5M</div>
+              <div class="wm-mono" style="color:var(--accent);font-size:var(--wm-text-xs);display:inline-flex;gap:4px;align-items:center;margin-top:2px">▲ 40% recorrente</div>
+            </div>
+            <div style="background:var(--bg-raised);border:1px solid var(--border);border-radius:var(--wm-r-4);padding:var(--wm-s-5)">
+              <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Clientes ativos · 12m</div>
+              <div style="font-family:var(--wm-font-display);font-weight:450;font-size:var(--wm-text-2xl);letter-spacing:-.015em">20–30</div>
+              <div class="wm-mono" style="color:var(--accent);font-size:var(--wm-text-xs);display:inline-flex;gap:4px;align-items:center;margin-top:2px">▲ Signal + Clarity</div>
+            </div>
+            <div style="background:var(--bg-raised);border:1px solid var(--border);border-radius:var(--wm-r-4);padding:var(--wm-s-5)">
+              <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">NPS · meta</div>
+              <div style="font-family:var(--wm-font-display);font-weight:450;font-size:var(--wm-text-2xl);letter-spacing:-.015em">65+</div>
+              <div class="wm-mono" style="color:var(--accent);font-size:var(--wm-text-xs);display:inline-flex;gap:4px;align-items:center;margin-top:2px">primeira medição 6m</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 10 PRÓXIMOS PASSOS / CONTATO ========== -->
+      <section class="wm-section" id="contato">
+        <div class="wm-section-head">
+          <div class="num">10</div>
+          <div>
+            <h2 class="wm-h2">Próximos passos</h2>
+            <p class="sub">Para começar um projeto, a conversa dura 20 minutos. Você sai com uma hipótese de trabalho. Nós saímos com o briefing.</p>
+          </div>
+        </div>
+
+        <div class="wm-ambient">
+          <canvas data-ambient="orbit"></canvas>
+          <div class="wm-ambient-content">
+            <div class="wm-eyebrow" style="justify-content:center;margin-bottom:var(--wm-s-4)"><span class="pulse"></span>Inteligência em movimento</div>
+            <h3 class="wm-h3" style="font-size:var(--wm-text-2xl);margin-bottom:var(--wm-s-4)">A leitura que chega <em style="color:var(--accent);font-style:italic">antes da planilha.</em></h3>
+            <p style="color:var(--fg-muted);margin:0 0 var(--wm-s-5);font-size:var(--wm-text-md)">Medimos padrão de comportamento. Entregamos hipótese estratégica. O dado que orienta a reunião de board.</p>
+            <div style="display:flex;gap:var(--wm-s-3);flex-wrap:wrap;justify-content:center">
+              <button class="wm-btn accent">Solicitar diagnóstico <span class="arrow">→</span></button>
+              <button class="wm-btn ghost">Baixar Consumer Pulse</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Documentação complementar</h3>
+          <div class="wm-grid cols-3">
+            <div class="wm-card">
+              <span class="kicker">Serviços & Preços</span>
+              <h4>Portfólio completo</h4>
+              <p>10 serviços em 4 linhas, tabela de preços, tiers e política comercial detalhada.</p>
+              <a class="wm-btn link" href="Servicos-e-Precificacao.md">Acessar →</a>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Go-to-Market</span>
+              <h4>Plano de 18 meses</h4>
+              <p>ICP, TAM/SAM/SOM, 3 fases de execução, OKRs e orçamento de lançamento.</p>
+              <a class="wm-btn link" href="Go-to-Market.md">Acessar →</a>
+            </div>
+            <div class="wm-card">
+              <span class="kicker">Conteúdo Editorial</span>
+              <h4>Estratégia e calendário</h4>
+              <p>5 pilares editoriais, templates de voz, Consumer Pulse Report e processo de produção.</p>
+              <a class="wm-btn link" href="Estrategia-de-Conteudo.md">Acessar →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer style="padding:var(--wm-s-8) 0;border-top:1px solid var(--rule);margin-top:var(--wm-s-8);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
+        <div class="wm-mono" style="color:var(--fg-subtle);font-size:var(--wm-text-2xs);letter-spacing:.1em">WISEMETRICS · BRANDING & MARKETING · v1.0 · 2026</div>
+        <div class="wm-mono" style="color:var(--accent);font-size:var(--wm-text-2xs);letter-spacing:.1em">DADO QUE PENSA.</div>
+      </footer>
+
+    </div>
+  </main>
+</div>
+
+<div class="wm-toast" id="toast"></div>
+
+<script>
+/* ================================================================
+   THEME
+   ================================================================ */
+const root = document.documentElement;
+const themeButtons = document.querySelectorAll('[data-theme-btn]');
+function setTheme(t){
+  root.setAttribute('data-theme', t);
+  themeButtons.forEach(b => b.classList.toggle('active', b.dataset.themeBtn === t));
+  try{ localStorage.setItem('wm-theme', t); }catch(e){}
+  window.dispatchEvent(new Event('wm-theme-change'));
+}
+const saved = (()=>{ try{ return localStorage.getItem('wm-theme'); }catch(e){ return null; } })();
+if(saved) setTheme(saved);
+themeButtons.forEach(b => b.addEventListener('click', () => setTheme(b.dataset.themeBtn)));
+
+/* ================================================================
+   TOAST
+   ================================================================ */
+const toast = document.getElementById('toast');
+function showToast(msg){
+  toast.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(showToast._t);
+  showToast._t = setTimeout(() => toast.classList.remove('show'), 1500);
+}
+
+/* ================================================================
+   WEBGL HERO
+   ================================================================ */
+(function initHero(){
+  const canvas = document.getElementById('heroCanvas');
+  if(!canvas || typeof THREE === 'undefined') return;
+  const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, 1, 0.1, 100);
+  camera.position.set(0, 0, 18);
+  const GRID = 56, GAP = 0.55, count = GRID * GRID;
+  const positions = new Float32Array(count * 3);
+  let k = 0;
+  for(let i = 0; i < GRID; i++){
+    for(let j = 0; j < GRID; j++){
+      const x = (i - GRID/2) * GAP, y = (j - GRID/2) * GAP;
+      const r = Math.hypot(x, y);
+      positions[k*3] = x; positions[k*3+1] = y; positions[k*3+2] = -r*0.04;
+      k++;
+    }
+  }
+  const geom = new THREE.BufferGeometry();
+  geom.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  const uniforms = {
+    uTime:   { value: 0 },
+    uMouse:  { value: new THREE.Vector2(0, 0) },
+    uSize:   { value: 2.2 * (window.devicePixelRatio||1) },
+    uAccent: { value: new THREE.Color('#1db5a3') },
+    uFg:     { value: new THREE.Color('#ece7dc') },
+  };
+  const mat = new THREE.ShaderMaterial({
+    uniforms, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+    vertexShader:`
+      uniform float uTime; uniform vec2 uMouse; uniform float uSize;
+      varying float vDist; varying float vWave;
+      void main(){
+        vec3 p = position;
+        float w = sin(p.x*0.35 + uTime*0.6)*0.35 + cos(p.y*0.45 - uTime*0.5)*0.35;
+        p.z += w; vWave = w;
+        vec2 toMouse = uMouse - p.xy; float d = length(toMouse);
+        float inf = smoothstep(6.0, 0.0, d);
+        p.xy -= normalize(toMouse + 1e-6) * inf * 0.9; p.z += inf * 1.4;
+        vDist = d;
+        vec4 mv = modelViewMatrix * vec4(p, 1.0);
+        gl_Position = projectionMatrix * mv;
+        gl_PointSize = uSize * (1.0 + inf*1.6) * (20.0 / -mv.z);
+      }`,
+    fragmentShader:`
+      uniform vec3 uAccent; uniform vec3 uFg;
+      varying float vDist; varying float vWave;
+      void main(){
+        vec2 uv = gl_PointCoord - 0.5; float r = length(uv);
+        if(r > 0.5) discard;
+        float a = smoothstep(0.5, 0.0, r);
+        float m = smoothstep(4.5, 0.0, vDist)*0.9 + smoothstep(0.2, 0.6, vWave)*0.3;
+        vec3 col = mix(uFg * 0.35, uAccent, clamp(m, 0.0, 1.0));
+        gl_FragColor = vec4(col, a * 0.85);
+      }`
+  });
+  const points = new THREE.Points(geom, mat);
+  points.rotation.x = -0.35;
+  scene.add(points);
+  function resize(){
+    const el = canvas.parentElement;
+    const w = el.clientWidth, h = el.clientHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w/h; camera.updateProjectionMatrix();
+  }
+  resize();
+  new ResizeObserver(resize).observe(canvas.parentElement);
+  const mouseTarget = new THREE.Vector2(0,0), mouse = new THREE.Vector2(0,0);
+  canvas.parentElement.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    mouseTarget.set(((e.clientX - rect.left)/rect.width)*2-1, -(((e.clientY-rect.top)/rect.height)*2-1));
+    mouseTarget.set(mouseTarget.x * 10, mouseTarget.y * 6);
+  });
+  canvas.parentElement.addEventListener('mouseleave', () => mouseTarget.set(0,0));
+  function syncTheme(){
+    uniforms.uAccent.value.set(getComputedStyle(root).getPropertyValue('--wm-signal-400').trim() || '#1db5a3');
+    uniforms.uFg.value.set(getComputedStyle(root).getPropertyValue('--fg').trim() || '#ece7dc');
+  }
+  syncTheme();
+  window.addEventListener('wm-theme-change', syncTheme);
+  const clock = new THREE.Clock();
+  function tick(){
+    uniforms.uTime.value = clock.getElapsedTime();
+    mouse.lerp(mouseTarget, 0.08);
+    uniforms.uMouse.value.copy(mouse);
+    points.rotation.z = Math.sin(clock.getElapsedTime()*0.05)*0.08;
+    renderer.render(scene, camera);
+    requestAnimationFrame(tick);
+  }
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches) tick();
+  else renderer.render(scene, camera);
+})();
+
+/* ================================================================
+   AMBIENT CANVASES
+   ================================================================ */
+function initAmbientGraph(canvas){
+  const ctx = canvas.getContext('2d');
+  let W=0, H=0, dpr=Math.min(window.devicePixelRatio||1,2);
+  const pts=[], N=28;
+  function resize(){
+    const r=canvas.getBoundingClientRect(); W=r.width; H=r.height;
+    canvas.width=W*dpr; canvas.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  function seed(){
+    pts.length=0;
+    for(let i=0;i<N;i++) pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*0.25,vy:(Math.random()-.5)*0.25,r:Math.random()*1.6+0.6});
+  }
+  function step(){
+    ctx.clearRect(0,0,W,H);
+    for(const p of pts){ p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>W)p.vx*=-1; if(p.y<0||p.y>H)p.vy*=-1; }
+    for(let i=0;i<N;i++) for(let j=i+1;j<N;j++){
+      const a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+      if(d<110){ ctx.strokeStyle=`rgba(29,181,163,${(1-d/110)*0.35})`; ctx.lineWidth=0.8; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); }
+    }
+    for(const p of pts){
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle='#1db5a3'; ctx.fill();
+      if(p.r>1.5){ ctx.beginPath(); ctx.arc(p.x,p.y,p.r*3,0,Math.PI*2); ctx.fillStyle='rgba(29,181,163,0.08)'; ctx.fill(); }
+    }
+    requestAnimationFrame(step);
+  }
+  resize(); seed();
+  new ResizeObserver(()=>{resize();seed();}).observe(canvas);
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches) step();
+}
+
+function initAmbientOrbit(canvas){
+  const ctx = canvas.getContext('2d');
+  let W=0, H=0, dpr=Math.min(window.devicePixelRatio||1,2);
+  const orbits=[];
+  function resize(){
+    const r=canvas.getBoundingClientRect(); W=r.width; H=r.height;
+    canvas.width=W*dpr; canvas.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); seed();
+  }
+  function seed(){
+    orbits.length=0; const cx=W/2,cy=H/2;
+    for(let i=0;i<6;i++) orbits.push({cx,cy,r:40+i*24,ang:Math.random()*Math.PI*2,speed:0.002+Math.random()*0.004,size:1.4+Math.random()*1.6});
+  }
+  function step(){
+    ctx.clearRect(0,0,W,H); const cx=W/2,cy=H/2;
+    for(let i=0;i<6;i++){ ctx.beginPath(); ctx.arc(cx,cy,40+i*24,0,Math.PI*2); ctx.strokeStyle='rgba(29,181,163,0.08)'; ctx.lineWidth=1; ctx.stroke(); }
+    for(const o of orbits){
+      o.ang+=o.speed; const x=o.cx+Math.cos(o.ang)*o.r, y=o.cy+Math.sin(o.ang)*o.r;
+      ctx.beginPath(); ctx.arc(x,y,o.size*2.5,0,Math.PI*2); ctx.fillStyle='rgba(29,181,163,0.1)'; ctx.fill();
+      ctx.beginPath(); ctx.arc(x,y,o.size,0,Math.PI*2); ctx.fillStyle='#1db5a3'; ctx.fill();
+    }
+    ctx.beginPath(); ctx.arc(cx,cy,4,0,Math.PI*2); ctx.fillStyle='#1db5a3'; ctx.fill();
+    ctx.beginPath(); ctx.arc(cx,cy,14,0,Math.PI*2); ctx.strokeStyle='rgba(29,181,163,0.3)'; ctx.lineWidth=1; ctx.stroke();
+    requestAnimationFrame(step);
+  }
+  resize(); new ResizeObserver(resize).observe(canvas);
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches) step();
+}
+
+function initSocialInk(canvas){
+  const ctx=canvas.getContext('2d');
+  let W=0,H=0,dpr=Math.min(window.devicePixelRatio||1,2); const pts=[],N=22;
+  function resize(){
+    const r=canvas.getBoundingClientRect(); W=r.width; H=r.height;
+    canvas.width=W*dpr; canvas.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    pts.length=0;
+    for(let i=0;i<N;i++) pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*0.2,vy:(Math.random()-.5)*0.2,r:Math.random()*1.4+0.6});
+  }
+  function step(){
+    ctx.clearRect(0,0,W,H);
+    for(const p of pts){ p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>W)p.vx*=-1; if(p.y<0||p.y>H)p.vy*=-1; }
+    for(let i=0;i<N;i++) for(let j=i+1;j<N;j++){
+      const a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+      if(d<90){ ctx.strokeStyle=`rgba(29,181,163,${(1-d/90)*0.4})`; ctx.lineWidth=0.6; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); }
+    }
+    for(const p of pts){ ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle='#1db5a3'; ctx.fill(); }
+    requestAnimationFrame(step);
+  }
+  resize(); new ResizeObserver(resize).observe(canvas);
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches) step();
+}
+
+document.querySelectorAll('[data-ambient="graph"]').forEach(initAmbientGraph);
+document.querySelectorAll('[data-ambient="orbit"]').forEach(initAmbientOrbit);
+document.querySelectorAll('[data-social="ink"]').forEach(initSocialInk);
+</script>
+</body>
+</html>

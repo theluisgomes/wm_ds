@@ -1,0 +1,251 @@
+{
+  "version": "2.11",
+  "children": [
+    {
+      "type": "frame",
+      "id": "wmRoot",
+      "x": 0,
+      "y": 0,
+      "name": "Wisemetrics — Design System v0.2",
+      "clip": true,
+      "width": 1440,
+      "height": 2200,
+      "fill": "#060a12",
+      "layout": "none",
+      "children": [
+
+        { "type": "frame", "id": "hdRule", "x": 64, "y": 56, "name": "rule.accent", "width": 24, "height": 1, "fill": "#1db5a3", "layout": "none" },
+        { "type": "text",  "id": "hdEye",  "x": 96, "y": 48, "name": "eyebrow", "width": 380, "height": 16,
+          "text": "DESIGN SYSTEM · v0.2 · DARK", "fontFamily": "JetBrains Mono", "fontSize": 11, "fontWeight": 500, "fill": "#1db5a3", "letterSpacing": 1.6 },
+        { "type": "text",  "id": "hdBrand","x": 64, "y": 80, "name": "brandmark", "width": 520, "height": 44,
+          "text": "wisemetrics.", "fontFamily": "Fraunces", "fontSize": 32, "fontWeight": 500, "fill": "#ece7dc", "letterSpacing": -0.6 },
+        { "type": "frame", "id": "hdDot",  "x": 269, "y": 110, "name": "accent.dot", "width": 8, "height": 8, "fill": "#1db5a3", "radius": 4, "layout": "none" },
+
+        { "type": "text",  "id": "hdMeta1Lbl", "x": 1040, "y": 56, "name": "meta.label.build", "width": 200, "height": 14,
+          "text": "BUILD",   "fontFamily": "JetBrains Mono", "fontSize": 10, "fill": "#5d5541", "letterSpacing": 1.4 },
+        { "type": "text",  "id": "hdMeta1Val", "x": 1040, "y": 74, "name": "meta.value.build", "width": 220, "height": 18,
+          "text": "2026.04.23 · 0143Z", "fontFamily": "JetBrains Mono", "fontSize": 12, "fill": "#ece7dc" },
+        { "type": "text",  "id": "hdMeta2Lbl", "x": 1240, "y": 56, "name": "meta.label.canvas", "width": 160, "height": 14,
+          "text": "CANVAS",  "fontFamily": "JetBrains Mono", "fontSize": 10, "fill": "#5d5541", "letterSpacing": 1.4 },
+        { "type": "text",  "id": "hdMeta2Val", "x": 1240, "y": 74, "name": "meta.value.canvas", "width": 160, "height": 18,
+          "text": "1440 × 2200", "fontFamily": "JetBrains Mono", "fontSize": 12, "fill": "#1db5a3" },
+
+        { "type": "frame", "id": "hdLine", "x": 64, "y": 156, "name": "divider", "width": 1312, "height": 1, "fill": "#26231a", "layout": "none" },
+
+        { "type": "text",  "id": "heroH1a", "x": 64,  "y": 220, "name": "hero.line1", "width": 1312, "height": 110,
+          "text": "Editorial em tom.", "fontFamily": "Fraunces", "fontSize": 96, "fontWeight": 350, "fill": "#ece7dc", "letterSpacing": -3, "lineHeight": 0.94 },
+        { "type": "text",  "id": "heroH1b", "x": 64,  "y": 322, "name": "hero.line2", "width": 1312, "height": 110,
+          "text": "Tecnológico em forma.", "fontFamily": "Fraunces", "fontSize": 96, "fontWeight": 300, "fontStyle": "italic", "fill": "#1db5a3", "letterSpacing": -3, "lineHeight": 0.94 },
+        { "type": "text",  "id": "heroLede", "x": 64, "y": 460, "name": "lede", "width": 760, "height": 60,
+          "text": "Tokens, componentes e princípios para um produto que parece pensar — sem decoração, com hierarquia.",
+          "fontFamily": "Fraunces", "fontSize": 22, "fontWeight": 350, "fill": "#8a8067", "lineHeight": 1.4 },
+
+        { "type": "frame", "id": "heroMetaRule", "x": 64, "y": 568, "name": "meta.rule", "width": 1312, "height": 1, "fill": "#26231a", "layout": "none" },
+        { "type": "text",  "id": "hm1L", "x": 64,  "y": 588, "name": "hm.fam.lbl",  "width": 200, "height": 14, "text": "FAMILIAS",  "fontFamily": "JetBrains Mono", "fontSize": 10, "fill": "#5d5541", "letterSpacing": 1.4 },
+        { "type": "text",  "id": "hm1V", "x": 64,  "y": 606, "name": "hm.fam.val",  "width": 220, "height": 18, "text": "Paper · Ink · Signal · Amber", "fontFamily": "Inter Tight", "fontSize": 14, "fill": "#ece7dc" },
+        { "type": "text",  "id": "hm2L", "x": 320, "y": 588, "name": "hm.type.lbl", "width": 200, "height": 14, "text": "TIPOGRAFIA", "fontFamily": "JetBrains Mono", "fontSize": 10, "fill": "#5d5541", "letterSpacing": 1.4 },
+        { "type": "text",  "id": "hm2V", "x": 320, "y": 606, "name": "hm.type.val", "width": 320, "height": 18, "text": "Fraunces · Inter Tight · JetBrains Mono", "fontFamily": "Inter Tight", "fontSize": 14, "fill": "#ece7dc" },
+        { "type": "text",  "id": "hm3L", "x": 680, "y": 588, "name": "hm.acc.lbl",  "width": 200, "height": 14, "text": "ACENTO",    "fontFamily": "JetBrains Mono", "fontSize": 10, "fill": "#5d5541", "letterSpacing": 1.4 },
+        { "type": "text",  "id": "hm3V", "x": 680, "y": 606, "name": "hm.acc.val",  "width": 220, "height": 18, "text": "#1DB5A3 · signal-400", "fontFamily": "JetBrains Mono", "fontSize": 13, "fill": "#1db5a3" },
+        { "type": "text",  "id": "hm4L", "x": 940, "y": 588, "name": "hm.grid.lbl", "width": 200, "height": 14, "text": "GRID",      "fontFamily": "JetBrains Mono", "fontSize": 10, "fill": "#5d5541", "letterSpacing": 1.4 },
+        { "type": "text",  "id": "hm4V", "x": 940, "y": 606, "name": "hm.grid.val", "width": 220, "height": 18, "text": "12 col · 1280 max · 24 gutter", "fontFamily": "Inter Tight", "fontSize": 14, "fill": "#ece7dc" },
+
+        { "type": "frame", "id": "s1Rule",  "x": 64, "y": 716, "name": "s1.rule", "width": 80, "height": 1, "fill": "#1db5a3", "layout": "none" },
+        { "type": "text",  "id": "s1Num",   "x": 64, "y": 724, "name": "s1.num",  "width": 80, "height": 20,
+          "text": "01 / 03", "fontFamily": "JetBrains Mono", "fontSize": 13, "fill": "#1db5a3" },
+        { "type": "text",  "id": "s1Title", "x": 176, "y": 716, "name": "s1.title", "width": 800, "height": 60,
+          "text": "Cor", "fontFamily": "Fraunces", "fontSize": 48, "fontWeight": 400, "fill": "#ece7dc", "letterSpacing": -1.2 },
+        { "type": "text",  "id": "s1Sub",   "x": 176, "y": 776, "name": "s1.sub", "width": 720, "height": 28,
+          "text": "Quatro famílias. Acentos discretos, hierarquia clara, contraste sempre intencional.",
+          "fontFamily": "Fraunces", "fontSize": 18, "fontWeight": 350, "fill": "#8a8067" },
+
+        {
+          "type": "frame", "id": "swPaper", "x": 64, "y": 840, "name": "swatch.paper", "width": 300, "height": 380,
+          "fill": "#ece7dc", "radius": 8, "layout": "none", "clip": true,
+          "children": [
+            { "type": "text", "id": "swPN", "x": 20, "y": 20,  "name": "name", "width": 260, "height": 14,
+              "text": "PAPER · 100", "fontFamily": "JetBrains Mono", "fontSize": 10, "fontWeight": 500, "fill": "#26231a", "letterSpacing": 1.4 },
+            { "type": "text", "id": "swPR", "x": 20, "y": 40,  "name": "role", "width": 260, "height": 16,
+              "text": "Surface · warm neutral", "fontFamily": "Inter Tight", "fontSize": 12, "fill": "#5d5541" },
+            { "type": "text", "id": "swPH", "x": 20, "y": 308, "name": "hex",  "width": 260, "height": 24,
+              "text": "#ECE7DC", "fontFamily": "JetBrains Mono", "fontSize": 18, "fontWeight": 500, "fill": "#26231a" },
+            { "type": "text", "id": "swPT", "x": 20, "y": 336, "name": "token","width": 260, "height": 16,
+              "text": "--wm-paper-100", "fontFamily": "JetBrains Mono", "fontSize": 11, "fill": "#5d5541" }
+          ]
+        },
+        {
+          "type": "frame", "id": "swInk", "x": 380, "y": 840, "name": "swatch.ink", "width": 300, "height": 380,
+          "fill": "#132a44", "radius": 8, "layout": "none", "clip": true,
+          "children": [
+            { "type": "text", "id": "swIN", "x": 20, "y": 20,  "name": "name", "width": 260, "height": 14,
+              "text": "INK · 500 · BRAND", "fontFamily": "JetBrains Mono", "fontSize": 10, "fontWeight": 500, "fill": "#c8d5e1", "letterSpacing": 1.4 },
+            { "type": "text", "id": "swIR", "x": 20, "y": 40,  "name": "role", "width": 260, "height": 16,
+              "text": "Primary · cool deep navy", "fontFamily": "Inter Tight", "fontSize": 12, "fill": "#8ba2b8" },
+            { "type": "text", "id": "swIH", "x": 20, "y": 308, "name": "hex",  "width": 260, "height": 24,
+              "text": "#132A44", "fontFamily": "JetBrains Mono", "fontSize": 18, "fontWeight": 500, "fill": "#eaf0f5" },
+            { "type": "text", "id": "swIT", "x": 20, "y": 336, "name": "token","width": 260, "height": 16,
+              "text": "--wm-ink-500", "fontFamily": "JetBrains Mono", "fontSize": 11, "fill": "#8ba2b8" }
+          ]
+        },
+        {
+          "type": "frame", "id": "swSig", "x": 696, "y": 840, "name": "swatch.signal.featured", "width": 300, "height": 380,
+          "fill": "#1db5a3", "radius": 8, "layout": "none", "clip": true,
+          "children": [
+            { "type": "frame", "id": "swSglow", "x": -1, "y": -1, "name": "glow.inset", "width": 302, "height": 382, "fill": "#1db5a3", "radius": 8, "layout": "none" },
+            { "type": "text", "id": "swSN", "x": 20, "y": 20,  "name": "name", "width": 260, "height": 14,
+              "text": "SIGNAL · 400 · HERO ACCENT", "fontFamily": "JetBrains Mono", "fontSize": 10, "fontWeight": 500, "fill": "#021714", "letterSpacing": 1.4 },
+            { "type": "text", "id": "swSR", "x": 20, "y": 40,  "name": "role", "width": 260, "height": 16,
+              "text": "Accent · teal · glow", "fontFamily": "Inter Tight", "fontSize": 12, "fill": "#06463f" },
+            { "type": "text", "id": "swSH", "x": 20, "y": 308, "name": "hex",  "width": 260, "height": 24,
+              "text": "#1DB5A3", "fontFamily": "JetBrains Mono", "fontSize": 18, "fontWeight": 500, "fill": "#021714" },
+            { "type": "text", "id": "swST", "x": 20, "y": 336, "name": "token","width": 260, "height": 16,
+              "text": "--wm-signal-400", "fontFamily": "JetBrains Mono", "fontSize": 11, "fill": "#06463f" }
+          ]
+        },
+        {
+          "type": "frame", "id": "swAmb", "x": 1012, "y": 840, "name": "swatch.amber", "width": 300, "height": 380,
+          "fill": "#e8a33a", "radius": 8, "layout": "none", "clip": true,
+          "children": [
+            { "type": "text", "id": "swAN", "x": 20, "y": 20,  "name": "name", "width": 260, "height": 14,
+              "text": "AMBER · 400 · DATA-3", "fontFamily": "JetBrains Mono", "fontSize": 10, "fontWeight": 500, "fill": "#3d2810", "letterSpacing": 1.4 },
+            { "type": "text", "id": "swAR", "x": 20, "y": 40,  "name": "role", "width": 260, "height": 16,
+              "text": "Warning · series-B", "fontFamily": "Inter Tight", "fontSize": 12, "fill": "#7a4f10" },
+            { "type": "text", "id": "swAH", "x": 20, "y": 308, "name": "hex",  "width": 260, "height": 24,
+              "text": "#E8A33A", "fontFamily": "JetBrains Mono", "fontSize": 18, "fontWeight": 500, "fill": "#3d2810" },
+            { "type": "text", "id": "swAT", "x": 20, "y": 336, "name": "token","width": 260, "height": 16,
+              "text": "--wm-amber-400", "fontFamily": "JetBrains Mono", "fontSize": 11, "fill": "#7a4f10" }
+          ]
+        },
+
+        { "type": "text",  "id": "rampLbl", "x": 64, "y": 1252, "name": "ramp.label", "width": 400, "height": 14,
+          "text": "SIGNAL · RAMP 50 → 700", "fontFamily": "JetBrains Mono", "fontSize": 10, "fill": "#5d5541", "letterSpacing": 1.4 },
+        { "type": "frame", "id": "ramp1", "x": 64,   "y": 1276, "name": "signal.50",  "width": 156, "height": 56, "fill": "#e6f9f6", "radius": 4, "layout": "none" },
+        { "type": "frame", "id": "ramp2", "x": 228,  "y": 1276, "name": "signal.100", "width": 156, "height": 56, "fill": "#b9efe7", "radius": 4, "layout": "none" },
+        { "type": "frame", "id": "ramp3", "x": 392,  "y": 1276, "name": "signal.200", "width": 156, "height": 56, "fill": "#7ee0d3", "radius": 4, "layout": "none" },
+        { "type": "frame", "id": "ramp4", "x": 556,  "y": 1276, "name": "signal.300", "width": 156, "height": 56, "fill": "#42ccbb", "radius": 4, "layout": "none" },
+        { "type": "frame", "id": "ramp5", "x": 720,  "y": 1276, "name": "signal.400", "width": 156, "height": 56, "fill": "#1db5a3", "radius": 4, "layout": "none" },
+        { "type": "frame", "id": "ramp6", "x": 884,  "y": 1276, "name": "signal.500", "width": 156, "height": 56, "fill": "#0f9385", "radius": 4, "layout": "none" },
+        { "type": "frame", "id": "ramp7", "x": 1048, "y": 1276, "name": "signal.600", "width": 156, "height": 56, "fill": "#0a6e63", "radius": 4, "layout": "none" },
+        { "type": "frame", "id": "ramp8", "x": 1212, "y": 1276, "name": "signal.700", "width": 100, "height": 56, "fill": "#06463f", "radius": 4, "layout": "none" },
+        { "type": "text", "id": "rL1", "x": 64,   "y": 1340, "name": "lbl.50",  "width": 156, "height": 14, "text": "50",  "fontFamily": "JetBrains Mono", "fontSize": 10, "fill": "#5d5541" },
+        { "type": "text", "id": "rL2", "x": 228,  "y": 1340, "name": "lbl.100", "width": 156, "height": 14, "text": "100", "fontFamily": "JetBrains Mono", "fontSize": 10, "fill": "#5d5541" },
+        { "type": "text", "id": "rL3", "x": 392,  "y": 1340, "name": "lbl.200", "width": 156, "height": 14, "text": "200", "fontFamily": "JetBrains Mono", "fontSize": 10, "fill": "#5d5541" },
+        { "type": "text", "id": "rL4", "x": 556,  "y": 1340, "name": "lbl.300", "width": 156, "height": 14, "text": "300", "fontFamily": "JetBrains Mono", "fontSize": 10, "fill": "#5d5541" },
+        { "type": "text", "id": "rL5", "x": 720,  "y": 1340, "name": "lbl.400", "width": 156, "height": 14, "text": "400 ★","fontFamily": "JetBrains Mono", "fontSize": 10, "fill": "#1db5a3" },
+        { "type": "text", "id": "rL6", "x": 884,  "y": 1340, "name": "lbl.500", "width": 156, "height": 14, "text": "500", "fontFamily": "JetBrains Mono", "fontSize": 10, "fill": "#5d5541" },
+        { "type": "text", "id": "rL7", "x": 1048, "y": 1340, "name": "lbl.600", "width": 156, "height": 14, "text": "600", "fontFamily": "JetBrains Mono", "fontSize": 10, "fill": "#5d5541" },
+        { "type": "text", "id": "rL8", "x": 1212, "y": 1340, "name": "lbl.700", "width": 100, "height": 14, "text": "700", "fontFamily": "JetBrains Mono", "fontSize": 10, "fill": "#5d5541" },
+
+        { "type": "frame", "id": "secDiv2", "x": 64, "y": 1416, "name": "section.divider", "width": 1312, "height": 1, "fill": "#26231a", "layout": "none" },
+        { "type": "frame", "id": "s2Rule",  "x": 64, "y": 1456, "name": "s2.rule", "width": 80, "height": 1, "fill": "#1db5a3", "layout": "none" },
+        { "type": "text",  "id": "s2Num",   "x": 64, "y": 1464, "name": "s2.num",  "width": 80, "height": 20,
+          "text": "02 / 03", "fontFamily": "JetBrains Mono", "fontSize": 13, "fill": "#1db5a3" },
+        { "type": "text",  "id": "s2Title", "x": 176, "y": 1456, "name": "s2.title", "width": 800, "height": 60,
+          "text": "Tipografia", "fontFamily": "Fraunces", "fontSize": 48, "fontWeight": 400, "fill": "#ece7dc", "letterSpacing": -1.2 },
+        { "type": "text",  "id": "s2Sub",   "x": 176, "y": 1516, "name": "s2.sub", "width": 720, "height": 28,
+          "text": "Display serif para voz. Sans humanista para o corpo. Mono técnica para a máquina.",
+          "fontFamily": "Fraunces", "fontSize": 18, "fontWeight": 350, "fill": "#8a8067" },
+
+        { "type": "text", "id": "tyT1", "x": 64,  "y": 1600, "name": "ty.tag.6xl",  "width": 90, "height": 16, "text": "DISPLAY · 6XL", "fontFamily": "JetBrains Mono", "fontSize": 10, "fill": "#5d5541", "letterSpacing": 1.2 },
+        { "type": "text", "id": "tyS1", "x": 176, "y": 1584, "name": "ty.sample.h1", "width": 1200, "height": 110,
+          "text": "Aa — análise.", "fontFamily": "Fraunces", "fontSize": 96, "fontWeight": 350, "fill": "#ece7dc", "letterSpacing": -3, "lineHeight": 1 },
+
+        { "type": "text", "id": "tyT2", "x": 64,  "y": 1730, "name": "ty.tag.3xl",  "width": 90, "height": 16, "text": "ITALIC · 3XL", "fontFamily": "JetBrains Mono", "fontSize": 10, "fill": "#5d5541", "letterSpacing": 1.2 },
+        { "type": "text", "id": "tyS2", "x": 176, "y": 1718, "name": "ty.sample.italic", "width": 1200, "height": 60,
+          "text": "Sinal sobre ruído.", "fontFamily": "Fraunces", "fontSize": 48, "fontWeight": 400, "fontStyle": "italic", "fill": "#1db5a3", "letterSpacing": -1.2 },
+
+        { "type": "text", "id": "tyT3", "x": 64,  "y": 1820, "name": "ty.tag.xl",   "width": 90, "height": 16, "text": "DISPLAY · XL",  "fontFamily": "JetBrains Mono", "fontSize": 10, "fill": "#5d5541", "letterSpacing": 1.2 },
+        { "type": "text", "id": "tyS3", "x": 176, "y": 1812, "name": "ty.sample.h3", "width": 1200, "height": 36,
+          "text": "Métrica que conta uma história.", "fontFamily": "Fraunces", "fontSize": 28, "fontWeight": 500, "fill": "#ece7dc", "letterSpacing": -0.4 },
+
+        { "type": "text", "id": "tyT4", "x": 64,  "y": 1880, "name": "ty.tag.body", "width": 90, "height": 16, "text": "BODY · BASE",   "fontFamily": "JetBrains Mono", "fontSize": 10, "fill": "#5d5541", "letterSpacing": 1.2 },
+        { "type": "text", "id": "tyS4", "x": 176, "y": 1872, "name": "ty.sample.body", "width": 760, "height": 48,
+          "text": "Wisemetrics traduz dados em decisão. Sem ruído, sem opinião sem evidência.",
+          "fontFamily": "Inter Tight", "fontSize": 16, "fontWeight": 400, "fill": "#ece7dc", "lineHeight": 1.55 },
+
+        { "type": "text", "id": "tyT5", "x": 64,  "y": 1944, "name": "ty.tag.mono", "width": 90, "height": 16, "text": "MONO · XS",     "fontFamily": "JetBrains Mono", "fontSize": 10, "fill": "#5d5541", "letterSpacing": 1.2 },
+        { "type": "text", "id": "tyS5", "x": 176, "y": 1944, "name": "ty.sample.mono", "width": 760, "height": 20,
+          "text": "$ wm export --tokens=design --version=0.2 --theme=dark", "fontFamily": "JetBrains Mono", "fontSize": 13, "fill": "#42ccbb" },
+
+        { "type": "frame", "id": "secDiv3", "x": 64, "y": 2000, "name": "section.divider", "width": 1312, "height": 1, "fill": "#26231a", "layout": "none" },
+        { "type": "frame", "id": "s3Rule",  "x": 64, "y": 2040, "name": "s3.rule", "width": 80, "height": 1, "fill": "#1db5a3", "layout": "none" },
+        { "type": "text",  "id": "s3Num",   "x": 64, "y": 2048, "name": "s3.num",  "width": 80, "height": 20,
+          "text": "03 / 03", "fontFamily": "JetBrains Mono", "fontSize": 13, "fill": "#1db5a3" },
+        { "type": "text",  "id": "s3Title", "x": 176, "y": 2040, "name": "s3.title", "width": 800, "height": 60,
+          "text": "Componentes", "fontFamily": "Fraunces", "fontSize": 48, "fontWeight": 400, "fill": "#ece7dc", "letterSpacing": -1.2 },
+        { "type": "text",  "id": "s3Sub",   "x": 176, "y": 2100, "name": "s3.sub", "width": 720, "height": 28,
+          "text": "Botões pílula. Badges em mono. Cards levemente elevados sobre o sunken.",
+          "fontFamily": "Fraunces", "fontSize": 18, "fontWeight": 350, "fill": "#8a8067" },
+
+        {
+          "type": "frame", "id": "btnPrim", "x": 64, "y": 2150, "name": "button.primary", "width": 188, "height": 44,
+          "fill": "#ece7dc", "radius": 999, "layout": "none", "clip": true,
+          "children": [
+            { "type": "text", "id": "btnPrimT", "x": 22, "y": 14, "name": "label", "width": 144, "height": 18,
+              "text": "Solicitar acesso  →", "fontFamily": "Inter Tight", "fontSize": 14, "fontWeight": 500, "fill": "#060a12" }
+          ]
+        },
+        {
+          "type": "frame", "id": "btnAcc", "x": 268, "y": 2150, "name": "button.accent", "width": 188, "height": 44,
+          "fill": "#1db5a3", "radius": 999, "layout": "none", "clip": true,
+          "children": [
+            { "type": "text", "id": "btnAccT", "x": 22, "y": 14, "name": "label", "width": 144, "height": 18,
+              "text": "Ver demo  →", "fontFamily": "Inter Tight", "fontSize": 14, "fontWeight": 500, "fill": "#021714" }
+          ]
+        },
+        {
+          "type": "frame", "id": "btnGhost", "x": 472, "y": 2150, "name": "button.ghost", "width": 188, "height": 44,
+          "fill": "#060a12", "radius": 999, "layout": "none", "clip": true, "stroke": "#3d3828", "strokeWidth": 1,
+          "children": [
+            { "type": "text", "id": "btnGhostT", "x": 22, "y": 14, "name": "label", "width": 144, "height": 18,
+              "text": "Ver tokens", "fontFamily": "Inter Tight", "fontSize": 14, "fontWeight": 500, "fill": "#ece7dc" }
+          ]
+        },
+
+        {
+          "type": "frame", "id": "bgLive", "x": 680, "y": 2156, "name": "badge.live", "width": 96, "height": 28,
+          "fill": "#0c1e1c", "radius": 999, "layout": "none", "clip": true, "stroke": "#0f9385", "strokeWidth": 1,
+          "children": [
+            { "type": "frame", "id": "bgLiveDot", "x": 12, "y": 11, "name": "dot", "width": 6, "height": 6, "fill": "#1db5a3", "radius": 3, "layout": "none" },
+            { "type": "text",  "id": "bgLiveT", "x": 26, "y": 7, "name": "label", "width": 70, "height": 14,
+              "text": "LIVE", "fontFamily": "JetBrains Mono", "fontSize": 10, "fontWeight": 500, "fill": "#42ccbb", "letterSpacing": 1.2 }
+          ]
+        },
+        {
+          "type": "frame", "id": "bgWarn", "x": 786, "y": 2156, "name": "badge.warning", "width": 116, "height": 28,
+          "fill": "#1e1810", "radius": 999, "layout": "none", "clip": true, "stroke": "#c48220", "strokeWidth": 1,
+          "children": [
+            { "type": "frame", "id": "bgWarnDot", "x": 12, "y": 11, "name": "dot", "width": 6, "height": 6, "fill": "#e8a33a", "radius": 3, "layout": "none" },
+            { "type": "text",  "id": "bgWarnT", "x": 26, "y": 7, "name": "label", "width": 90, "height": 14,
+              "text": "BETA · v0.2", "fontFamily": "JetBrains Mono", "fontSize": 10, "fontWeight": 500, "fill": "#e8a33a", "letterSpacing": 1.2 }
+          ]
+        },
+        {
+          "type": "frame", "id": "bgNeutral", "x": 912, "y": 2156, "name": "badge.neutral", "width": 116, "height": 28,
+          "fill": "#0c121d", "radius": 999, "layout": "none", "clip": true, "stroke": "#26231a", "strokeWidth": 1,
+          "children": [
+            { "type": "frame", "id": "bgNDot", "x": 12, "y": 11, "name": "dot", "width": 6, "height": 6, "fill": "#8a8067", "radius": 3, "layout": "none" },
+            { "type": "text",  "id": "bgNT", "x": 26, "y": 7, "name": "label", "width": 90, "height": 14,
+              "text": "TOKEN · CSS", "fontFamily": "JetBrains Mono", "fontSize": 10, "fontWeight": 500, "fill": "#8a8067", "letterSpacing": 1.2 }
+          ]
+        },
+
+        {
+          "type": "frame", "id": "card", "x": 1040, "y": 2150, "name": "card.metric", "width": 336, "height": 44,
+          "fill": "#0c121d", "radius": 8, "layout": "none", "clip": true, "stroke": "#26231a", "strokeWidth": 1,
+          "children": [
+            { "type": "text", "id": "cardL",  "x": 16, "y": 6,  "name": "card.label", "width": 200, "height": 12,
+              "text": "MRR · 30d",       "fontFamily": "JetBrains Mono", "fontSize": 9, "fill": "#5d5541", "letterSpacing": 1.4 },
+            { "type": "text", "id": "cardV",  "x": 16, "y": 20, "name": "card.value", "width": 220, "height": 22,
+              "text": "R$ 184.230  ",    "fontFamily": "Fraunces", "fontSize": 18, "fontWeight": 500, "fill": "#ece7dc", "letterSpacing": -0.3 },
+            { "type": "text", "id": "cardD",  "x": 250, "y": 22, "name": "card.delta", "width": 80, "height": 16,
+              "text": "▲ 12,4%",         "fontFamily": "JetBrains Mono", "fontSize": 12, "fontWeight": 500, "fill": "#1db5a3" }
+          ]
+        },
+
+        { "type": "frame", "id": "ftRule", "x": 64, "y": 2148, "name": "footer.rule.spacer", "width": 0, "height": 0, "fill": "#26231a", "layout": "none" }
+
+      ]
+    }
+  ]
+}

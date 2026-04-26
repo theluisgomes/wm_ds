@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Wisemetrics — Serviços & Precificação</title>
+<meta name="description" content="Portfólio completo de serviços, tabela de preços e política comercial Wisemetrics."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300..800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="wisemetrics.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+.comparison-table th:first-child { text-align: left; }
+.comparison-table td:first-child  { font-weight: 500; color: var(--fg); }
+.comparison-table .check  { color: var(--wm-success); text-align: center; }
+.comparison-table .dash   { color: var(--fg-subtle); text-align: center; }
+.service-line {
+  display: grid; grid-template-columns: 3fr 2fr; gap: var(--wm-s-5); align-items: start;
+  padding: var(--wm-s-6) 0; border-bottom: 1px solid var(--rule);
+}
+.service-line:last-child { border-bottom: 0; }
+.policy-item {
+  padding: var(--wm-s-4); background: var(--bg-raised); border: 1px solid var(--border);
+  border-radius: var(--wm-r-3); display: flex; gap: var(--wm-s-3); align-items: flex-start;
+}
+.policy-item .pol-num {
+  font-family: var(--wm-font-mono); color: var(--accent); font-size: var(--wm-text-sm);
+  flex-shrink: 0; padding-top: 2px;
+}
+.policy-item h5 {
+  font-family: var(--wm-font-display); font-weight: 500; font-size: var(--wm-text-base);
+  margin: 0 0 4px; letter-spacing: -.01em;
+}
+.policy-item p { margin: 0; color: var(--fg-muted); font-size: var(--wm-text-sm); }
+</style>
+</head>
+<body>
+<div class="wm-app">
+  <!-- SIDEBAR -->
+  <aside class="wm-side">
+    <div class="wm-brandmark">
+      <svg class="sym" viewBox="0 0 40 40" fill="none">
+        <rect x="3" y="22" width="5" height="14" fill="currentColor" opacity=".85"/>
+        <rect x="11" y="16" width="5" height="20" fill="currentColor" opacity=".85"/>
+        <rect x="19" y="10" width="5" height="26" fill="currentColor" opacity=".85"/>
+        <rect x="27" y="18" width="5" height="18" fill="currentColor" opacity=".85"/>
+        <circle cx="34.5" cy="6" r="3.5" fill="var(--accent)"/>
+      </svg>
+      <div>
+        <div class="name">Wisemetrics<span class="dot">.</span></div>
+        <div class="wm-version">Serviços & Preços</div>
+      </div>
+    </div>
+    <nav class="wm-nav">
+      <a href="index.html"><span class="num">--</span>Hub Central</a>
+      <div class="group-label" style="margin-top:16px">Documentos</div>
+      <a href="identidade-visual.html"><span class="num">01</span>Identidade Visual</a>
+      <a href="canais-digitais.html"><span class="num">02</span>Canais Digitais</a>
+      <a href="estrategia-conteudo.html"><span class="num">03</span>Estratégia Editorial</a>
+      <a href="go-to-market.html"><span class="num">04</span>Go-to-Market</a>
+      <a href="servicos.html"><span class="num">05</span>Serviços &amp; Preços</a>
+      <a href="modelos-proposta.html"><span class="num">06</span>Modelos de Proposta</a>
+      <a href="wisemetrics-design-system-v2.html"><span class="num">07</span>Design System</a>
+      <div class="group-label" style="margin-top:16px">Seções</div>
+
+    </nav>
+    <div class="wm-theme-switch">
+      <span class="slider"></span>
+      <button data-theme-btn="dark" class="active">Dark</button>
+      <button data-theme-btn="light">Light</button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="wm-main">
+    <div class="wm-toc-float">
+      <div class="wm-toc-container">
+        <a href="#linhas"><span class="num">01</span>Linhas de serviço</a>
+      <a href="#tiers"><span class="num">02</span>Tiers</a>
+      <a href="#comparativo"><span class="num">03</span>Comparativo</a>
+      <a href="#politica"><span class="num">04</span>Política comercial</a>
+      </div>
+    </div>
+    <div class="wm-container">
+
+      <!-- HERO -->
+      <section class="wm-hero">
+        <div class="wm-hero-grid-overlay"></div>
+        <canvas class="wm-hero-canvas" id="heroCanvas"></canvas>
+        <div class="wm-hud">
+          <div class="row"><span>documento</span><span class="v">serviços</span></div>
+          <div class="row"><span>linhas</span><span class="v">4</span></div>
+          <div class="row"><span>serviços</span><span class="v">10</span></div>
+          <div class="row"><span>tiers</span><span class="v">Pulse · Signal · Clarity</span></div>
+        </div>
+        <div class="wm-hero-content">
+          <div class="wm-eyebrow wm-fade-up"><span class="pulse"></span>Portfólio · v1.0</div>
+          <h1 class="wm-h1 wm-fade-up d1">Serviços & <em>Precificação.</em></h1>
+          <p class="wm-lede wm-fade-up d2">Quatro linhas de serviço. Três tiers de relacionamento. Preço por valor entregue — não por hora ou por assento.</p>
+          <div class="wm-hero-meta wm-fade-up d3">
+            <div class="cell"><span class="label">Ticket mínimo</span><span class="val accent">R$ 9.000</span></div>
+            <div class="cell"><span class="label">Ticket projetos</span><span class="val">R$ 15k – 80k</span></div>
+            <div class="cell"><span class="label">Recorrente</span><span class="val">R$ 8k – 80k/mês</span></div>
+            <div class="cell"><span class="label">Modelo</span><span class="val">Valor · Entregável</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 01 LINHAS DE SERVIÇO -->
+      <section class="wm-section" id="linhas">
+        <div class="wm-section-head">
+          <div class="num">01</div>
+          <div>
+            <h2 class="wm-h2">Linhas de serviço</h2>
+            <p class="sub">Quatro linhas com finalidades distintas. Podem ser contratadas individualmente ou combinadas no tier Signal/Clarity.</p>
+          </div>
+        </div>
+
+        <!-- Intelligence -->
+        <div class="service-line">
+          <div>
+            <div class="wm-eyebrow" style="margin-bottom:var(--wm-s-3)">Linha A · Intelligence</div>
+            <h3 class="wm-h3">Inteligência de consumidor</h3>
+            <p style="color:var(--fg-muted);max-width:55ch;margin-bottom:var(--wm-s-5)">Leituras periódicas de comportamento, sentimento e intenção de compra. Dado para decisão proativa, não reativa.</p>
+            <div class="wm-grid cols-2">
+              <div class="wm-card">
+                <span class="kicker">A1 · Consumer Pulse Report</span>
+                <h4>Retrato trimestral de mercado</h4>
+                <p>Tracking de comportamento, intenção e sentimento. Painel amostral representativo. Relatório editorial + insights estratégicos.</p>
+                <span class="wm-badge accent" style="align-self:flex-start">R$ 22k – 45k</span>
+              </div>
+              <div class="wm-card">
+                <span class="kicker">A2 · Brand Health Monitor</span>
+                <h4>Saúde de marca em tempo real</h4>
+                <p>Awareness, consideração, NPS e share of voice. Benchmark com 3 concorrentes. Alertas de variação por semana.</p>
+                <span class="wm-badge accent" style="align-self:flex-start">R$ 18k – 35k</span>
+              </div>
+              <div class="wm-card">
+                <span class="kicker">A3 · Competitive Landscape</span>
+                <h4>Mapa competitivo anual</h4>
+                <p>Posicionamento, pricing e movimento estratégico dos principais players. Entregável: relatório + deck executivo.</p>
+                <span class="wm-badge accent" style="align-self:flex-start">R$ 15k – 28k</span>
+              </div>
+              <div class="wm-card">
+                <span class="kicker">A4 · Insight Sprint</span>
+                <h4>Resposta rápida em 5 dias</h4>
+                <p>Uma questão estratégica. Dado disponível + field rápido. Relatório 8–12 páginas com 3 hipóteses priorizadas.</p>
+                <span class="wm-badge accent" style="align-self:flex-start">R$ 15.000</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:var(--wm-s-5);background:color-mix(in srgb,var(--accent) 5%,transparent);border:1px solid color-mix(in srgb,var(--accent) 20%,transparent);border-radius:var(--wm-r-4)">
+            <div class="wm-mono" style="color:var(--accent);font-size:10px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px">Linha A · Resumo</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div class="wm-metric-row">
+                <div class="wm-metric-row-head"><span class="mlabel">4 serviços</span><span class="mvals">Intelligence</span></div>
+              </div>
+              <div style="font-family:var(--wm-font-display);font-size:var(--wm-text-xl);font-weight:350;letter-spacing:-.02em">R$ 15k – 45k</div>
+              <p style="color:var(--fg-muted);font-size:var(--wm-text-sm);margin:0">por projeto, escopo fixo</p>
+              <div class="wm-badge accent" style="align-self:flex-start;margin-top:4px">Entrada recomendada</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analytics -->
+        <div class="service-line">
+          <div>
+            <div class="wm-eyebrow" style="margin-bottom:var(--wm-s-3)">Linha B · Analytics</div>
+            <h3 class="wm-h3">Modelagem e análise de dados</h3>
+            <p style="color:var(--fg-muted);max-width:55ch;margin-bottom:var(--wm-s-5)">Análises estruturadas de dados existentes. Modelos que orientam decisão de produto, budget e audiência.</p>
+            <div class="wm-grid cols-2">
+              <div class="wm-card">
+                <span class="kicker">B1 · Marketing Mix Model</span>
+                <h4>Atribuição multitoque</h4>
+                <p>Quanto de cada canal, período e criativo contribuiu para resultado. MMM econométrico com cenários de otimização.</p>
+                <span class="wm-badge accent" style="align-self:flex-start">R$ 35k – 80k</span>
+              </div>
+              <div class="wm-card">
+                <span class="kicker">B2 · Segmentação & Churn</span>
+                <h4>Modelos preditivos de base</h4>
+                <p>Clustering de audiência, modelo de churn e LTV preditivo. Entregável: scripts documentados + relatório de insights.</p>
+                <span class="wm-badge accent" style="align-self:flex-start">R$ 28k – 55k</span>
+              </div>
+              <div class="wm-card">
+                <span class="kicker">B3 · Analytics Audit</span>
+                <h4>Diagnóstico de rastreio</h4>
+                <p>Auditoria de GA4, tags, conversões e funil. Entrega: relatório de gaps, plano de correção e recomendação de configuração.</p>
+                <span class="wm-badge accent" style="align-self:flex-start">R$ 9.000</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:var(--wm-s-5);background:var(--bg-raised);border:1px solid var(--border);border-radius:var(--wm-r-4)">
+            <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px">Linha B · Resumo</div>
+            <div style="font-family:var(--wm-font-display);font-size:var(--wm-text-xl);font-weight:350;letter-spacing:-.02em">R$ 9k – 80k</div>
+            <p style="color:var(--fg-muted);font-size:var(--wm-text-sm);margin:8px 0 0">3 serviços · projetos pontuais ou integrados ao tier Signal</p>
+          </div>
+        </div>
+
+        <!-- Product Research -->
+        <div class="service-line">
+          <div>
+            <div class="wm-eyebrow" style="margin-bottom:var(--wm-s-3)">Linha C · Product Research</div>
+            <h3 class="wm-h3">Validação de produto e hipótese</h3>
+            <p style="color:var(--fg-muted);max-width:55ch;margin-bottom:var(--wm-s-5)">Pesquisa aplicada a decisões de produto. Evidência antes do desenvolvimento, não depois.</p>
+            <div class="wm-grid cols-2">
+              <div class="wm-card">
+                <span class="kicker">C1 · Concept Testing</span>
+                <h4>Validar ideia antes de construir</h4>
+                <p>Quantitativo + quali. Teste de conceito, nome, tagline e pricing. Relatório com preference share e hipóteses de melhoria.</p>
+                <span class="wm-badge accent" style="align-self:flex-start">R$ 22k – 40k</span>
+              </div>
+              <div class="wm-card">
+                <span class="kicker">C2 · UX Research Sprint</span>
+                <h4>Testabilidade de interface</h4>
+                <p>Testes de usabilidade, análise de heatmap e entrevistas de comportamento. 5–8 sessões com relatório de fricções.</p>
+                <span class="wm-badge accent" style="align-self:flex-start">R$ 18k – 32k</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:var(--wm-s-5);background:var(--bg-raised);border:1px solid var(--border);border-radius:var(--wm-r-4)">
+            <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px">Linha C · Resumo</div>
+            <div style="font-family:var(--wm-font-display);font-size:var(--wm-text-xl);font-weight:350;letter-spacing:-.02em">R$ 18k – 40k</div>
+            <p style="color:var(--fg-muted);font-size:var(--wm-text-sm);margin:8px 0 0">2 serviços · frequente em startups Series A–B pré-lançamento</p>
+          </div>
+        </div>
+
+        <!-- Advisory -->
+        <div class="service-line">
+          <div>
+            <div class="wm-eyebrow" style="margin-bottom:var(--wm-s-3)">Linha D · Advisory</div>
+            <h3 class="wm-h3">Inteligência embarcada</h3>
+            <p style="color:var(--fg-muted);max-width:55ch;margin-bottom:var(--wm-s-5)">Wisemetrics no time. Uma extensão da capacidade analítica interna, sem o custo fixo de uma contratação.</p>
+            <div class="wm-grid cols-2">
+              <div class="wm-card">
+                <span class="kicker">D1 · Embedded Analyst</span>
+                <h4>Analista sênior dedicado</h4>
+                <p>Dedicação parcial (20–40h/mês). Ativado nos projetos prioritários do cliente. Ponto de contato fixo.</p>
+                <span class="wm-badge accent" style="align-self:flex-start">R$ 18k – 38k/mês</span>
+              </div>
+              <div class="wm-card">
+                <span class="kicker">D2 · Data Workshop</span>
+                <h4>Capacitação em análise</h4>
+                <p>Treinamento customizado do time interno: leitura de dado, hipótese estratégica, briefing de pesquisa. 4–8h, presencial ou remoto.</p>
+                <span class="wm-badge accent" style="align-self:flex-start">R$ 8k – 14k</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:var(--wm-s-5);background:var(--bg-raised);border:1px solid var(--border);border-radius:var(--wm-r-4)">
+            <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px">Linha D · Resumo</div>
+            <div style="font-family:var(--wm-font-display);font-size:var(--wm-text-xl);font-weight:350;letter-spacing:-.02em">R$ 8k – 38k</div>
+            <p style="color:var(--fg-muted);font-size:var(--wm-text-sm);margin:8px 0 0">2 serviços · recorrente, base do tier Clarity</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 TIERS -->
+      <section class="wm-section" id="tiers">
+        <div class="wm-section-head">
+          <div class="num">02</div>
+          <div>
+            <h2 class="wm-h2">Tiers de relacionamento</h2>
+            <p class="sub">Não vendemos assentos de software. Vendemos acesso a inteligência. Tiers refletem o grau de integração operacional e estratégica com a Wisemetrics.</p>
+          </div>
+        </div>
+        <div class="wm-grid cols-3">
+          <div class="wm-tier">
+            <div class="tier-name">Tier · Pulse</div>
+            <h4>Projetos pontuais</h4>
+            <div class="tier-price">R$ 9k <span>– 80k / projeto</span></div>
+            <p style="color:var(--fg-muted);font-size:var(--wm-text-sm);margin:0">Sem contrato, sem mensalidade. Aprovação por projeto, entrega com prazo fixo. Ideal para startups, primeiros contatos ou necessidades urgentes.</p>
+            <ul>
+              <li>Qualquer serviço das linhas A, B ou C</li>
+              <li>Proposta em até 48h após briefing</li>
+              <li>2 ciclos de revisão incluídos</li>
+              <li>NDA bilateral antes do início</li>
+            </ul>
+            <div class="tier-cta"><button class="wm-btn ghost" style="width:100%;justify-content:center">Solicitar projeto</button></div>
+          </div>
+          <div class="wm-tier featured">
+            <div class="tier-name">Tier · Signal <span class="wm-badge accent" style="margin-left:8px;font-size:9px">recomendado</span></div>
+            <h4>Assinatura trimestral</h4>
+            <div class="tier-price">R$ 8k <span>– 20k / mês</span></div>
+            <p style="color:var(--fg-muted);font-size:var(--wm-text-sm);margin:0">Contrato mínimo de 3 meses. Pacote de serviços recorrentes com desconto progressivo e priority scheduling.</p>
+            <ul>
+              <li>Consumer Pulse trimestral incluso</li>
+              <li>Até 3 análises ad-hoc / mês</li>
+              <li>2 reuniões de alinhamento / mês</li>
+              <li>Revisões ilimitadas nos projetos</li>
+              <li>10% desconto vs. projetos avulsos</li>
+              <li>Acesso antecipado a relatórios de mercado</li>
+            </ul>
+            <div class="tier-cta"><button class="wm-btn accent" style="width:100%;justify-content:center">Conversar sobre Signal <span class="arrow">→</span></button></div>
+          </div>
+          <div class="wm-tier">
+            <div class="tier-name">Tier · Clarity</div>
+            <h4>Advisory contínuo</h4>
+            <div class="tier-price">R$ 30k <span>– 80k / mês</span></div>
+            <p style="color:var(--fg-muted);font-size:var(--wm-text-sm);margin:0">Contrato mínimo de 6 meses. Analista sênior dedicado, acesso full às 4 linhas de serviço e governança mensal com a liderança.</p>
+            <ul>
+              <li>Embedded Analyst incluso (20–40h/mês)</li>
+              <li>Todas as linhas A + B + C + D disponíveis</li>
+              <li>Priority scheduling · prazo -20%</li>
+              <li>Dashboard de advisory atualizado quinzenal</li>
+              <li>15–20% desconto geral</li>
+              <li>Check-in trimestral com sócios</li>
+            </ul>
+            <div class="tier-cta"><button class="wm-btn ghost" style="width:100%;justify-content:center">Solicitar proposta Clarity</button></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 COMPARATIVO -->
+      <section class="wm-section" id="comparativo">
+        <div class="wm-section-head">
+          <div class="num">03</div>
+          <div>
+            <h2 class="wm-h2">Comparativo de tiers</h2>
+            <p class="sub">O que está incluso em cada nível de relacionamento.</p>
+          </div>
+        </div>
+        <div style="overflow-x:auto">
+          <table class="wm-table comparison-table" style="min-width:600px">
+            <thead>
+              <tr>
+                <th style="width:40%">Benefício</th>
+                <th style="text-align:center">Pulse</th>
+                <th style="text-align:center">Signal</th>
+                <th style="text-align:center">Clarity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Qualquer serviço sob demanda</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+              <tr><td>Consumer Pulse trimestral incluso</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓</td></tr>
+              <tr><td>Análises ad-hoc mensais</td><td class="dash">—</td><td class="check">até 3</td><td class="check">ilimitadas</td></tr>
+              <tr><td>Reuniões de alinhamento</td><td class="dash">kick + entrega</td><td class="check">2/mês</td><td class="check">4/mês</td></tr>
+              <tr><td>Revisões incluídas</td><td class="dash">2 ciclos</td><td class="check">ilimitadas</td><td class="check">ilimitadas</td></tr>
+              <tr><td>Embedded Analyst</td><td class="dash">—</td><td class="dash">opcional (+)</td><td class="check">incluso</td></tr>
+              <tr><td>Desconto sobre tabela</td><td class="dash">—</td><td class="check">10%</td><td class="check">15–20%</td></tr>
+              <tr><td>Priority scheduling</td><td class="dash">—</td><td class="check">✓</td><td class="check">✓ · prazo -20%</td></tr>
+              <tr><td>Acesso antecipado a relatórios</td><td class="dash">—</td><td class="check">1 semana</td><td class="check">2 semanas</td></tr>
+              <tr><td>Dashboard de advisory</td><td class="dash">—</td><td class="dash">—</td><td class="check">quinzenal</td></tr>
+              <tr><td>Check-in com sócios Wisemetrics</td><td class="dash">—</td><td class="dash">trimestral</td><td class="check">mensal</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 04 POLÍTICA COMERCIAL -->
+      <section class="wm-section" id="politica">
+        <div class="wm-section-head">
+          <div class="num">04</div>
+          <div>
+            <h2 class="wm-h2">Política comercial</h2>
+            <p class="sub">Regras claras antes de começar. Sem surpresas no meio do projeto.</p>
+          </div>
+        </div>
+        <div class="wm-grid cols-2">
+          <div class="policy-item"><span class="pol-num">01</span><div><h5>Pagamento por etapa</h5><p>Projetos pontuais: 50% entrada + 50% entrega. Tracking e recorrente: boleto mensal com 10 dias de antecedência.</p></div></div>
+          <div class="policy-item"><span class="pol-num">02</span><div><h5>Escopo fixo, revisões previsíveis</h5><p>Pulse: 2 ciclos de revisão incluídos. Ciclos adicionais: R$ 2.500–6.000 conforme complexidade. Signal/Clarity: ilimitado.</p></div></div>
+          <div class="policy-item"><span class="pol-num">03</span><div><h5>Reajuste anual</h5><p>Contratos recorrentes reajustados pelo IPCA no aniversário. Comunicado com 30 dias de antecedência.</p></div></div>
+          <div class="policy-item"><span class="pol-num">04</span><div><h5>Rescisão antecipada</h5><p>Multa de 1 mensalidade para rescisão antes do prazo sem justa causa. Aviso mínimo de 30 dias.</p></div></div>
+          <div class="policy-item"><span class="pol-num">05</span><div><h5>Confidencialidade & LGPD</h5><p>NDA bilateral antes do início. Dados primários coletados pertencem ao cliente. Processamento LGPD-compliant.</p></div></div>
+          <div class="policy-item"><span class="pol-num">06</span><div><h5>Desconto para startups</h5><p>Startups pré-Series A podem solicitar configuração reduzida sem perda de qualidade metodológica. Conversas abertas.</p></div></div>
+        </div>
+
+        <div class="wm-sub">
+          <div class="wm-ambient">
+            <canvas data-ambient="orbit"></canvas>
+            <div class="wm-ambient-content">
+              <div class="wm-eyebrow" style="justify-content:center;margin-bottom:var(--wm-s-3)"><span class="pulse"></span>Próximo passo</div>
+              <h3 class="wm-h3" style="margin-bottom:var(--wm-s-3)">Comece por um <em style="color:var(--accent);font-style:italic">Insight Sprint.</em></h3>
+              <p style="color:var(--fg-muted);margin-bottom:var(--wm-s-5)">R$ 15.000 fixos. 5 dias úteis. Uma questão estratégica respondida com dado.</p>
+              <button class="wm-btn accent">Solicitar diagnóstico <span class="arrow">→</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="wm-footer">
+        <span class="left">WISEMETRICS · SERVIÇOS & PRECIFICAÇÃO · v1.0 · 2026</span>
+        <span class="right">DADO QUE PENSA.</span>
+      </footer>
+    </div>
+  </main>
+</div>
+<div class="wm-toast" id="toast"></div>
+<script src="wisemetrics.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wisemetrics — Documentation Hub</title>
+  <meta name="description" content="Central de documentação de marca, produto e GTM da Wisemetrics." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300..800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="wisemetrics.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+<div class="wm-app">
+  <aside class="wm-side">
+    <div class="wm-brandmark">
+      <svg class="sym" viewBox="0 0 40 40" fill="none">
+        <rect x="3" y="22" width="5" height="14" fill="currentColor" opacity=".85"/>
+        <rect x="11" y="16" width="5" height="20" fill="currentColor" opacity=".85"/>
+        <rect x="19" y="10" width="5" height="26" fill="currentColor" opacity=".85"/>
+        <rect x="27" y="18" width="5" height="18" fill="currentColor" opacity=".85"/>
+        <circle cx="34.5" cy="6" r="3.5" fill="var(--accent)"/>
+      </svg>
+      <div>
+        <div class="name">Wisemetrics<span class="dot">.</span></div>
+        <div class="wm-version">Hub de Documentação</div>
+      </div>
+    </div>
+    <nav class="wm-nav">
+      <a href="index.html"><span class="num">--</span>Hub Central</a>
+      <div class="group-label" style="margin-top:16px">Documentos</div>
+      <a href="identidade-visual.html"><span class="num">01</span>Identidade Visual</a>
+      <a href="canais-digitais.html"><span class="num">02</span>Canais Digitais</a>
+      <a href="estrategia-conteudo.html"><span class="num">03</span>Estratégia Editorial</a>
+      <a href="go-to-market.html"><span class="num">04</span>Go-to-Market</a>
+      <a href="servicos.html"><span class="num">05</span>Serviços & Preços</a>
+      <a href="modelos-proposta.html"><span class="num">06</span>Modelos de Proposta</a>
+      <a href="wisemetrics-design-system-v2.html"><span class="num">07</span>Design System</a>
+    </nav>
+    <div class="wm-theme-switch">
+      <span class="slider"></span>
+      <button data-theme-btn="dark" class="active">Dark</button>
+      <button data-theme-btn="light">Light</button>
+    </div>
+  </aside>
+
+  <main class="wm-main">
+    <div class="wm-container" style="max-width: 1100px;">
+      
+      <section class="wm-hero">
+        <div class="wm-hero-grid-overlay"></div>
+        <canvas class="wm-hero-canvas" id="heroCanvas"></canvas>
+        <div class="wm-hud">
+          <div class="row"><span>sistema</span><span class="v">v1.0</span></div>
+          <div class="row"><span>arquivos</span><span class="v">08 integrados</span></div>
+          <div class="row"><span>última att.</span><span class="v">Abril 2026</span></div>
+          <div class="row"><span>pontos</span><span class="v" data-k="p">3136</span></div>
+        </div>
+        <div class="wm-hero-content">
+          <div class="wm-eyebrow wm-fade-up"><span class="pulse"></span>Documentation Suite</div>
+          <h1 class="wm-h1 wm-fade-up d1">Estratégia, dados e produto <em>numa só lógica.</em></h1>
+          <p class="wm-lede wm-fade-up d2">Bem-vindo ao centro de inteligência comercial e branding da Wisemetrics. Todo o racional estratégico, diretrizes visuais e posicionamento de mercado integrados em um único ecossistema.</p>
+        </div>
+      </section>
+
+      <div class="wm-grid cols-2" style="margin-bottom: var(--wm-s-8);">
+
+        <a href="identidade-visual.html" class="wm-card" style="text-decoration:none; color:inherit;">
+          <span class="kicker">01 · DESIGN</span>
+          <h4>Identidade Visual</h4>
+          <p>Guia prático de aplicação do design system: regras de cores, tipografia editorial e grid lógico.</p>
+          <div style="display:flex; justify-content:flex-end; align-items:center; margin-top:auto;">
+            <span class="wm-badge accent">ATIVO</span>
+          </div>
+        </a>
+
+        <a href="canais-digitais.html" class="wm-card" style="text-decoration:none; color:inherit;">
+          <span class="kicker">02 · DISTRIBUIÇÃO</span>
+          <h4>Canais Digitais</h4>
+          <p>Ecossistema de presença digital focada em conversão: site, LinkedIn, newsletter e SEO.</p>
+          <div style="display:flex; justify-content:flex-end; align-items:center; margin-top:auto;">
+            <span class="wm-badge accent">ATIVO</span>
+          </div>
+        </a>
+
+        <a href="estrategia-conteudo.html" class="wm-card" style="text-decoration:none; color:inherit;">
+          <span class="kicker">03 · CONTEÚDO</span>
+          <h4>Estratégia Editorial</h4>
+          <p>Pilares de conteúdo, tom analítico proprietário, cronograma e diretrizes para publicações.</p>
+          <div style="display:flex; justify-content:flex-end; align-items:center; margin-top:auto;">
+            <span class="wm-badge accent">ATIVO</span>
+          </div>
+        </a>
+
+        <a href="go-to-market.html" class="wm-card" style="text-decoration:none; color:inherit;">
+          <span class="kicker">04 · GROWTH</span>
+          <h4>Go-to-Market</h4>
+          <p>Planejamento estratégico de lançamento, OKRs por fase e cronograma de crescimento B2B.</p>
+          <div style="display:flex; justify-content:flex-end; align-items:center; margin-top:auto;">
+            <span class="wm-badge accent">ATIVO</span>
+          </div>
+        </a>
+
+        <a href="servicos.html" class="wm-card" style="text-decoration:none; color:inherit;">
+          <span class="kicker">05 · PRODUTO</span>
+          <h4>Serviços & Preços</h4>
+          <p>Portfólio detalhado: Consumer Pulse, Analytics, Product Research e Advisory.</p>
+          <div style="display:flex; justify-content:flex-end; align-items:center; margin-top:auto;">
+            <span class="wm-badge accent">ATIVO</span>
+          </div>
+        </a>
+
+        <a href="modelos-proposta.html" class="wm-card" style="text-decoration:none; color:inherit;">
+          <span class="kicker">06 · COMERCIAL</span>
+          <h4>Modelos de Proposta</h4>
+          <p>Templates comerciais padronizados para Insight Sprints, projetos e retainers (Advisory).</p>
+          <div style="display:flex; justify-content:flex-end; align-items:center; margin-top:auto;">
+            <span class="wm-badge accent">ATIVO</span>
+          </div>
+        </a>
+
+        <a href="wisemetrics-design-system-v2.html" class="wm-card" style="text-decoration:none; color:inherit; border-color: color-mix(in srgb, var(--accent) 30%, var(--border));">
+          <span class="kicker">07 · RECURSO TÉCNICO</span>
+          <h4>Design System v0.2</h4>
+          <p>Referência técnica canônica contendo tokens CSS, componentes interativos e regras de UI/UX.</p>
+          <div style="display:flex; justify-content:flex-end; align-items:center; margin-top:auto;">
+            <span class="wm-badge primary">ROOT</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </main>
+</div>
+<script src="wisemetrics.js"></script>
+</body>
+</html>

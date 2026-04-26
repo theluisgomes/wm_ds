@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Wisemetrics — Estratégia de Conteúdo</title>
+<meta name="description" content="Pilares editoriais, calendário, templatees de voz e Consumer Pulse Report — estratégia de conteúdo Wisemetrics."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300..800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="wisemetrics.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+.cal-week {
+  display: grid; grid-template-columns: 100px 1fr 1fr 1fr 1fr 1fr; gap: 1px;
+  background: var(--border); border: 1px solid var(--border); border-radius: var(--wm-r-3);
+  overflow: hidden; font-size: var(--wm-text-sm);
+}
+.cal-week .cal-head {
+  background: var(--bg-sunken); padding: 10px 12px;
+  font-family: var(--wm-font-mono); font-size: 10px; text-transform: uppercase;
+  letter-spacing: .08em; color: var(--fg-muted);
+}
+.cal-week .cal-label {
+  background: var(--bg-sunken); padding: 12px; display: flex;
+  align-items: center; font-family: var(--wm-font-mono);
+  font-size: var(--wm-text-2xs); color: var(--fg-subtle); text-transform: uppercase; letter-spacing: .08em;
+}
+.cal-cell {
+  background: var(--bg-raised); padding: 10px 12px; display: flex; flex-direction: column; gap: 4px;
+}
+.cal-cell .cc-type { font-family: var(--wm-font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); }
+.cal-cell .cc-title { font-size: var(--wm-text-sm); color: var(--fg); line-height: 1.3; }
+.cal-cell.empty { background: var(--bg-sunken); }
+.pulse-section {
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--wm-s-5); align-items: start;
+  padding: var(--wm-s-6) 0; border-bottom: 1px solid var(--rule);
+}
+.pulse-section:last-child { border-bottom: 0; }
+.pulse-section .sec-num { font-family: var(--wm-font-mono); font-size: var(--wm-text-3xl); color: var(--border-strong); font-weight: 700; letter-spacing: -.04em; }
+</style>
+</head>
+<body>
+<div class="wm-app">
+  <aside class="wm-side">
+    <div class="wm-brandmark">
+      <svg class="sym" viewBox="0 0 40 40" fill="none">
+        <rect x="3" y="22" width="5" height="14" fill="currentColor" opacity=".85"/>
+        <rect x="11" y="16" width="5" height="20" fill="currentColor" opacity=".85"/>
+        <rect x="19" y="10" width="5" height="26" fill="currentColor" opacity=".85"/>
+        <rect x="27" y="18" width="5" height="18" fill="currentColor" opacity=".85"/>
+        <circle cx="34.5" cy="6" r="3.5" fill="var(--accent)"/>
+      </svg>
+      <div>
+        <div class="name">Wisemetrics<span class="dot">.</span></div>
+        <div class="wm-version">Estratégia de Conteúdo</div>
+      </div>
+    </div>
+    <nav class="wm-nav">
+      <a href="index.html"><span class="num">--</span>Hub Central</a>
+      <div class="group-label" style="margin-top:16px">Documentos</div>
+      <a href="identidade-visual.html"><span class="num">01</span>Identidade Visual</a>
+      <a href="canais-digitais.html"><span class="num">02</span>Canais Digitais</a>
+      <a href="estrategia-conteudo.html"><span class="num">03</span>Estratégia Editorial</a>
+      <a href="go-to-market.html"><span class="num">04</span>Go-to-Market</a>
+      <a href="servicos.html"><span class="num">05</span>Serviços &amp; Preços</a>
+      <a href="modelos-proposta.html"><span class="num">06</span>Modelos de Proposta</a>
+      <a href="wisemetrics-design-system-v2.html"><span class="num">07</span>Design System</a>
+      <div class="group-label" style="margin-top:16px">Seções</div>
+
+    </nav>
+    <div class="wm-theme-switch">
+      <span class="slider"></span>
+      <button data-theme-btn="dark" class="active">Dark</button>
+      <button data-theme-btn="light">Light</button>
+    </div>
+  </aside>
+
+  <main class="wm-main">
+    <div class="wm-toc-float">
+      <div class="wm-toc-container">
+        <a href="#pilares"><span class="num">01</span>Pilares editoriais</a>
+      <a href="#calendario"><span class="num">02</span>Calendário</a>
+      <a href="#voz"><span class="num">03</span>Voz & Templates</a>
+      <a href="#pulse"><span class="num">04</span>Consumer Pulse Report</a>
+      </div>
+    </div>
+    <div class="wm-container">
+
+      <section class="wm-hero">
+        <div class="wm-hero-grid-overlay"></div>
+        <canvas class="wm-hero-canvas" id="heroCanvas"></canvas>
+        <div class="wm-hud">
+          <div class="row"><span>documento</span><span class="v">conteúdo</span></div>
+          <div class="row"><span>pilares</span><span class="v">5</span></div>
+          <div class="row"><span>frequência</span><span class="v">3x / semana</span></div>
+          <div class="row"><span>flagship</span><span class="v">Consumer Pulse</span></div>
+        </div>
+        <div class="wm-hero-content">
+          <div class="wm-eyebrow wm-fade-up"><span class="pulse"></span>Editorial & Conteúdo · v1.0</div>
+          <h1 class="wm-h1 wm-fade-up d1">Estratégia de <em>Conteúdo.</em></h1>
+          <p class="wm-lede wm-fade-up d2">Todo conteúdo Wisemetrics parte de um dado, passa por uma hipótese e chega a uma implicação prática. Sem floreio, sem dado solto.</p>
+          <div class="wm-hero-meta wm-fade-up d3">
+            <div class="cell"><span class="label">Pilar âncora</span><span class="val accent">Consumer Pulse</span></div>
+            <div class="cell"><span class="label">Tom</span><span class="val">Analítico · direto</span></div>
+            <div class="cell"><span class="label">LinkedIn</span><span class="val">3x / semana</span></div>
+            <div class="cell"><span class="label">Newsletter</span><span class="val">1x / semana</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PILARES -->
+      <section class="wm-section" id="pilares">
+        <div class="wm-section-head">
+          <div class="num">01</div>
+          <div>
+            <h2 class="wm-h2">Pilares editoriais</h2>
+            <p class="sub">Cinco pilares, cada um com função distinta no funil. A audiência que lê "Leitura de Número" regularmente está nos primeiros 40% do funil de consideração.</p>
+          </div>
+        </div>
+        <div class="wm-pillar">
+          <div class="pillar-num">Pilar 01 · Âncora principal</div>
+          <h4>Consumer Pulse</h4>
+          <p>Relatório trimestral de comportamento, intenção e sentimento do consumidor brasileiro. Dado exclusivo do painel amostral Wisemetrics. Gratuito para download — principal lead magnet. Formato: PDF editorial 30–40p + deck executivo 15 slides + resumo de 500 palavras para newsletter e LinkedIn.</p>
+        </div>
+        <div class="wm-pillar">
+          <div class="pillar-num">Pilar 02 · Cadência semanal</div>
+          <h4>Leitura de Número</h4>
+          <p>Um dado de mercado. Uma interpretação. Uma consequência prática por setor. Publicado toda segunda-feira no LinkedIn e na newsletter. Formato: texto de 150–250 palavras + visual com o número destacado + 3 hashtags. É o formato com maior alcance orgânico — linguagem de análise editorial, sem jargão.</p>
+        </div>
+        <div class="wm-pillar">
+          <div class="pillar-num">Pilar 03 · Construção de autoridade metodológica</div>
+          <h4>Metodologia Aberta</h4>
+          <p>Como pensamos, medimos e interpretamos dado. Formatos: artigo de blog (800–1.200 palavras), carrossel no LinkedIn, episódio de podcast. Exemplos: "como construímos um tracking de intenção sem survey tradicional", "por que churn e NPS precisam ser lidos em paralelo". Frequência: 2x / mês.</p>
+        </div>
+        <div class="wm-pillar">
+          <div class="pillar-num">Pilar 04 · Evidência comercial</div>
+          <h4>Caso Comentado</h4>
+          <p>Um projeto anonimizado com: problema original, abordagem metodológica, dado encontrado, decisão tomada e, quando possível, resultado observado. Não é propaganda — é demonstração de raciocínio. Frequência: 1x / mês. Formato: artigo + infográfico para redes.</p>
+        </div>
+        <div class="wm-pillar">
+          <div class="pillar-num">Pilar 05 · Debate e crítica</div>
+          <h4>Contra-intuição</h4>
+          <p>Um post que desafia uma crença de mercado com dado. "A audiência mais valiosa do e-commerce não é quem compra mais — é quem nunca pediu reembolso." Função: diferenciação de posicionamento e geração de comentários (engajamento). Frequência: 2x / mês. Formato: texto curto provocativo + dado de suporte.</p>
+        </div>
+      </section>
+
+      <!-- CALENDÁRIO -->
+      <section class="wm-section" id="calendario">
+        <div class="wm-section-head">
+          <div class="num">02</div>
+          <div>
+            <h2 class="wm-h2">Calendário semanal tipo</h2>
+            <p class="sub">Modelo de semana padrão. A ordem é deliberada — segunda com dado, quarta com newsletter, sexta com metodologia ou caso.</p>
+          </div>
+        </div>
+        <div class="cal-week" style="margin-bottom:var(--wm-s-5)">
+          <div class="cal-head">Canal</div>
+          <div class="cal-head">Segunda</div>
+          <div class="cal-head">Terça</div>
+          <div class="cal-head">Quarta</div>
+          <div class="cal-head">Quinta</div>
+          <div class="cal-head">Sexta</div>
+
+          <div class="cal-label">LinkedIn</div>
+          <div class="cal-cell"><div class="cc-type">Leitura de número</div><div class="cc-title">1 dado + hipótese + consequência prática</div></div>
+          <div class="cal-cell empty"></div>
+          <div class="cal-cell"><div class="cc-type">Metodologia aberta</div><div class="cc-title">Como pensamos um problema de dados</div></div>
+          <div class="cal-cell empty"></div>
+          <div class="cal-cell"><div class="cc-type">Contra-intuição / Caso</div><div class="cc-title">Desafio de crença ou case anonimizado</div></div>
+
+          <div class="cal-label">Newsletter</div>
+          <div class="cal-cell empty"></div>
+          <div class="cal-cell"><div class="cc-type">Produção</div><div class="cc-title">Escrita e revisão da edição semanal</div></div>
+          <div class="cal-cell"><div class="cc-type">Wisemetrics Weekly</div><div class="cc-title">Envio às 8h30 — dado + análise + links</div></div>
+          <div class="cal-cell empty"></div>
+          <div class="cal-cell empty"></div>
+
+          <div class="cal-label">Site</div>
+          <div class="cal-cell empty"></div>
+          <div class="cal-cell empty"></div>
+          <div class="cal-cell empty"></div>
+          <div class="cal-cell"><div class="cc-type">Blog post</div><div class="cc-title">Artigo de 800–1.200 palavras (SEO)</div></div>
+          <div class="cal-cell empty"></div>
+        </div>
+
+        <div class="wm-alert">
+          <svg class="ic" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v5M10 13.5v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <div><strong>Regra de ouro.</strong><p>Nenhum post sai sem: 1 dado com fonte e período, 1 interpretação atribuída à Wisemetrics, e 1 implicação prática. Posts que violam essa regra não publicam — esperamos pela próxima janela.</p></div>
+        </div>
+      </section>
+
+      <!-- VOZ -->
+      <section class="wm-section" id="voz">
+        <div class="wm-section-head">
+          <div class="num">03</div>
+          <div>
+            <h2 class="wm-h2">Voz & Templates</h2>
+            <p class="sub">Templates prontos para uso pelo time. Adaptar o dado — manter a estrutura. A consistência de formato constrói reconhecimento antes da logo.</p>
+          </div>
+        </div>
+        <div class="wm-grid cols-2">
+          <div class="wm-card">
+            <span class="kicker">Template · Leitura de Número</span>
+            <pre style="font-family:var(--wm-font-mono);font-size:var(--wm-text-xs);color:var(--fg-muted);background:var(--bg-sunken);padding:var(--wm-s-4);border-radius:var(--wm-r-2);overflow-x:auto;margin:0;line-height:1.6">[DADO NUMÉRICO]: [métrica específica]
+[período + fonte]
+
+Não é [causa óbvia].
+
+É [hipótese não-intuitiva com dado de suporte].
+
+Para [setor X], isso significa:
+→ [consequência A]
+→ [consequência B]
+
+[PERGUNTA que abre debate]
+
+#wisemetrics #consumidor #[setor]</pre>
+          </div>
+          <div class="wm-card">
+            <span class="kicker">Template · Contra-intuição</span>
+            <pre style="font-family:var(--wm-font-mono);font-size:var(--wm-text-xs);color:var(--fg-muted);background:var(--bg-sunken);padding:var(--wm-s-4);border-radius:var(--wm-r-2);overflow-x:auto;margin:0;line-height:1.6">[AFIRMAÇÃO CONTRÁRIA AO SENSO COMUM]
+
+O dado:
+[estatística ou observação com fonte]
+
+Por quê isso importa:
+[2–3 linhas diretas, sem jargão]
+
+O que fazemos com isso:
+[implicação para decisão de produto/marketing]
+
+(Dados de [fonte/painel Wisemetrics], [mês/trimestre])
+
+#wisemetrics #dados</pre>
+          </div>
+          <div class="wm-card">
+            <span class="kicker">Template · Metodologia Aberta</span>
+            <pre style="font-family:var(--wm-font-mono);font-size:var(--wm-text-xs);color:var(--fg-muted);background:var(--bg-sunken);padding:var(--wm-s-4);border-radius:var(--wm-r-2);overflow-x:auto;margin:0;line-height:1.6">Quando um cliente chega com a pergunta
+"[pergunta típica do ICP]",
+nossa primeira reação não é coletar mais dado.
+
+É perguntar: [pergunta metodológica]
+
+Por quê? Porque [raciocínio em 2–3 linhas].
+
+O que fazemos de diferente:
+→ [passo 1 com lógica]
+→ [passo 2 com lógica]
+→ [resultado esperado]
+
+Isso é o que chamamos de [nome interno do processo].
+
+#wisemetrics #metodologia #pesquisa</pre>
+          </div>
+          <div class="wm-card">
+            <span class="kicker">Template · Caso Comentado</span>
+            <pre style="font-family:var(--wm-font-mono);font-size:var(--wm-text-xs);color:var(--fg-muted);background:var(--bg-sunken);padding:var(--wm-s-4);border-radius:var(--wm-r-2);overflow-x:auto;margin:0;line-height:1.6">Problema: [empresa, setor] precisava entender
+[questão específica] antes de [decisão].
+
+A hipótese inicial deles: [o que acreditavam].
+
+O que o dado mostrou:
+→ [insight 1 — surpreendente vs. hipótese]
+→ [insight 2]
+→ [insight 3]
+
+A decisão que tomaram: [ação específica]
+
+Metodologia: [abordagem resumida em 1 linha]
+Prazo: [X dias/semanas]
+
+#wisemetrics #case #[setor]</pre>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Palavras proibidas</h3>
+          <div class="wm-voice">
+            <div class="do">
+              <h5>Usar</h5>
+              <ul>
+                <li>medir, rastrear, comparar, revelar, orientar</li>
+                <li>hipótese, evidência, padrão, variação</li>
+                <li>consumidor, audiência, segmento, comportamento</li>
+                <li>decidir, agir, priorizar, ajustar</li>
+                <li>dado, número, índice, pesquisa, amostra</li>
+              </ul>
+            </div>
+            <div class="dont">
+              <h5>Não usar (jamais)</h5>
+              <ul>
+                <li>desbloqueie, potencialize, revolucione, escale</li>
+                <li>"não é apenas X — é Y" (construção clichê)</li>
+                <li>jornada do consumidor (sem contexto específico)</li>
+                <li>insights acionáveis (redundante — todo insight deve ser acionável)</li>
+                <li>inteligência artificial, IA generativa (sem necessidade técnica real)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONSUMER PULSE -->
+      <section class="wm-section" id="pulse">
+        <div class="wm-section-head">
+          <div class="num">04</div>
+          <div>
+            <h2 class="wm-h2">Consumer Pulse Report</h2>
+            <p class="sub">O flagship de conteúdo. Relatório trimestral com dado exclusivo do painel amostral Wisemetrics. Download gratuito — principal gerador de leads e ativo de autoridade.</p>
+          </div>
+        </div>
+
+        <div class="wm-grid cols-3" style="margin-bottom:var(--wm-s-7)">
+          <div class="wm-stat"><span class="stat-label">Frequência</span><div class="stat-value">Trimestral</div><span class="stat-delta up">Jan · Abr · Jul · Out</span></div>
+          <div class="wm-stat"><span class="stat-label">Tamanho</span><div class="stat-value">30–40p</div><span class="stat-delta up">PDF editorial + deck 15 slides</span></div>
+          <div class="wm-stat"><span class="stat-label">Amostra mínima</span><div class="stat-value">n=500</div><span class="stat-delta up">expansão para n=1.000+ em 12m</span></div>
+        </div>
+
+        <h3 class="wm-h3" style="margin-bottom:var(--wm-s-5)">Estrutura de uma edição</h3>
+        <div>
+          <div class="pulse-section">
+            <div><div class="sec-num">01</div><h4 style="font-family:var(--wm-font-display);font-weight:500;font-size:var(--wm-text-xl);margin:0 0 8px">Sumário executivo</h4><p style="color:var(--fg-muted);font-size:var(--wm-text-md)">2 páginas. Os 5 achados mais relevantes do trimestre. Projetável em reunião de diretoria.</p></div>
+            <div class="wm-card"><p>Sem metodologia nesta seção. Só achados e implicações. Ideal para quem tem 3 minutos antes de uma reunião de board.</p><span class="wm-badge accent" style="align-self:flex-start">Alta densidade executiva</span></div>
+          </div>
+          <div class="pulse-section">
+            <div><div class="sec-num">02</div><h4 style="font-family:var(--wm-font-display);font-weight:500;font-size:var(--wm-text-xl);margin:0 0 8px">Panorama de comportamento</h4><p style="color:var(--fg-muted);font-size:var(--wm-text-md)">8–10 páginas. Dados de comportamento de compra, canal, frequência e ticket médio por categoria.</p></div>
+            <div class="wm-card"><p>Gráficos com anotação editorial — não apenas o número, mas o que mudou em relação à onda anterior e por quê.</p></div>
+          </div>
+          <div class="pulse-section">
+            <div><div class="sec-num">03</div><h4 style="font-family:var(--wm-font-display);font-weight:500;font-size:var(--wm-text-xl);margin:0 0 8px">Intenção e sentimento</h4><p style="color:var(--fg-muted);font-size:var(--wm-text-md)">6–8 páginas. Índice de intenção de compra por categoria + sentimento de marca (NPS setorial).</p></div>
+            <div class="wm-card"><p>Dado para antecipação de tendência — não apenas retrato do passado. O diferencial da Wisemetrics é a leitura preditiva.</p></div>
+          </div>
+          <div class="pulse-section">
+            <div><div class="sec-num">04</div><h4 style="font-family:var(--wm-font-display);font-weight:500;font-size:var(--wm-text-xl);margin:0 0 8px">Foco temático do trimestre</h4><p style="color:var(--fg-muted);font-size:var(--wm-text-md)">8–10 páginas. Aprofundamento em 1 tema específico: ex. "dia das mães", "volta às aulas", "saúde preventiva".</p></div>
+            <div class="wm-card"><p>O tema é definido com 2 meses de antecedência para alinhamento editorial com newsletter e LinkedIn.</p></div>
+          </div>
+          <div class="pulse-section">
+            <div><div class="sec-num">05</div><h4 style="font-family:var(--wm-font-display);font-weight:500;font-size:var(--wm-text-xl);margin:0 0 8px">Metodologia & Limitações</h4><p style="color:var(--fg-muted);font-size:var(--wm-text-md)">2 páginas. Amostra, instrumento, período de campo, margem de erro e o que o estudo não mede.</p></div>
+            <div class="wm-card"><p>Honestidade metodológica é diferencial competitivo. Clientes sofisticados valorizam pesquisadores que declaram o que não sabem.</p><span class="wm-badge" style="align-self:flex-start">Transparência ativa</span></div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="wm-footer">
+        <span class="left">WISEMETRICS · ESTRATÉGIA DE CONTEÚDO · v1.0 · 2026</span>
+        <span class="right">DADO QUE PENSA.</span>
+      </footer>
+    </div>
+  </main>
+</div>
+<div class="wm-toast" id="toast"></div>
+<script src="wisemetrics.js"></script>
+</body>
+</html>

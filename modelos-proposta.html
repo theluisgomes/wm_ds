@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Wisemetrics — Modelos de Proposta</title>
+<meta name="description" content="Templates de proposta comercial Wisemetrics: Insight Sprint, projetos de Intelligence e advisory recorrente."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300..800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="wisemetrics.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+.prop-tabs { display: flex; gap: 1px; background: var(--border); border-radius: var(--wm-r-3); overflow: hidden; margin-bottom: var(--wm-s-5); }
+.prop-tab {
+  flex: 1; padding: 12px; text-align: center;
+  font-family: var(--wm-font-mono); font-size: var(--wm-text-xs);
+  text-transform: uppercase; letter-spacing: .08em; color: var(--fg-muted);
+  background: var(--bg-raised); cursor: pointer;
+  transition: background var(--wm-dur-1), color var(--wm-dur-1);
+}
+.prop-tab.active { background: var(--bg-elevated); color: var(--accent); }
+.prop-panel { display: none; }
+.prop-panel.active { display: block; }
+.prop-doc {
+  border: 1px solid var(--border); border-radius: var(--wm-r-5);
+  background: var(--bg-raised); overflow: hidden;
+}
+.prop-doc-header {
+  padding: var(--wm-s-5) var(--wm-s-6);
+  background: var(--bg-sunken); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.prop-doc-header h3 { font-family:var(--wm-font-display);font-weight:500;font-size:var(--wm-text-xl);margin:0;letter-spacing:-.015em; }
+.prop-doc-body { padding: var(--wm-s-6); display: flex; flex-direction: column; gap: var(--wm-s-5); }
+.prop-section-label {
+  font-family: var(--wm-font-mono); font-size: 10px; text-transform: uppercase;
+  letter-spacing: .12em; color: var(--accent); padding-bottom: 8px;
+  border-bottom: 1px solid var(--border); margin-bottom: 8px;
+}
+.prop-field { display: flex; gap: var(--wm-s-3); align-items: baseline; font-size: var(--wm-text-sm); }
+.prop-field .pf-label { font-family: var(--wm-font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: var(--fg-subtle); white-space: nowrap; width: 120px; flex-shrink: 0; }
+.prop-field .pf-value { color: var(--fg-muted); }
+.deliverable {
+  display: grid; grid-template-columns: 24px 1fr; gap: var(--wm-s-3);
+  padding: 10px 0; border-bottom: 1px solid var(--border); align-items: flex-start;
+}
+.deliverable:last-child { border-bottom: 0; }
+.deliverable .del-num { font-family: var(--wm-font-mono); font-size: var(--wm-text-xs); color: var(--accent); padding-top: 1px; }
+.deliverable h5 { font-family: var(--wm-font-display); font-weight: 500; font-size: var(--wm-text-md); margin: 0 0 4px; letter-spacing: -.01em; }
+.deliverable p { margin: 0; color: var(--fg-muted); font-size: var(--wm-text-sm); }
+.copy-example {
+  background: color-mix(in srgb, var(--accent) 5%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  border-radius: var(--wm-r-3); padding: var(--wm-s-4);
+  font-family: var(--wm-font-display); font-size: var(--wm-text-md);
+  font-weight: 350; line-height: 1.4; letter-spacing: -.01em;
+  cursor: pointer; transition: border-color var(--wm-dur-2);
+}
+.copy-example:hover { border-color: color-mix(in srgb, var(--accent) 40%, transparent); }
+.copy-example .cx-label { font-family: var(--wm-font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--accent); display: block; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<div class="wm-app">
+  <aside class="wm-side">
+    <div class="wm-brandmark">
+      <svg class="sym" viewBox="0 0 40 40" fill="none">
+        <rect x="3" y="22" width="5" height="14" fill="currentColor" opacity=".85"/>
+        <rect x="11" y="16" width="5" height="20" fill="currentColor" opacity=".85"/>
+        <rect x="19" y="10" width="5" height="26" fill="currentColor" opacity=".85"/>
+        <rect x="27" y="18" width="5" height="18" fill="currentColor" opacity=".85"/>
+        <circle cx="34.5" cy="6" r="3.5" fill="var(--accent)"/>
+      </svg>
+      <div>
+        <div class="name">Wisemetrics<span class="dot">.</span></div>
+        <div class="wm-version">Modelos de Proposta</div>
+      </div>
+    </div>
+    <nav class="wm-nav">
+      <a href="index.html"><span class="num">--</span>Hub Central</a>
+      <div class="group-label" style="margin-top:16px">Documentos</div>
+      <a href="identidade-visual.html"><span class="num">01</span>Identidade Visual</a>
+      <a href="canais-digitais.html"><span class="num">02</span>Canais Digitais</a>
+      <a href="estrategia-conteudo.html"><span class="num">03</span>Estratégia Editorial</a>
+      <a href="go-to-market.html"><span class="num">04</span>Go-to-Market</a>
+      <a href="servicos.html"><span class="num">05</span>Serviços &amp; Preços</a>
+      <a href="modelos-proposta.html"><span class="num">06</span>Modelos de Proposta</a>
+      <a href="wisemetrics-design-system-v2.html"><span class="num">07</span>Design System</a>
+      <div class="group-label" style="margin-top:16px">Seções</div>
+
+    </nav>
+    <div class="wm-theme-switch">
+      <span class="slider"></span>
+      <button data-theme-btn="dark" class="active">Dark</button>
+      <button data-theme-btn="light">Light</button>
+    </div>
+  </aside>
+
+  <main class="wm-main">
+    <div class="wm-toc-float">
+      <div class="wm-toc-container">
+        <a href="#estrutura"><span class="num">01</span>Estrutura padrão</a>
+      <a href="#templates"><span class="num">02</span>Templates</a>
+      <a href="#copy"><span class="num">03</span>Copy aprovado</a>
+      <a href="#checklist"><span class="num">04</span>Checklist</a>
+      </div>
+    </div>
+    <div class="wm-container">
+
+      <section class="wm-hero">
+        <div class="wm-hero-grid-overlay"></div>
+        <canvas class="wm-hero-canvas" id="heroCanvas"></canvas>
+        <div class="wm-hud">
+          <div class="row"><span>documento</span><span class="v">proposta</span></div>
+          <div class="row"><span>templates</span><span class="v">3</span></div>
+          <div class="row"><span>max páginas</span><span class="v">12</span></div>
+          <div class="row"><span>uso</span><span class="v">interno · comercial</span></div>
+        </div>
+        <div class="wm-hero-content">
+          <div class="wm-eyebrow wm-fade-up"><span class="pulse"></span>Comercial · Uso interno</div>
+          <h1 class="wm-h1 wm-fade-up d1">Modelos de <em>Proposta.</em></h1>
+          <p class="wm-lede wm-fade-up d2">Templates para uso pelo time comercial. Três formatos — Insight Sprint, projeto de Intelligence e advisory recorrente. Máximo 12 páginas. Sempre.</p>
+          <div class="wm-hero-meta wm-fade-up d3">
+            <div class="cell"><span class="label">Sprint</span><span class="val accent">R$ 15.000</span></div>
+            <div class="cell"><span class="label">Projeto</span><span class="val">R$ 15k–80k</span></div>
+            <div class="cell"><span class="label">Advisory</span><span class="val">R$ 8k–80k/mês</span></div>
+            <div class="cell"><span class="label">Validade padrão</span><span class="val">15 dias</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ESTRUTURA -->
+      <section class="wm-section" id="estrutura">
+        <div class="wm-section-head">
+          <div class="num">01</div>
+          <div>
+            <h2 class="wm-h2">Estrutura padrão</h2>
+            <p class="sub">Toda proposta Wisemetrics tem 6 seções, máximo 12 páginas. O cliente deve conseguir aprovar com base no que lê — não se perder tentando entender.</p>
+          </div>
+        </div>
+        <div class="wm-funnel">
+          <div class="wm-funnel-step"><div class="step-num">C</div><div class="step-body"><h5>Capa</h5><p>Logo, nome do projeto/empresa cliente, data e número de versão.</p></div><div class="step-tag">Sempre presente</div></div>
+          <div class="wm-funnel-step"><div class="step-num">01</div><div class="step-body"><h5>Contexto & entendimento</h5><p>O que entendemos do problema e do momento da empresa. A hipótese de trabalho que nos trouxe até aqui.</p></div><div class="step-tag">Obrigatório</div></div>
+          <div class="wm-funnel-step"><div class="step-num">02</div><div class="step-body"><h5>Metodologia</h5><p>Como vamos medir (fontes, ferramentas, abordagem). Por que essa abordagem e não outra.</p></div><div class="step-tag">Obrigatório</div></div>
+          <div class="wm-funnel-step"><div class="step-num">03</div><div class="step-body"><h5>Entregáveis & critérios de aceite</h5><p>Lista concreta do que será entregue. Como cada entregável é avaliado como "concluído".</p></div><div class="step-tag">Obrigatório</div></div>
+          <div class="wm-funnel-step"><div class="step-num">04</div><div class="step-body"><h5>Cronograma</h5><p>Fases com datas de marco. Responsabilidades do cliente — o que precisamos deles.</p></div><div class="step-tag">Obrigatório</div></div>
+          <div class="wm-funnel-step"><div class="step-num">05</div><div class="step-body"><h5>Equipe</h5><p>Quem trabalha no projeto (nome, papel, dedicação estimada).</p></div><div class="step-tag">Obrigatório</div></div>
+          <div class="wm-funnel-step"><div class="step-num">06</div><div class="step-body"><h5>Investimento & condições</h5><p>Valor total e forma de pagamento. Validade da proposta. Próximos passos para aprovação.</p></div><div class="step-tag">Obrigatório</div></div>
+        </div>
+      </section>
+
+      <!-- TEMPLATES -->
+      <section class="wm-section" id="templates">
+        <div class="wm-section-head">
+          <div class="num">02</div>
+          <div>
+            <h2 class="wm-h2">Templates</h2>
+            <p class="sub">Três modelos — um para cada situação comercial. Copie, adapte o dado do cliente, mantenha a estrutura.</p>
+          </div>
+        </div>
+
+        <div class="prop-tabs">
+          <div class="prop-tab active" onclick="showTab(0)">Insight Sprint</div>
+          <div class="prop-tab" onclick="showTab(1)">Projeto de Intelligence</div>
+          <div class="prop-tab" onclick="showTab(2)">Advisory Recorrente</div>
+        </div>
+
+        <!-- SPRINT -->
+        <div class="prop-panel active" id="panel-0">
+          <div class="prop-doc">
+            <div class="prop-doc-header">
+              <div>
+                <div class="wm-mono" style="color:var(--accent);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px">Template · Tier Pulse · Entrada universal</div>
+                <h3>Insight Sprint</h3>
+              </div>
+              <div style="text-align:right">
+                <div class="wm-mono" style="color:var(--fg-muted);font-size:10px">Valor fixo</div>
+                <div style="font-family:var(--wm-font-display);font-size:var(--wm-text-2xl);font-weight:350;color:var(--accent)">R$ 15.000</div>
+              </div>
+            </div>
+            <div class="prop-doc-body">
+              <div>
+                <div class="prop-section-label">Seção 01 · Contexto (modelo)</div>
+                <p style="font-size:var(--wm-text-sm);color:var(--fg-muted);line-height:1.7">Entendemos que <strong style="color:var(--fg)">[empresa]</strong> enfrenta <strong style="color:var(--fg)">[problema]</strong>. A decisão sobre <strong style="color:var(--fg)">[ação]</strong> precisa ser tomada até <strong style="color:var(--fg)">[prazo]</strong> e a questão central é: <em style="color:var(--fg)">"[hipótese central]"</em>. O Insight Sprint entrega uma direção fundamentada em 5 dias úteis.</p>
+              </div>
+              <div>
+                <div class="prop-section-label">Seção 02 · Cronograma</div>
+                <div style="overflow-x:auto">
+                  <table class="wm-table" style="min-width:500px">
+                    <thead><tr><th>Dia</th><th>Atividade</th></tr></thead>
+                    <tbody>
+                      <tr><td><span class="wm-badge accent">Dia 1</span></td><td>Briefing aprofundado (2h) + mapeamento de fontes disponíveis</td></tr>
+                      <tr><td><span class="wm-badge">Dias 2–3</span></td><td>Análise de dados + desk research + 3–5 entrevistas (se aplicável)</td></tr>
+                      <tr><td><span class="wm-badge">Dia 4</span></td><td>Síntese, hipóteses, validação interna</td></tr>
+                      <tr><td><span class="wm-badge">Dia 5</span></td><td>Apresentação executiva (90 min) + entregável escrito</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div>
+                <div class="prop-section-label">Seção 03 · Entregáveis</div>
+                <div class="deliverable"><div class="del-num">01</div><div><h5>Relatório de Insight Sprint (8–12 páginas)</h5><p>Contexto, 3 hipóteses priorizadas com evidência, recomendação de próximo passo, limitações declaradas.</p></div></div>
+                <div class="deliverable"><div class="del-num">02</div><div><h5>Apresentação executiva (deck 10–15 slides)</h5><p>Para circulação interna ou reunião de liderança.</p></div></div>
+                <div class="deliverable"><div class="del-num">03</div><div><h5>Sessão de Q&A (30 min, até 1 semana após entrega)</h5><p>Dúvidas e alinhamento pós-relatório.</p></div></div>
+              </div>
+              <div>
+                <div class="prop-section-label">Seção 06 · Investimento</div>
+                <div class="wm-grid cols-2">
+                  <div class="prop-field"><span class="pf-label">Valor total</span><span class="pf-value" style="color:var(--fg);font-weight:500">R$ 15.000 (quinze mil reais)</span></div>
+                  <div class="prop-field"><span class="pf-label">Pagamento</span><span class="pf-value">100% na aprovação — boleto ou transferência</span></div>
+                  <div class="prop-field"><span class="pf-label">Validade</span><span class="pf-value">15 dias corridos a partir da data de envio</span></div>
+                  <div class="prop-field"><span class="pf-label">Para aprovar</span><span class="pf-value">Responder o e-mail com aceite + comprovante de pagamento</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INTELLIGENCE -->
+        <div class="prop-panel" id="panel-1">
+          <div class="prop-doc">
+            <div class="prop-doc-header">
+              <div>
+                <div class="wm-mono" style="color:var(--accent);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px">Template · Tier Pulse ou Signal</div>
+                <h3>Projeto de Intelligence</h3>
+              </div>
+              <div style="text-align:right">
+                <div class="wm-mono" style="color:var(--fg-muted);font-size:10px">Faixa de valor</div>
+                <div style="font-family:var(--wm-font-display);font-size:var(--wm-text-2xl);font-weight:350;color:var(--accent)">R$ 15k–80k</div>
+              </div>
+            </div>
+            <div class="prop-doc-body">
+              <div>
+                <div class="prop-section-label">Seção 01 · Contexto (modelo)</div>
+                <p style="font-size:var(--wm-text-sm);color:var(--fg-muted);line-height:1.7"><strong style="color:var(--fg)">[Empresa]</strong> está em um momento de <strong style="color:var(--fg)">[contexto: reposicionamento / lançamento / queda]</strong>. A questão que orienta este projeto: <em style="color:var(--fg)">"[pergunta estratégica central]"</em>. Nossa hipótese de trabalho: <strong style="color:var(--fg)">[o que acreditamos que vamos encontrar]</strong>. O projeto vai confirmar, refutar ou matizar essa hipótese.</p>
+              </div>
+              <div>
+                <div class="prop-section-label">Seção 02 · Metodologia (modelo)</div>
+                <div class="wm-grid cols-3">
+                  <div class="prop-field" style="flex-direction:column;align-items:flex-start;gap:4px"><span class="pf-label">Abordagem</span><span class="pf-value">[Quantitativa / Quali+Quanti / Mista]</span></div>
+                  <div class="prop-field" style="flex-direction:column;align-items:flex-start;gap:4px"><span class="pf-label">Amostra</span><span class="pf-value">n = [X] respondentes, critérios: [perfil]</span></div>
+                  <div class="prop-field" style="flex-direction:column;align-items:flex-start;gap:4px"><span class="pf-label">Campo</span><span class="pf-value">[X] semanas — painel / entrevistas</span></div>
+                </div>
+              </div>
+              <div>
+                <div class="prop-section-label">Seção 03 · Entregáveis</div>
+                <div style="overflow-x:auto">
+                  <table class="wm-table" style="min-width:500px">
+                    <thead><tr><th>Entregável</th><th>Formato</th><th>Prazo</th></tr></thead>
+                    <tbody>
+                      <tr><td>Relatório [Nome]</td><td>PDF · 20–35 páginas</td><td class="num">[Data]</td></tr>
+                      <tr><td>Apresentação executiva</td><td>Deck · 15–20 slides</td><td class="num">[Data]</td></tr>
+                      <tr><td>Dashboard de acompanhamento</td><td>Link/planilha interativa</td><td class="num">[Data]</td></tr>
+                      <tr><td>Workshop de alinhamento</td><td>2h · remoto ou presencial</td><td class="num">[Data + semana]</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="wm-mono" style="color:var(--fg-muted);font-size:var(--wm-text-xs);margin-top:8px">2 ciclos de revisão incluídos. Rodadas adicionais: R$ [X.000]/ciclo.</div>
+              </div>
+              <div>
+                <div class="prop-section-label">Seção 06 · Investimento</div>
+                <div class="wm-grid cols-2">
+                  <div class="prop-field"><span class="pf-label">Valor total</span><span class="pf-value" style="color:var(--fg);font-weight:500">R$ [XX.000] ([por extenso])</span></div>
+                  <div class="prop-field"><span class="pf-label">Pagamento</span><span class="pf-value">50% na aprovação + 50% na entrega final</span></div>
+                  <div class="prop-field"><span class="pf-label">Tracking</span><span class="pf-value">40% entrada + 30% meio + 30% entrega</span></div>
+                  <div class="prop-field"><span class="pf-label">Validade</span><span class="pf-value">15 dias corridos a partir do envio</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ADVISORY -->
+        <div class="prop-panel" id="panel-2">
+          <div class="prop-doc">
+            <div class="prop-doc-header">
+              <div>
+                <div class="wm-mono" style="color:var(--accent);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px">Template · Tier Signal ou Clarity</div>
+                <h3>Parceria Advisory Recorrente</h3>
+              </div>
+              <div style="text-align:right">
+                <div class="wm-mono" style="color:var(--fg-muted);font-size:10px">Mensalidade</div>
+                <div style="font-family:var(--wm-font-display);font-size:var(--wm-text-2xl);font-weight:350;color:var(--accent)">R$ 8k–80k/mês</div>
+              </div>
+            </div>
+            <div class="prop-doc-body">
+              <div>
+                <div class="prop-section-label">Seção 01 · Proposta de parceria (modelo)</div>
+                <p style="font-size:var(--wm-text-sm);color:var(--fg-muted);line-height:1.7">Esta proposta estrutura uma colaboração contínua entre Wisemetrics e <strong style="color:var(--fg)">[empresa]</strong>, com o objetivo de <strong style="color:var(--fg)">[elevar capacidade analítica / manter inteligência atualizada / suportar decisões de produto]</strong>. O modelo recorrente é mais eficiente quando a empresa toma decisões frequentes que precisam de suporte analítico, o mercado muda rápido ou o time tem dado mas não tem senioridade para interpretar.</p>
+              </div>
+              <div>
+                <div class="prop-section-label">A cada mês você recebe</div>
+                <div class="deliverable"><div class="del-num">→</div><div><h5>Relatório mensal de mercado (5–8 páginas)</h5><p>Entregue até o dia 15 de cada mês. Leitura de tendências com implicação prática por categoria.</p></div></div>
+                <div class="deliverable"><div class="del-num">→</div><div><h5>[X] análises ad-hoc por demanda</h5><p>Turnaround de 48–72h via e-mail ou deck. Sem formalidade desnecessária.</p></div></div>
+                <div class="deliverable"><div class="del-num">→</div><div><h5>[X] reuniões de alinhamento / mês</h5><p>Agendadas com antecedência de 5 dias úteis. Presencial ou remoto.</p></div></div>
+                <div class="deliverable"><div class="del-num">→</div><div><h5>Acesso priority a todos os relatórios</h5><p>Consumer Pulse com 1 semana de antecedência vs. versão pública.</p></div></div>
+              </div>
+              <div>
+                <div class="prop-section-label">Seção 06 · Investimento</div>
+                <div class="wm-grid cols-2">
+                  <div class="prop-field"><span class="pf-label">Mensalidade</span><span class="pf-value" style="color:var(--fg);font-weight:500">R$ [X.000] (por extenso)</span></div>
+                  <div class="prop-field"><span class="pf-label">Pagamento</span><span class="pf-value">Boleto mensal, vencimento dia 5, emitido 10 dias antes</span></div>
+                  <div class="prop-field"><span class="pf-label">Vigência</span><span class="pf-value">[X] meses, renovação automática. Aviso 30 dias antes para não renovar.</span></div>
+                  <div class="prop-field"><span class="pf-label">Rescisão</span><span class="pf-value">1 mensalidade de multa por saída antecipada sem justa causa</span></div>
+                  <div class="prop-field"><span class="pf-label">Reajuste</span><span class="pf-value">IPCA anual no aniversário do contrato</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COPY -->
+      <section class="wm-section" id="copy">
+        <div class="wm-section-head">
+          <div class="num">03</div>
+          <div>
+            <h2 class="wm-h2">Copy aprovado</h2>
+            <p class="sub">Frases de alta performance por situação de cliente. Clique para copiar.</p>
+          </div>
+        </div>
+        <div class="wm-grid cols-2">
+          <div class="copy-example" onclick="WM_copy(this.querySelector('p').innerText,'copy copiado')">
+            <span class="cx-label">Para empresa em lançamento</span>
+            <p>Antes de alocar budget, a questão é: o mercado está onde achamos que está? O projeto a seguir responde isso antes da decisão.</p>
+          </div>
+          <div class="copy-example" onclick="WM_copy(this.querySelector('p').innerText,'copy copiado')">
+            <span class="cx-label">Para empresa com queda de performance</span>
+            <p>Quando o dado mostra queda sem explicar por quê, ou o retrato do consumidor ficou defasado, ou a hipótese de posicionamento perdeu validade. Vamos descobrir qual.</p>
+          </div>
+          <div class="copy-example" onclick="WM_copy(this.querySelector('p').innerText,'copy copiado')">
+            <span class="cx-label">Para empresa com dado demais</span>
+            <p>A Wisemetrics não vai adicionar mais um relatório à pilha. Vai substituir três relatórios que não orientam decisão por uma leitura que orienta.</p>
+          </div>
+          <div class="copy-example" onclick="WM_copy(this.querySelector('p').innerText,'copy copiado')">
+            <span class="cx-label">Para liderança C-Level</span>
+            <p>O que você precisa não é de mais uma pesquisa — é de uma análise que aguente a próxima reunião de board.</p>
+          </div>
+          <div class="copy-example" onclick="WM_copy(this.querySelector('p').innerText,'copy copiado')">
+            <span class="cx-label">Seção de metodologia</span>
+            <p>Este não é um projeto de levantamento de dados. É um projeto de interpretação. Os dados são o meio; a hipótese estratégica é o fim.</p>
+          </div>
+          <div class="copy-example" onclick="WM_copy(this.querySelector('p').innerText,'copy copiado')">
+            <span class="cx-label">Seção de investimento</span>
+            <p>O investimento reflete o escopo definido nesta proposta. O que não está listado como entregável não está incluído — qualquer adição será orçada separadamente.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHECKLIST -->
+      <section class="wm-section" id="checklist">
+        <div class="wm-section-head">
+          <div class="num">04</div>
+          <div>
+            <h2 class="wm-h2">Checklist pré-envio</h2>
+            <p class="sub">Marque cada item antes de mandar qualquer proposta. Clique nos itens para marcar.</p>
+          </div>
+        </div>
+        <div class="wm-grid cols-2" style="align-items:start">
+          <div>
+            <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px">Conteúdo</div>
+            <div class="wm-checklist">
+              <div class="wm-check-item"><div class="wm-check-box"></div><div class="check-text">A hipótese de trabalho está formulada (não é só descrição do que vai ser feito)?</div></div>
+              <div class="wm-check-item"><div class="wm-check-box"></div><div class="check-text">A metodologia explica por que essa abordagem e não outra?</div></div>
+              <div class="wm-check-item"><div class="wm-check-box"></div><div class="check-text">Os entregáveis têm critério de aceite claro e verificável?</div></div>
+              <div class="wm-check-item"><div class="wm-check-box"></div><div class="check-text">O cronograma lista as dependências do cliente?</div></div>
+              <div class="wm-check-item"><div class="wm-check-box"></div><div class="check-text">O valor está alinhado com a tabela interna de preços?</div></div>
+            </div>
+            <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin:var(--wm-s-5) 0 12px">Tom</div>
+            <div class="wm-checklist">
+              <div class="wm-check-item"><div class="wm-check-box"></div><div class="check-text">Não usa "desbloqueie", "potencialize" ou "revolucione"?</div></div>
+              <div class="wm-check-item"><div class="wm-check-box"></div><div class="check-text">Não usa construção "não é apenas X — é Y"?</div></div>
+              <div class="wm-check-item"><div class="wm-check-box"></div><div class="check-text">Tem ao menos 1 dado ou referência de mercado na contextualização?</div></div>
+              <div class="wm-check-item"><div class="wm-check-box"></div><div class="check-text">Pode ser lida por alguém que nunca ouviu falar da Wisemetrics?</div></div>
+            </div>
+          </div>
+          <div>
+            <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px">Formato</div>
+            <div class="wm-checklist">
+              <div class="wm-check-item"><div class="wm-check-box"></div><div class="check-text">Máximo de 12 páginas (incluindo capa)?</div></div>
+              <div class="wm-check-item"><div class="wm-check-box"></div><div class="check-text">Visual usando o template Wisemetrics (Design System v0.2)?</div></div>
+              <div class="wm-check-item"><div class="wm-check-box"></div><div class="check-text">Versão e data na capa?</div></div>
+              <div class="wm-check-item"><div class="wm-check-box"></div><div class="check-text">Validade da proposta mencionada explicitamente?</div></div>
+            </div>
+            <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin:var(--wm-s-5) 0 12px">Processo</div>
+            <div class="wm-checklist">
+              <div class="wm-check-item"><div class="wm-check-box"></div><div class="check-text">Briefing de discovery feito antes de elaborar a proposta?</div></div>
+              <div class="wm-check-item"><div class="wm-check-box"></div><div class="check-text">Revisada por ao menos 1 pessoa além de quem escreveu?</div></div>
+              <div class="wm-check-item"><div class="wm-check-box"></div><div class="check-text">E-mail com assunto padrão: "Wisemetrics — Proposta [Serviço] — [Empresa] — v1.0"?</div></div>
+              <div class="wm-check-item"><div class="wm-check-box"></div><div class="check-text">CRM atualizado com status "proposta enviada" + valor + data?</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="wm-footer">
+        <span class="left">WISEMETRICS · MODELOS DE PROPOSTA · v1.0 · 2026 · USO INTERNO</span>
+        <span class="right">DADO QUE PENSA.</span>
+      </footer>
+    </div>
+  </main>
+</div>
+<div class="wm-toast" id="toast"></div>
+<script src="wisemetrics.js"></script>
+<script>
+function showTab(i) {
+  document.querySelectorAll('.prop-tab').forEach((t,j) => t.classList.toggle('active', i===j));
+  document.querySelectorAll('.prop-panel').forEach((p,j) => p.classList.toggle('active', i===j));
+}
+</script>
+</body>
+</html>

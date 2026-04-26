@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Wisemetrics — Identidade Visual</title>
+<meta name="description" content="Guia executivo de identidade visual Wisemetrics: cores, tipografia, logo, motion e regras de uso."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300..800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="wisemetrics.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+.ramp-strip { display: flex; height: 56px; border-radius: var(--wm-r-2); overflow: hidden; border: 1px solid var(--border); }
+.ramp-step { flex: 1; position: relative; cursor: pointer; transition: transform var(--wm-dur-1); }
+.ramp-step:hover { transform: scaleY(1.06); }
+.ramp-step:hover::after { content: attr(data-label); position: absolute; bottom: -24px; left: 50%; transform: translateX(-50%); font-family: var(--wm-font-mono); font-size: 9px; color: var(--fg-muted); white-space: nowrap; }
+.type-specimen {
+  display: flex; flex-direction: column; gap: var(--wm-s-2);
+  padding: var(--wm-s-5); border: 1px solid var(--border); border-radius: var(--wm-r-4);
+  background: var(--bg-raised);
+}
+.motion-card {
+  padding: var(--wm-s-5); border: 1px solid var(--border); border-radius: var(--wm-r-4);
+  background: var(--bg-raised); display: flex; flex-direction: column; gap: var(--wm-s-3);
+}
+.motion-demo {
+  height: 48px; border-radius: var(--wm-r-2); background: var(--bg-sunken);
+  display: flex; align-items: center; padding: 0 var(--wm-s-3); overflow: hidden; cursor: pointer;
+}
+.motion-ball {
+  width: 24px; height: 24px; border-radius: 50%; background: var(--accent);
+  box-shadow: var(--wm-glow-signal); transform: translateX(0); transition: transform var(--wm-dur-2) var(--wm-ease-standard);
+}
+.motion-demo:hover .motion-ball { transform: translateX(140px); }
+.motion-demo.entrance .motion-ball { transform: translateX(140px); transition-timing-function: var(--wm-ease-entrance); transition-duration: var(--wm-dur-3); }
+.motion-demo.entrance:hover .motion-ball { transform: translateX(0); }
+.logo-variant {
+  background: var(--bg-raised); border: 1px solid var(--border); border-radius: var(--wm-r-4);
+  padding: var(--wm-s-6); display: flex; align-items: center; justify-content: center; min-height: 120px;
+}
+</style>
+</head>
+<body>
+<div class="wm-app">
+  <aside class="wm-side">
+    <div class="wm-brandmark">
+      <svg class="sym" viewBox="0 0 40 40" fill="none">
+        <rect x="3" y="22" width="5" height="14" fill="currentColor" opacity=".85"/>
+        <rect x="11" y="16" width="5" height="20" fill="currentColor" opacity=".85"/>
+        <rect x="19" y="10" width="5" height="26" fill="currentColor" opacity=".85"/>
+        <rect x="27" y="18" width="5" height="18" fill="currentColor" opacity=".85"/>
+        <circle cx="34.5" cy="6" r="3.5" fill="var(--accent)"/>
+      </svg>
+      <div>
+        <div class="name">Wisemetrics<span class="dot">.</span></div>
+        <div class="wm-version">Identidade Visual</div>
+      </div>
+    </div>
+    <nav class="wm-nav">
+      <a href="index.html"><span class="num">--</span>Hub Central</a>
+      <div class="group-label" style="margin-top:16px">Documentos</div>
+      <a href="identidade-visual.html"><span class="num">01</span>Identidade Visual</a>
+      <a href="canais-digitais.html"><span class="num">02</span>Canais Digitais</a>
+      <a href="estrategia-conteudo.html"><span class="num">03</span>Estratégia Editorial</a>
+      <a href="go-to-market.html"><span class="num">04</span>Go-to-Market</a>
+      <a href="servicos.html"><span class="num">05</span>Serviços &amp; Preços</a>
+      <a href="modelos-proposta.html"><span class="num">06</span>Modelos de Proposta</a>
+      <a href="wisemetrics-design-system-v2.html"><span class="num">07</span>Design System</a>
+      <div class="group-label" style="margin-top:16px">Seções</div>
+
+    </nav>
+    <div class="wm-theme-switch">
+      <span class="slider"></span>
+      <button data-theme-btn="dark" class="active">Dark</button>
+      <button data-theme-btn="light">Light</button>
+    </div>
+  </aside>
+
+  <main class="wm-main">
+    <div class="wm-toc-float">
+      <div class="wm-toc-container">
+        <a href="#logo"><span class="num">01</span>Logo</a>
+      <a href="#cores"><span class="num">02</span>Cores</a>
+      <a href="#tipografia"><span class="num">03</span>Tipografia</a>
+      <a href="#motion"><span class="num">04</span>Motion</a>
+      <a href="#aplicacoes"><span class="num">05</span>Aplicações</a>
+      <a href="#nao-fazer"><span class="num">06</span>Não fazer</a>
+      </div>
+    </div>
+    <div class="wm-container">
+
+      <section class="wm-hero">
+        <div class="wm-hero-grid-overlay"></div>
+        <canvas class="wm-hero-canvas" id="heroCanvas"></canvas>
+        <div class="wm-hud">
+          <div class="row"><span>sistema</span><span class="v">Design System v0.2</span></div>
+          <div class="row"><span>cores</span><span class="v">Teal · Ink · Paper</span></div>
+          <div class="row"><span>tipografia</span><span class="v">3 famílias</span></div>
+          <div class="row"><span>tokens</span><span class="v">JSON exportável</span></div>
+        </div>
+        <div class="wm-hero-content">
+          <div class="wm-eyebrow wm-fade-up"><span class="pulse"></span>Design System v0.2 · Guia Executivo</div>
+          <h1 class="wm-h1 wm-fade-up d1">Identidade <em>Visual.</em></h1>
+          <p class="wm-lede wm-fade-up d2">As regras que garantem que tudo feito pela Wisemetrics — de um post de LinkedIn a um relatório de 40 páginas — seja imediatamente reconhecível como Wisemetrics.</p>
+          <div class="wm-hero-meta wm-fade-up d3">
+            <div class="cell"><span class="label">Display</span><span class="val accent">Fraunces</span></div>
+            <div class="cell"><span class="label">Interface</span><span class="val">Inter Tight</span></div>
+            <div class="cell"><span class="label">Dado</span><span class="val">JetBrains Mono</span></div>
+            <div class="cell"><span class="label">Paleta</span><span class="val">Signal · Ink · Paper</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LOGO -->
+      <section class="wm-section" id="logo">
+        <div class="wm-section-head">
+          <div class="num">01</div>
+          <div>
+            <h2 class="wm-h2">Logo & Símbolo</h2>
+            <p class="sub">O símbolo é a combinação de barras de dado e o ponto Signal. A versão wordmark usa Fraunces peso 400–500, optical size 96+. O ponto final em teal é parte da marca.</p>
+          </div>
+        </div>
+        <div class="wm-grid cols-3" style="margin-bottom:var(--wm-s-5)">
+          <div class="logo-variant" style="background:var(--wm-ink-800)">
+            <div style="display:flex;align-items:center;gap:12px">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <rect x="3" y="22" width="5" height="14" fill="#ece7dc" opacity=".85"/>
+                <rect x="11" y="16" width="5" height="20" fill="#ece7dc" opacity=".85"/>
+                <rect x="19" y="10" width="5" height="26" fill="#ece7dc" opacity=".85"/>
+                <rect x="27" y="18" width="5" height="18" fill="#ece7dc" opacity=".85"/>
+                <circle cx="34.5" cy="6" r="3.5" fill="#1db5a3"/>
+              </svg>
+              <div style="font-family:var(--wm-font-display);font-weight:450;font-size:1.25rem;letter-spacing:-.015em;color:#ece7dc">Wisemetrics<span style="color:#1db5a3">.</span></div>
+            </div>
+          </div>
+          <div class="logo-variant" style="background:#f7f5f0;border-color:#d9d1bf">
+            <div style="display:flex;align-items:center;gap:12px">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <rect x="3" y="22" width="5" height="14" fill="#132a44" opacity=".85"/>
+                <rect x="11" y="16" width="5" height="20" fill="#132a44" opacity=".85"/>
+                <rect x="19" y="10" width="5" height="26" fill="#132a44" opacity=".85"/>
+                <rect x="27" y="18" width="5" height="18" fill="#132a44" opacity=".85"/>
+                <circle cx="34.5" cy="6" r="3.5" fill="#0f9385"/>
+              </svg>
+              <div style="font-family:var(--wm-font-display);font-weight:450;font-size:1.25rem;letter-spacing:-.015em;color:#132a44">Wisemetrics<span style="color:#0f9385">.</span></div>
+            </div>
+          </div>
+          <div class="logo-variant" style="background:var(--wm-signal-400)">
+            <div style="display:flex;align-items:center;gap:12px">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <rect x="3" y="22" width="5" height="14" fill="#132a44" opacity=".9"/>
+                <rect x="11" y="16" width="5" height="20" fill="#132a44" opacity=".9"/>
+                <rect x="19" y="10" width="5" height="26" fill="#132a44" opacity=".9"/>
+                <rect x="27" y="18" width="5" height="18" fill="#132a44" opacity=".9"/>
+                <circle cx="34.5" cy="6" r="3.5" fill="#132a44"/>
+              </svg>
+              <div style="font-family:var(--wm-font-display);font-weight:450;font-size:1.25rem;letter-spacing:-.015em;color:#132a44">Wisemetrics<span>.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="wm-grid cols-3">
+          <div style="text-align:center"><div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px">Variante Dark</div><p style="font-size:var(--wm-text-sm);color:var(--fg-muted);margin:0">Uso padrão em fundos escuros. Ink-800 ou mais escuro.</p></div>
+          <div style="text-align:center"><div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px">Variante Light</div><p style="font-size:var(--wm-text-sm);color:var(--fg-muted);margin:0">Uso em backgrounds Paper. Ink-500 com Signal-500.</p></div>
+          <div style="text-align:center"><div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px">Variante Signal</div><p style="font-size:var(--wm-text-sm);color:var(--fg-muted);margin:0">Apenas em backgrounds Signal. CTAs e eventos.</p></div>
+        </div>
+      </section>
+
+      <!-- CORES -->
+      <section class="wm-section" id="cores">
+        <div class="wm-section-head">
+          <div class="num">02</div>
+          <div>
+            <h2 class="wm-h2">Paleta de cores</h2>
+            <p class="sub">Três famílias — Signal (teal), Ink (azul-marinho), Paper (bege quente). Signal é evento: aparece uma vez por tela. Clicar em qualquer tom copia o token.</p>
+          </div>
+        </div>
+
+        <div class="wm-sub" style="margin-top:0">
+          <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px">Signal · Teal</div>
+          <div class="ramp-strip">
+            <div class="ramp-step" style="background:var(--wm-signal-50)" data-label="50" onclick="WM_copy('--wm-signal-50','--wm-signal-50 · #e6f9f6')"></div>
+            <div class="ramp-step" style="background:var(--wm-signal-100)" data-label="100" onclick="WM_copy('--wm-signal-100','--wm-signal-100')"></div>
+            <div class="ramp-step" style="background:var(--wm-signal-200)" data-label="200" onclick="WM_copy('--wm-signal-200','--wm-signal-200')"></div>
+            <div class="ramp-step" style="background:var(--wm-signal-300)" data-label="300" onclick="WM_copy('--wm-signal-300','--wm-signal-300')"></div>
+            <div class="ramp-step" style="background:var(--wm-signal-400)" data-label="400 · hero" onclick="WM_copy('#1db5a3','#1db5a3 · Signal-400 · hero')"></div>
+            <div class="ramp-step" style="background:var(--wm-signal-500)" data-label="500" onclick="WM_copy('--wm-signal-500','--wm-signal-500')"></div>
+            <div class="ramp-step" style="background:var(--wm-signal-600)" data-label="600" onclick="WM_copy('--wm-signal-600','--wm-signal-600')"></div>
+            <div class="ramp-step" style="background:var(--wm-signal-700)" data-label="700" onclick="WM_copy('--wm-signal-700','--wm-signal-700')"></div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px">Ink · Azul-marinho profundo</div>
+          <div class="ramp-strip">
+            <div class="ramp-step" style="background:var(--wm-ink-50)" data-label="50"></div>
+            <div class="ramp-step" style="background:var(--wm-ink-100)" data-label="100"></div>
+            <div class="ramp-step" style="background:var(--wm-ink-200)" data-label="200"></div>
+            <div class="ramp-step" style="background:var(--wm-ink-300)" data-label="300"></div>
+            <div class="ramp-step" style="background:var(--wm-ink-400)" data-label="400"></div>
+            <div class="ramp-step" style="background:var(--wm-ink-500)" data-label="500 · primary"></div>
+            <div class="ramp-step" style="background:var(--wm-ink-600)" data-label="600"></div>
+            <div class="ramp-step" style="background:var(--wm-ink-700)" data-label="700"></div>
+            <div class="ramp-step" style="background:var(--wm-ink-800)" data-label="800 · dark bg"></div>
+            <div class="ramp-step" style="background:var(--wm-ink-900)" data-label="900"></div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <div class="wm-mono" style="color:var(--fg-muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px">Paper · Bege quente (modo light)</div>
+          <div class="ramp-strip">
+            <div class="ramp-step" style="background:var(--wm-paper-50)" data-label="50 · canvas"></div>
+            <div class="ramp-step" style="background:var(--wm-paper-100)" data-label="100"></div>
+            <div class="ramp-step" style="background:var(--wm-paper-200)" data-label="200"></div>
+            <div class="ramp-step" style="background:var(--wm-paper-300)" data-label="300"></div>
+            <div class="ramp-step" style="background:var(--wm-paper-400)" data-label="400"></div>
+            <div class="ramp-step" style="background:var(--wm-paper-500)" data-label="500"></div>
+            <div class="ramp-step" style="background:var(--wm-paper-600)" data-label="600"></div>
+            <div class="ramp-step" style="background:var(--wm-paper-700)" data-label="700"></div>
+            <div class="ramp-step" style="background:var(--wm-paper-800)" data-label="800"></div>
+            <div class="ramp-step" style="background:var(--wm-paper-900)" data-label="900"></div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Swatches principais</h3>
+          <div class="wm-grid cols-5">
+            <div class="wm-swatch" data-token="--wm-signal-400" data-hex="#1db5a3" style="--swatch:#1db5a3;--swatch-fg:#021714"><div><div class="name">Signal 400</div></div><div><div class="hex">#1DB5A3</div><div class="token">Hero · CTA</div></div><span class="copied">copiado</span></div>
+            <div class="wm-swatch" data-token="--wm-ink-800" data-hex="#040d18" style="--swatch:#040d18;--swatch-fg:#ece7dc"><div><div class="name">Ink 800</div></div><div><div class="hex">#040D18</div><div class="token">BG dark</div></div><span class="copied">copiado</span></div>
+            <div class="wm-swatch" data-token="--wm-ink-500" data-hex="#132a44" style="--swatch:#132a44;--swatch-fg:#c8d5e1"><div><div class="name">Ink 500</div></div><div><div class="hex">#132A44</div><div class="token">Primary</div></div><span class="copied">copiado</span></div>
+            <div class="wm-swatch" data-token="--wm-paper-50" data-hex="#f7f5f0" style="--swatch:#f7f5f0;--swatch-fg:#26231a"><div><div class="name">Paper 50</div></div><div><div class="hex">#F7F5F0</div><div class="token">Canvas light</div></div><span class="copied">copiado</span></div>
+            <div class="wm-swatch" data-token="--wm-amber-400" data-hex="#e8a33a" style="--swatch:#e8a33a;--swatch-fg:#26231a"><div><div class="name">Amber 400</div></div><div><div class="hex">#E8A33A</div><div class="token">Atenção</div></div><span class="copied">copiado</span></div>
+          </div>
+        </div>
+
+        <div class="wm-sub">
+          <h3 class="wm-h3">Regra 60 / 30 / 10</h3>
+          <p style="color:var(--fg-muted);max-width:62ch;margin-bottom:16px">O teal é evento — um único destaque por composição. Quando tudo grita, nada é ouvido.</p>
+          <div style="display:flex;height:56px;border-radius:8px;overflow:hidden;border:1px solid var(--border)">
+            <div style="flex:60;background:var(--wm-ink-800);display:flex;align-items:center;justify-content:center;font-family:var(--wm-font-mono);font-size:10px;color:var(--fg-muted)">60% · neutro (Ink)</div>
+            <div style="flex:30;background:var(--wm-paper-200);display:flex;align-items:center;justify-content:center;font-family:var(--wm-font-mono);font-size:10px;color:var(--wm-ink-700)">30% · contraste (Paper)</div>
+            <div style="flex:10;background:var(--wm-signal-400);box-shadow:var(--wm-glow-signal);display:flex;align-items:center;justify-content:center;font-family:var(--wm-font-mono);font-size:10px;color:var(--wm-ink-900)">10% · Signal</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TIPOGRAFIA -->
+      <section class="wm-section" id="tipografia">
+        <div class="wm-section-head">
+          <div class="num">03</div>
+          <div>
+            <h2 class="wm-h2">Tipografia</h2>
+            <p class="sub">Três famílias com papéis distintos. Fraunces para impacto editorial. Inter Tight para interface e corpo de texto. JetBrains Mono para dados, tokens e código.</p>
+          </div>
+        </div>
+        <div class="wm-grid cols-3">
+          <div class="type-specimen">
+            <div class="wm-mono" style="color:var(--accent);font-size:10px;text-transform:uppercase;letter-spacing:.12em">Fraunces · Display</div>
+            <div style="font-family:var(--wm-font-display);font-size:clamp(3rem,8vw,6rem);font-weight:350;line-height:.9;letter-spacing:-.04em;font-variation-settings:'opsz' 144,'SOFT' 20">Dado.<br><em style="font-style:italic;color:var(--accent)">vivo.</em></div>
+            <div style="display:flex;flex-direction:column;gap:4px;margin-top:8px">
+              <div style="font-family:var(--wm-font-display);font-size:var(--wm-text-3xl);font-weight:350;letter-spacing:-.03em;font-variation-settings:'opsz' 96">Display 48px</div>
+              <div style="font-family:var(--wm-font-display);font-size:var(--wm-text-2xl);font-weight:400;letter-spacing:-.025em">Heading 36px</div>
+              <div style="font-family:var(--wm-font-display);font-size:var(--wm-text-xl);font-weight:500;letter-spacing:-.015em">Título 28px</div>
+              <div style="font-family:var(--wm-font-display);font-size:var(--wm-text-lg);font-weight:350;color:var(--fg-muted)">Lede 22px · voz do insight</div>
+            </div>
+          </div>
+          <div class="type-specimen">
+            <div class="wm-mono" style="color:var(--accent);font-size:10px;text-transform:uppercase;letter-spacing:.12em">Inter Tight · Interface</div>
+            <div style="font-family:var(--wm-font-body);font-size:clamp(3rem,8vw,6rem);font-weight:400;line-height:.9;letter-spacing:-.04em">Aa</div>
+            <div style="display:flex;flex-direction:column;gap:4px;margin-top:8px">
+              <div style="font-family:var(--wm-font-body);font-size:var(--wm-text-base);font-weight:500">Base 16px · semi</div>
+              <div style="font-family:var(--wm-font-body);font-size:var(--wm-text-base);font-weight:400">Base 16px · regular</div>
+              <div style="font-family:var(--wm-font-body);font-size:var(--wm-text-sm);color:var(--fg-muted)">Small 14px · corpo muted</div>
+              <div style="font-family:var(--wm-font-body);font-size:var(--wm-text-md)">UI 18px · lede de card</div>
+              <div style="font-family:var(--wm-font-body);font-size:var(--wm-text-xs);color:var(--fg-subtle)">Caption 12px · rodapé</div>
+            </div>
+          </div>
+          <div class="type-specimen">
+            <div class="wm-mono" style="color:var(--accent);font-size:10px;text-transform:uppercase;letter-spacing:.12em">JetBrains Mono · Dado</div>
+            <div style="font-family:var(--wm-font-mono);font-size:clamp(3rem,8vw,6rem);font-weight:400;line-height:.9;letter-spacing:-.02em;color:var(--accent)">01</div>
+            <div style="display:flex;flex-direction:column;gap:4px;margin-top:8px">
+              <div style="font-family:var(--wm-font-mono);font-size:var(--wm-text-xs);text-transform:uppercase;letter-spacing:.14em;color:var(--accent)">KICKER · EYEBROW</div>
+              <div style="font-family:var(--wm-font-mono);font-size:var(--wm-text-xs);color:var(--fg-muted)">label de gráfico · 12px</div>
+              <div style="font-family:var(--wm-font-mono);font-size:var(--wm-text-2xs);letter-spacing:.08em;text-transform:uppercase;color:var(--fg-subtle)">HUD · METADATA · 11px</div>
+              <div style="font-family:var(--wm-font-mono);font-size:var(--wm-text-xl);font-weight:700">3,42%</div>
+              <div style="font-family:var(--wm-font-mono);font-size:var(--wm-text-3xl);font-weight:500;color:var(--accent)">R$ 12,80</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MOTION -->
+      <section class="wm-section" id="motion">
+        <div class="wm-section-head">
+          <div class="num">04</div>
+          <div>
+            <h2 class="wm-h2">Motion</h2>
+            <p class="sub">Movimento com propósito: revelar hierarquia, confirmar ação, guiar o olhar ao dado. Durações curtas. Respeita prefers-reduced-motion.</p>
+          </div>
+        </div>
+        <div class="wm-grid cols-3">
+          <div class="motion-card">
+            <div class="wm-mono" style="color:var(--accent);font-size:10px;text-transform:uppercase;letter-spacing:.1em">Dur-1 · 120ms</div>
+            <div style="font-family:var(--wm-font-display);font-weight:500;font-size:var(--wm-text-lg)">Micro-feedback</div>
+            <p style="color:var(--fg-muted);font-size:var(--wm-text-sm);margin:0">Hover de botão, toggle, foco. Quase imperceptível — só confirma a ação.</p>
+            <div class="motion-demo">
+              <div class="motion-ball" style="transition-duration:120ms"></div>
+            </div>
+          </div>
+          <div class="motion-card">
+            <div class="wm-mono" style="color:var(--accent);font-size:10px;text-transform:uppercase;letter-spacing:.1em">Dur-2 · 200ms</div>
+            <div style="font-family:var(--wm-font-display);font-weight:500;font-size:var(--wm-text-lg)">Ação discreta</div>
+            <p style="color:var(--fg-muted);font-size:var(--wm-text-sm);margin:0">Entrada de dropdown, abertura de menu, transições de tab.</p>
+            <div class="motion-demo">
+              <div class="motion-ball" style="transition-duration:200ms"></div>
+            </div>
+          </div>
+          <div class="motion-card">
+            <div class="wm-mono" style="color:var(--accent);font-size:10px;text-transform:uppercase;letter-spacing:.1em">Dur-3 · 320ms</div>
+            <div style="font-family:var(--wm-font-display);font-weight:500;font-size:var(--wm-text-lg)">Revelar conteúdo</div>
+            <p style="color:var(--fg-muted);font-size:var(--wm-text-sm);margin:0">Cards, modais, troca de tema. O usuário deve perceber a transição.</p>
+            <div class="motion-demo">
+              <div class="motion-ball" style="transition-duration:320ms"></div>
+            </div>
+          </div>
+          <div class="motion-card">
+            <div class="wm-mono" style="color:var(--accent);font-size:10px;text-transform:uppercase;letter-spacing:.1em">Dur-4 · 520ms</div>
+            <div style="font-family:var(--wm-font-display);font-weight:500;font-size:var(--wm-text-lg)">Storytelling</div>
+            <p style="color:var(--fg-muted);font-size:var(--wm-text-sm);margin:0">Stagger de entrada em landing e relatórios. Usado com parcimônia.</p>
+            <div class="motion-demo entrance">
+              <div class="motion-ball" style="transition-duration:520ms"></div>
+            </div>
+          </div>
+          <div class="motion-card">
+            <div class="wm-mono" style="color:var(--accent);font-size:10px;text-transform:uppercase;letter-spacing:.1em">Ambient · loop</div>
+            <div style="font-family:var(--wm-font-display);font-weight:500;font-size:var(--wm-text-lg)">Hero generativo</div>
+            <p style="color:var(--fg-muted);font-size:var(--wm-text-sm);margin:0">WebGL de pontos reage ao cursor. Grafo 2D e órbita para seções de fundo.</p>
+            <div style="height:48px;border-radius:var(--wm-r-2);overflow:hidden;position:relative">
+              <canvas data-ambient="graph" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+            </div>
+          </div>
+          <div class="motion-card">
+            <div class="wm-mono" style="color:var(--accent);font-size:10px;text-transform:uppercase;letter-spacing:.1em">Easing · Standard</div>
+            <div style="font-family:var(--wm-font-display);font-weight:500;font-size:var(--wm-text-lg)">cubic-bezier</div>
+            <p style="color:var(--fg-muted);font-size:var(--wm-text-sm);margin:0">Entrada: <code style="font-family:var(--wm-font-mono);font-size:11px">.16,.84,.24,1</code><br>Standard: <code style="font-family:var(--wm-font-mono);font-size:11px">.2,.6,.2,1</code></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- APLICAÇÕES -->
+      <section class="wm-section" id="aplicacoes">
+        <div class="wm-section-head">
+          <div class="num">05</div>
+          <div>
+            <h2 class="wm-h2">Aplicações aprovadas</h2>
+            <p class="sub">Como o sistema se manifesta em diferentes superfícies. Cada aplicação tem regras específicas sobre uso de cor e tipografia.</p>
+          </div>
+        </div>
+        <div class="wm-grid cols-3">
+          <div class="wm-social var-ink">
+            <canvas data-social="ink"></canvas>
+            <span class="kicker">Relatório · Q2/2026</span>
+            <h5>Social <em>Ink</em> — fundo escuro + grafo</h5>
+            <div class="foot"><span>wisemetrics.com.br</span><span>#data</span></div>
+          </div>
+          <div class="wm-social var-paper">
+            <span class="kicker">Nota curta</span>
+            <h5>Social <em>Paper</em> — editorial sóbrio</h5>
+            <div class="foot"><span>wisemetrics.com.br</span><span>#insights</span></div>
+          </div>
+          <div class="wm-social var-signal">
+            <span class="kicker">Case · Destaque</span>
+            <h5>Social <em>Signal</em> — atenção máxima</h5>
+            <div class="foot"><span>wisemetrics.com.br</span><span>#case</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NÃO FAZER -->
+      <section class="wm-section" id="nao-fazer">
+        <div class="wm-section-head">
+          <div class="num">06</div>
+          <div>
+            <h2 class="wm-h2">O que nunca fazer</h2>
+            <p class="sub">Regras de proteção da identidade. São proibições definitivas — não exceções situacionais.</p>
+          </div>
+        </div>
+        <div class="wm-voice">
+          <div class="do">
+            <h5>Permitido</h5>
+            <ul>
+              <li>Usar Signal teal como único acento por composição</li>
+              <li>Combinar Fraunces display com Inter Tight</li>
+              <li>Aplicar itálico Fraunces em palavras-chave de headlines</li>
+              <li>Usar gradiente de Ink-800 → Ink-700 como fundo dark</li>
+              <li>Fundo Paper-50 com texto Ink-500 no modo light</li>
+              <li>Motion sempre com purpose — confirmar ação ou revelar hierarquia</li>
+            </ul>
+          </div>
+          <div class="dont">
+            <h5>Proibido</h5>
+            <ul>
+              <li>Usar Signal em mais de 10% de uma composição</li>
+              <li>Colocar texto claro sobre fundo Signal (exceção: Ink escuro)</li>
+              <li>Misturas de fontes além da tríade aprovada</li>
+              <li>Gradientes de cor (apenas gradientes de opacidade em overlays)</li>
+              <li>Animações de bounce ou elastic</li>
+              <li>Logo sobre fundos que não sejam Ink-800, Paper-50 ou Signal-400</li>
+            </ul>
+          </div>
+        </div>
+        <div class="wm-sub">
+          <div class="wm-alert warning">
+            <svg class="ic" viewBox="0 0 20 20" fill="none"><path d="M10 2l8.5 15h-17L10 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 8v4M10 14.5v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <div><strong>Referência viva.</strong><p>Este guia é complementar ao Design System v0.2 completo (<code style="font-family:var(--wm-font-mono);font-size:12px">wisemetrics-design-system-v2.html</code>). Em caso de conflito, o sistema prevalece.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="wm-footer">
+        <span class="left">WISEMETRICS · IDENTIDADE VISUAL · Design System v0.2 · 2026</span>
+        <span class="right">DADO QUE PENSA.</span>
+      </footer>
+    </div>
+  </main>
+</div>
+<div class="wm-toast" id="toast"></div>
+<script src="wisemetrics.js"></script>
+</body>
+</html>
