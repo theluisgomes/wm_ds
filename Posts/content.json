@@ -1,0 +1,31 @@
+{
+    "id": "WM-2026-W18-003",
+    "template_id": "carousel_7",
+    "template_version": "v1",
+    "needs_review": true,
+    "fields": {
+        "carousel.s01.kicker": "IA aplicada",
+        "carousel.s01.headline": "O gargalo nao esta na ideia",
+        "carousel.s01.subheadline": "O gargalo real esta no processo, nao na ferramenta.",
+        "carousel.s02.title": "O problema aparece no output",
+        "carousel.s02.body": "Quando o insumo chega solto, a producao precisa reinterpretar tese, formato, densidade e CTA.",
+        "carousel.s03.title": "O mecanismo por tras",
+        "carousel.s03.body": "Automacao boa preserva criterio e remove retrabalho.",
+        "carousel.s04.title": "O erro comum",
+        "carousel.s04.body": "Comecar pela ferramenta antes de definir campos, estados e criterios. A automacao acelera o que ja existe.",
+        "carousel.s05.title": "A evidencia disponivel",
+        "carousel.s05.body": "A) ha friccao no input B) ha retrabalho na revisao C) ha desalinhamento com o template",
+        "carousel.s06.title": "O ajuste pratico",
+        "carousel.s06.body": "Separar estrategia, narrativa e render. A IA estrutura a tese; o schema garante que o Figma receba os campos certos.",
+        "carousel.s07.title": "Automacao boa remove retrabalho",
+        "carousel.s07.body": "O time continua decidindo angulo, criterio e publicacao. O sistema cuida da passagem repetitiva entre pauta e template.",
+        "carousel.s07.cta": "Mapeie o processo antes de automatizar."
+    },
+    "caption": "A producao de conteudo melhora quando o processo fica claro.\n\nSem campos e criterios, a automacao so acelera retrabalho.\n\nTransforme isso em um contrato de producao.",
+    "hashtags": [
+        "#Wisemetrics",
+        "#IA",
+        "#Automacao",
+        "#Estrategia"
+    ]
+}

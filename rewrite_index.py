@@ -1,6 +1,7 @@
 import re
 
-
+with open('index.html', 'r') as f:
+    content = f.read()
 
 # I will write the clean index.html here
 clean_html = """<!doctype html>
@@ -35,11 +36,12 @@ clean_html = """<!doctype html>
     <nav class="wm-nav">
       <a href="index.html"><span class="num">--</span>Hub Central</a>
       <div class="group-label" style="margin-top:16px">Documentos</div>
-      <a href="identidade-visual.html"><span class="num">01</span>Identidade Visual</a>
-      <a href="canais-digitais.html"><span class="num">02</span>Canais Digitais</a>
-      <a href="estrategia-conteudo.html"><span class="num">03</span>Estratégia Editorial</a>
-      <a href="go-to-market.html"><span class="num">04</span>Go-to-Market</a>
-      <a href="servicos.html"><span class="num">05</span>Serviços & Preços</a>
+      <a href="wisemetrics-branding.html"><span class="num">00</span>Branding</a>
+      <a href="servicos.html"><span class="num">01</span>Serviços & Preços</a>
+      <a href="go-to-market.html"><span class="num">02</span>Go-to-Market</a>
+      <a href="canais-digitais.html"><span class="num">03</span>Canais Digitais</a>
+      <a href="estrategia-conteudo.html"><span class="num">04</span>Estratégia de Conteúdo</a>
+      <a href="identidade-visual.html"><span class="num">05</span>Identidade Visual</a>
       <a href="modelos-proposta.html"><span class="num">06</span>Modelos de Proposta</a>
       <a href="wisemetrics-design-system-v2.html"><span class="num">07</span>Design System</a>
     </nav>
@@ -70,9 +72,18 @@ clean_html = """<!doctype html>
       </section>
 
       <div class="wm-grid cols-2" style="margin-bottom: var(--wm-s-8);">
+        
+        <a href="wisemetrics-branding.html" class="wm-card" style="text-decoration:none; color:inherit;">
+          <span class="kicker">01 · MASTER DOC</span>
+          <h4>Branding Overview</h4>
+          <p>Síntese de marca, posicionamento, proposta de valor e diretrizes de voz da Wisemetrics.</p>
+          <div style="display:flex; justify-content:flex-end; align-items:center; margin-top:auto;">
+            <span class="wm-badge accent">ATIVO</span>
+          </div>
+        </a>
 
         <a href="identidade-visual.html" class="wm-card" style="text-decoration:none; color:inherit;">
-          <span class="kicker">01 · DESIGN</span>
+          <span class="kicker">02 · DESIGN</span>
           <h4>Identidade Visual</h4>
           <p>Guia prático de aplicação do design system: regras de cores, tipografia editorial e grid lógico.</p>
           <div style="display:flex; justify-content:flex-end; align-items:center; margin-top:auto;">
@@ -80,19 +91,10 @@ clean_html = """<!doctype html>
           </div>
         </a>
 
-        <a href="canais-digitais.html" class="wm-card" style="text-decoration:none; color:inherit;">
-          <span class="kicker">02 · DISTRIBUIÇÃO</span>
-          <h4>Canais Digitais</h4>
-          <p>Ecossistema de presença digital focada em conversão: site, LinkedIn, newsletter e SEO.</p>
-          <div style="display:flex; justify-content:flex-end; align-items:center; margin-top:auto;">
-            <span class="wm-badge accent">ATIVO</span>
-          </div>
-        </a>
-
-        <a href="estrategia-conteudo.html" class="wm-card" style="text-decoration:none; color:inherit;">
-          <span class="kicker">03 · CONTEÚDO</span>
-          <h4>Estratégia Editorial</h4>
-          <p>Pilares de conteúdo, tom analítico proprietário, cronograma e diretrizes para publicações.</p>
+        <a href="servicos.html" class="wm-card" style="text-decoration:none; color:inherit;">
+          <span class="kicker">03 · PRODUTO</span>
+          <h4>Serviços & Preços</h4>
+          <p>Portfólio detalhado: Consumer Pulse, Analytics, Product Research e Advisory.</p>
           <div style="display:flex; justify-content:flex-end; align-items:center; margin-top:auto;">
             <span class="wm-badge accent">ATIVO</span>
           </div>
@@ -107,17 +109,26 @@ clean_html = """<!doctype html>
           </div>
         </a>
 
-        <a href="servicos.html" class="wm-card" style="text-decoration:none; color:inherit;">
-          <span class="kicker">05 · PRODUTO</span>
-          <h4>Serviços & Preços</h4>
-          <p>Portfólio detalhado: Consumer Pulse, Analytics, Product Research e Advisory.</p>
+        <a href="canais-digitais.html" class="wm-card" style="text-decoration:none; color:inherit;">
+          <span class="kicker">05 · DISTRIBUIÇÃO</span>
+          <h4>Canais Digitais</h4>
+          <p>Ecossistema de presença digital focada em conversão: site, LinkedIn, newsletter e SEO.</p>
+          <div style="display:flex; justify-content:flex-end; align-items:center; margin-top:auto;">
+            <span class="wm-badge accent">ATIVO</span>
+          </div>
+        </a>
+
+        <a href="estrategia-conteudo.html" class="wm-card" style="text-decoration:none; color:inherit;">
+          <span class="kicker">06 · CONTEÚDO</span>
+          <h4>Estratégia Editorial</h4>
+          <p>Pilares de conteúdo, tom analítico proprietário, cronograma e diretrizes para publicações.</p>
           <div style="display:flex; justify-content:flex-end; align-items:center; margin-top:auto;">
             <span class="wm-badge accent">ATIVO</span>
           </div>
         </a>
 
         <a href="modelos-proposta.html" class="wm-card" style="text-decoration:none; color:inherit;">
-          <span class="kicker">06 · COMERCIAL</span>
+          <span class="kicker">07 · COMERCIAL</span>
           <h4>Modelos de Proposta</h4>
           <p>Templates comerciais padronizados para Insight Sprints, projetos e retainers (Advisory).</p>
           <div style="display:flex; justify-content:flex-end; align-items:center; margin-top:auto;">
@@ -126,7 +137,7 @@ clean_html = """<!doctype html>
         </a>
 
         <a href="wisemetrics-design-system-v2.html" class="wm-card" style="text-decoration:none; color:inherit; border-color: color-mix(in srgb, var(--accent) 30%, var(--border));">
-          <span class="kicker">07 · RECURSO TÉCNICO</span>
+          <span class="kicker">08 · RECURSO TÉCNICO</span>
           <h4>Design System v0.2</h4>
           <p>Referência técnica canônica contendo tokens CSS, componentes interativos e regras de UI/UX.</p>
           <div style="display:flex; justify-content:flex-end; align-items:center; margin-top:auto;">
